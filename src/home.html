@@ -4,341 +4,217 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hackfest 2025</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        :root {
+            --primary: #A020F0;
+            --primary-dark: #8104B8;
+            --bg-dark: #0D0D2B;
+            --bg-darker: #1C1C1C;
         }
-
+        
         body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #0D0D2B;
-            color: rgb(243, 244, 224);
-            overflow-x: hidden;
+            font-family: 'Inter', Arial, sans-serif;
+            background: var(--bg-dark);
+            color: white;
+            line-height: 1.6;
         }
 
-        nav {
-            background-color: #242229;
-            padding: 1rem;
-            width: 100%;
-            z-index: 100;
-            
+        .navbar {
+            background-color: rgba(28, 28, 28, 0.95);
+            padding: 1rem 0;
+            backdrop-filter: blur(10px);
         }
 
-        .nav-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            color: #333;
+        .navbar-brand {
             font-weight: bold;
             font-size: 1.5rem;
-            opacity: 0;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: #333;
-            text-decoration: none;
+        .nav-link {
             font-weight: 500;
-            opacity: 0;
+            padding: 0.5rem 1rem !important;
+            margin: 0 0.5rem;
+            transition: color 0.3s;
         }
 
-        .menu-toggle {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #333;
+        .nav-link:hover {
+            color: var(--primary) !important;
         }
 
-        .main-content {
-            padding: 4rem 1rem;
-            text-align: center;
-            position: relative;
+        .hero-section {
             min-height: 100vh;
+            padding: 6rem 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, var(--bg-dark), #3D1D62);
         }
 
-        .title {
-            font-size: clamp(2rem, 8vw, 4rem);
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        .hero-section h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, #fff, #e0e0e0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-section p {
+            font-size: 1.25rem;
             margin-bottom: 2rem;
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        .subtitle {
-            font-size: clamp(1rem, 4vw, 1.5rem);
-            margin-bottom: 3rem;
-            opacity: 0;
-            transform: translateY(30px);
-            padding: 0 1rem;
+            max-width: 600px;
         }
 
         .register-btn {
-            background-color: #8e8e8e;
+            background: var(--primary);
             color: white;
-            padding: 0.8rem 2rem;
-            border-radius: 25px;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
             text-decoration: none;
-            display: inline-block;
-            margin-top: 2rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            opacity: 0;
+            transition: all 0.3s;
+            border: none;
+            font-size: 1.1rem;
+        }
+
+        .register-btn:hover {
+            background: var(--primary-dark);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(160, 32, 240, 0.3);
+        }
+
+        .dates-section {
+            background: var(--bg-darker);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .timeline-section {
+            padding: 6rem 0;
+            background: linear-gradient(180deg, var(--bg-darker), var(--bg-dark));
         }
 
         .timeline {
-            margin: 4rem auto;
             max-width: 800px;
-            position: relative;
-            padding: 2rem 0;
+            margin: 0 auto;
+            padding: 2rem;
         }
 
         .timeline-item {
-            background: #333;
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 4px solid var(--primary);
             padding: 1.5rem;
-            margin: 2rem 0;
-            position: relative;
-            clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
-            text-align: center;
-            opacity: 0;
-            transform: translateX(-100px);
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.1);
         }
 
         .timeline-item h3 {
-            font-size: clamp(0.9rem, 3vw, 1.2rem);
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
         }
 
         .timeline-item p {
-            font-size: clamp(0.8rem, 2.5vw, 1.1rem);
-        }
-
-        .timeline-arrow {
-            width: 50px;
-            height: 30px;
-            margin: 0 auto;
-            position: relative;
-            opacity: 0;
-        }
-
-        .timeline-arrow::after {
-            content: '→';
-            font-size: 2rem;
-            position: absolute;
-            right: 0;
-            transform: rotate(90deg);
-        }
-
-        .triangle {
-            position: absolute;
-            width: 0;
-            height: 0;
-            border-style: solid;
-        }
-
-        .triangle-top-right {
-            top: 0;
-            right: 0;
-            border-width: 0 150px 150px 0;
-            border-color: transparent #3D1D62 transparent transparent;
-            opacity: 0;
-        }
-
-        .triangle-bottom-left {
-            bottom: 0;
-            left: 0;
-            border-width: 150px 0 0 150px;
-            border-color: transparent transparent transparent  #3D1D62;
-            opacity: 0;
+            margin: 0;
+            opacity: 0.9;
         }
 
         @media (max-width: 768px) {
-            .nav-content {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .nav-links {
-                display: none;
-                width: 100%;
-                flex-direction: column;
-                gap: 1rem;
-                margin-top: 1rem;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .menu-toggle {
-                display: block;
-                position: absolute;
-                right: 1rem;
-                top: 1rem;
-            }
-
-            .timeline-item {
-                margin: 1rem 0;
+            .timeline {
                 padding: 1rem;
             }
-
-            .triangle-top-right {
-                border-width: 0 100px 100px 0;
-            }
-
-            .triangle-bottom-left {
-                border-width: 100px 0 0 100px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .main-content {
-                padding: 2rem 0.5rem;
-            }
-
-            .timeline {
-                margin: 2rem auto;
-                padding: 1rem 0;
-            }
-
-            .triangle-top-right {
-                border-width: 0 80px 80px 0;
-            }
-
-            .triangle-bottom-left {
-                border-width: 80px 0 0 80px;
+            
+            .timeline-item {
+                padding: 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <nav>
-        <div class="nav-content">
-            <div class="logo">HACKFEST 2025</div>
-            <div class="menu-toggle">☰</div>
-            <div class="nav-links">
-                <a href="#home">HOME</a>
-                <a href="#theme">THEME</a>
-                <a href="#partners">PARTNERS</a>
-                <a href="#hackfest2024">HACKFEST 2024</a>
-                <a href="#faq">FAQ</a>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">HACKFEST 2025</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#theme">Theme</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#partners">Partners</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+                </ul>
             </div>
         </div>
     </nav>
 
-    <div class="main-content">
-        <div class="triangle triangle-top-right"></div>
-        <div class="triangle triangle-bottom-left"></div>
-        
-        <h1 class="title">HACKFEST 2025</h1>
-        <p class="subtitle">PSG iTech and SAP are proud to announce the 3rd edition of Hackfest</p>
-        
-        <div class="timeline">
-            <div class="timeline-item">
-                <h3>ANNOUNCEMENT</h3>
-                <p>03 MARCH '25</p>
-            </div>
-            <div class="timeline-arrow"></div>
-            <div class="timeline-item">
-                <h3>REGISTRATION CLOSURE</h3>
-                <p>28 MARCH '25</p>
-            </div>
-            <div class="timeline-arrow"></div>
-            <div class="timeline-item">
-                <h3>REGIONAL ROUND</h3>
-                <p>31 MARCH – 12 MAY '25</p>
-            </div>
-            <div class="timeline-arrow"></div>
-            <div class="timeline-item">
-                <h3>START HUB ROUND</h3>
-                <p>26 MAY - 14 JUNE '25</p>
+    <section class="hero-section" id="home">
+        <div class="container">
+            <h1>HACKFEST 2025</h1>
+            <p>PSG iTech and SAP are proud to announce the 3rd edition of Hackfest, bringing together the brightest minds in technology.</p>
+            <a href="#register" class="register-btn">REGISTER NOW</a>
+        </div>
+    </section>
+
+    <section class="dates-section">
+        <div class="container">
+            <h2 class="mb-4">Important Dates</h2>
+            <p class="mb-2">Hackfest begins on 8th March 2024</p>
+            <p>Last date for registration is 25th May 2024</p>
+        </div>
+    </section>
+
+    <section class="timeline-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Event Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>ANNOUNCEMENT</h3>
+                    <p>03 MARCH '25</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>REGISTRATION CLOSURE</h3>
+                    <p>28 MARCH '25</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>REGIONAL ROUND</h3>
+                    <p>31 MARCH – 12 MAY '25</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>START HUB ROUND</h3>
+                    <p>26 MAY - 14 JUNE '25</p>
+                </div>
             </div>
         </div>
-        
-        <p>To know more about the themes</p>
-        <a href="#register" class="register-btn">Register Now</a>
-    </div>
+    </section>
 
     <script>
-        gsap.registerPlugin(ScrollTrigger);
-
-        // Toggle mobile menu
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Initial animations
-        const tl = gsap.timeline();
-        
-        tl.to(".logo", {
-            opacity: 1,
-            duration: 1
-        })
-        .to(".nav-links a", {
-            opacity: 1,
-            stagger: 0.2
-        })
-        .to(".triangle-top-right, .triangle-bottom-left", {
-            opacity: 1,
-            duration: 1
-        })
-        .to(".title", {
-            opacity: 1,
-            y: 0,
-            duration: 1
-        })
-        .to(".subtitle", {
-            opacity: 1,
-            y: 0,
-            duration: 1
-        }, "-=0.5")
-        .to(".register-btn", {
-            opacity: 1,
-            duration: 1
-        });
-
-        // Timeline animations on scroll
-        gsap.utils.toArray(".timeline-item").forEach((item, i) => {
-            gsap.from(item, {
-                scrollTrigger: {
-                    trigger: item,
-                    start: "top 80%",
-                    end: "top 50%",
-                    scrub: 1
-                },
-                opacity: 0,
-                x: -100,
-                duration: 1
-            });
-        });
-
-        gsap.utils.toArray(".timeline-arrow").forEach((arrow, i) => {
-            gsap.from(arrow, {
-                scrollTrigger: {
-                    trigger: arrow,
-                    start: "top 80%",
-                    end: "top 50%",
-                    scrub: 1
-                },
-                opacity: 0,
-                duration: 1
-            });
+        gsap.from(".hero-section h1", {opacity: 0, y: 30, duration: 1, ease: "power3.out"});
+        gsap.from(".hero-section p", {opacity: 0, y: 30, duration: 1, delay: 0.3, ease: "power3.out"});
+        gsap.from(".register-btn", {opacity: 0, y: 30, duration: 1, delay: 0.6, ease: "power3.out"});
+        gsap.from(".timeline-item", {
+            opacity: 0,
+            x: -50,
+            duration: 0.8,
+            stagger: 0.2,
+            scrollTrigger: {
+                trigger: ".timeline-section",
+                start: "top center"
+            }
         });
     </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
