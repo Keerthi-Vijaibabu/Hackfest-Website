@@ -113,13 +113,7 @@
             border-color: transparent transparent rgba(255, 255, 255, 0.1) transparent;
         }
 
-        /*Dates Section*/
-
-        .dates-section {
-            background: var(--bg-darker);
-            padding: 4rem 0;
-            text-align: center;
-        }
+        /*Timeline Section*/
 
         .timeline-section {
             padding: 6rem 0;
@@ -195,45 +189,55 @@
             <p class="hero-subtitle">PSG iTech and SAP are proud to announce the 3rd edition of Hackfest</p>
             <p class="theme-text">To know more about the themes</p>
             <a href="#register" class="register-btn">REGISTER NOW</a>
+            <br>
+            <br>
+            <p class="mb-2">Hackfest begins on 8th March 2024</p>
+            <p>Last date for registration is 25th May 2024</p>
         </div>
         <div class="triangle"></div>
     </section>
 
-    <!-- Date Section -->
-    <section class="dates-section">
-        <div class="container">
-            <h2 class="mb-4">Important Dates</h2>
-            <p class="mb-2">Hackfest begins on 8th March 2024</p>
-            <p>Last date for registration is 25th May 2024</p>
-        </div>
-    </section>
+    
 
 
     <!-- Time Line -->
     <section class="timeline-section">
         <div class="container">
-            <h2 class="text-center mb-5">Event Timeline</h2>
             <div class="timeline">
                 <div class="timeline-item">
-                    <h3>ANNOUNCEMENT</h3>
-                    <p>03 MARCH '25</p>
+                    <div class="hexagon">
+                        <h3>ANNOUNCEMENT</h3>
+                        <p>03 MARCH '25</p>
+                    </div>
+                    <div class="arrow"></div>
                 </div>
-                <div class="timeline-item">
-                    <h3>REGISTRATION CLOSURE</h3>
-                    <p>28 MARCH '25</p>
+    
+                <div class="timeline-item right">
+                    <div class="hexagon">
+                        <h3>REGISTRATION CLOSURE</h3>
+                        <p>28 MARCH '25</p>
+                    </div>
+                    <div class="arrow"></div>
                 </div>
+    
                 <div class="timeline-item">
-                    <h3>REGIONAL ROUND</h3>
-                    <p>31 MARCH – 12 MAY '25</p>
+                    <div class="hexagon">
+                        <h3>REGIONAL ROUND</h3>
+                        <p>31 MARCH – 12 MAY '25</p>
+                    </div>
+                    <div class="arrow"></div>
                 </div>
-                <div class="timeline-item">
-                    <h3>START HUB ROUND</h3>
-                    <p>26 MAY - 14 JUNE '25</p>
+    
+                <div class="timeline-item right">
+                    <div class="hexagon">
+                        <h3>START HUB ROUND</h3>
+                        <p>26 MAY - 14 JUNE '25</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
+    
     <script>
         gsap.from(".hero-section h1", {opacity: 0, y: 30, duration: 1, ease: "power3.out"});
         gsap.from(".hero-section p", {opacity: 0, y: 30, duration: 1, delay: 0.3, ease: "power3.out"});
