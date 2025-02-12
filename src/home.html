@@ -57,7 +57,7 @@
             position: relative;
             padding-top: 80px;
         }
-/* vscode */
+
         .hero-content {
             color: white;
             z-index: 2;
@@ -160,6 +160,49 @@
                 padding: 1rem;
             }
         }
+        .prize-gif-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 50px 0;
+    }
+
+    .content-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 30px; /* Space between GIF and prize content */
+        max-width: 1000px;
+        width: 100%;
+    }
+
+    .prize-gif {
+        max-width: 400px; /* Adjust the GIF size */
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .prize-content {
+        flex: 1; /* Makes text & image take remaining space */
+    }
+
+    .prize-image {
+        max-width: 300px; /* Adjust the size */
+        width: 100%;
+        border-radius: 15px;
+        margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+        .content-wrapper {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .prize-gif {
+            max-width: 100%;
+        }
+    }
+
     </style>
 </head>
 <body>
@@ -237,7 +280,23 @@
             </div>
         </div>
     </section>
-    
+   <!-- Prize & Video Section -->
+   <section class="prize-gif-section py-5">
+    <div class="container">
+        <!-- <div class="content-wrapper"> -->
+            <!-- GIF on Left -->
+            <!-- <img src="video-unscreen.gif" alt="Hackfest Animation" class="prize-gif"> -->
+
+            <!-- Prize Image & Text on Right -->
+            <div class="prize-content text-center">
+                <h2 class="mb-4">🏆 Prizes Await You! 🏆</h2>
+                <p class="lead">Exciting rewards for the champions of Hackfest 2025</p>
+                <img src="prize-image .png" alt="Hackfest 2025 Prizes" class="prize-image">
+            </div>
+        </div>
+    </div>
+</section>
+
     <script>
         gsap.from(".hero-section h1", {opacity: 0, y: 30, duration: 1, ease: "power3.out"});
         gsap.from(".hero-section p", {opacity: 0, y: 30, duration: 1, delay: 0.3, ease: "power3.out"});
