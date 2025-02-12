@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superimposed Hover Text Boxes</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+                :root {
+            --primary: #533e60;
+            --primary-dark: #21052d;
+            --bg-dark: #070718;
+            --bg-darker: #151515;
+        }
+        
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: var(--bg-dark);
+            color: white;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            background-color: rgba(28, 28, 28, 0.95);
+            padding: 1rem 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
+            margin: 0 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--primary) !important;
+        }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: #0D0D2B;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            position: relative;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .text-box {
+            width: 100%;
+            height: 100px;
+            background: #462957;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 10px;
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .hover-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            opacity: 75%;
+            transform: translate(-50%, -50%);
+            background: #1c1c1d;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out;
+            width: 500%;
+            height: 500%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            z-index: 20;
+        }
+
+        .inner-box {
+            width: 200px;
+            height: 200px;
+            background: #200d3d;
+            margin: 5px 0;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            position: relative;
+            cursor: pointer;
+            opacity: 100%;
+        }
+
+        .inner-hover-text {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50vw;
+            height: 50vh;
+            background: rgba(25, 15, 46, 0.95);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out;
+            z-index: 50;
+            flex-wrap: wrap;
+        }
+
+        .inner-box:hover .inner-hover-text {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .text-box:hover .hover-text {
+            opacity: 90%;
+            visibility: visible;
+        }
+
+
+        .image-box{
+            justify-content: center;
+        }
+        .image{
+            height: 30%;
+            width: 25%;
+            display: flex;
+            padding: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 10px;
+            }
+            .hover-text {
+                width: 80%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">HACKFEST 2025</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="HOME.HTML">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Theme.html">Theme</a></li>
+                    <li class="nav-item"><a class="nav-link" href="partners.html">Partners</a></li>
+                    <li class="nav-item"><a class="nav-link" href="FAQ.html">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="text-box">Karnataka
+            <div class="hover-text">
+                <div class="inner-box">Info 1
+                    <div class="inner-hover-text">More details on Info 1</div>
+                </div>
+                <div class="inner-box">Info 2
+                    <div class="inner-hover-text">More details on Info 2</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-box">Kerala
+            <div class="hover-text">
+                <div class="inner-box">More 1
+                    <div class="inner-hover-text">Additional data on More 1</div>
+                </div>
+                <div class="inner-box">More 2
+                    <div class="inner-hover-text">Additional data on More 2</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-box">Tamil Nadu
+            <div class="hover-text">
+                <div class="inner-box">Chennai
+                    <div class="inner-hover-text image-box">
+                        <img class="image " src="..\assets\regional_partners\TN\Chennai\c1.jpeg">
+                        <img class="image " src="..\assets\regional_partners\TN\Chennai\c2.jpeg">
+                        <img class="image " src="..\assets\regional_partners\TN\Chennai\c3.jpeg">
+                        <img class="image " src="..\assets\regional_partners\TN\Chennai\c4.jpeg">
+                        <img class="image " src="..\assets\regional_partners\TN\Chennai\c5.jpeg">
+                        <img class="image " src="..\assets\regional_partners\TN\Chennai\c6.jpeg">
+                        <img class="image " src="..\assets\regional_partners\TN\Chennai\c7.jpeg">
+                        <img class="image " src="..\assets\regional_partners\TN\Chennai\c8.jpeg">
+                    </div>
+                </div>
+                <div class="inner-box">Salem
+                    <div class="inner-hover-text image-box">
+                        <img class=" image" src="..\assets\regional_partners\TN\Salem\s1.jpeg">
+                        <img class=" image" src="..\assets\regional_partners\TN\Salem\s2.jpeg">
+                        <img class=" image" src="..\assets\regional_partners\TN\Salem\s3.jpeg">
+                        <img class=" image" src="..\assets\regional_partners\TN\Salem\s4.jpeg">
+                        <img class=" image" src="..\assets\regional_partners\TN\Salem\s5.jpeg">
+                        <img class=" image" src="..\assets\regional_partners\TN\Salem\s6.jpeg">
+                        <img class=" image" src="..\assets\regional_partners\TN\Salem\s7.jpeg">                    
+                    </div>
+                </div>
+                <div class="inner-box">Madurai
+                    <div class="inner-hover-text">Extra info on Extra 2</div>
+                </div>
+                <div class="inner-box">Coimbatore
+                    <div class="inner-hover-text">Extra info on Extra 2</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-box">Telangana
+            <div class="hover-text">
+                <div class="inner-box">Additional 1
+                    <div class="inner-hover-text">Details about Additional 1</div>
+                </div>
+                <div class="inner-box">Additional 2
+                    <div class="inner-hover-text">Details about Additional 2</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-box">Andhra Pradesh 
+            <div class="hover-text">
+                <div class="inner-box">Hover Info 1
+                    <div class="inner-hover-text">Deeper insights on Hover Info 1</div>
+                </div>
+                <div class="inner-box">Hover Info 2
+                    <div class="inner-hover-text">Deeper insights on Hover Info 2</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-box">Goa
+            <div class="hover-text">
+                <div class="inner-box">More Insight 1
+                    <div class="inner-hover-text">Expanded info on More Insight 1</div>
+                </div>
+                <div class="inner-box">More Insight 2
+                    <div class="inner-hover-text">Expanded info on More Insight 2</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
