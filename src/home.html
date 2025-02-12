@@ -21,6 +21,7 @@
             background: var(--bg-dark);
             color: white;
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         .navbar {
@@ -163,87 +164,107 @@
         */
 
         .timeline-section {
-    padding: 6rem 0;
-    background: #777; /* Adjust to match your theme */
-}
+            padding: 2rem;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-.timeline {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-}
+        .timeline {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 1400px;
+            position: relative;
+        }
 
-.timeline-item {
-    display: flex;
-    align-items: center;
-    position: relative;
-    margin: 20px 0;
-}
+        .timeline-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            padding: 100px 0;
+        }
 
-.timeline-item.right {
-    flex-direction: row-reverse; /* Reverse position for alternating effect */
-}
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            gap: 0;
+        }
 
-/* HEXAGON SHAPE */
-.hexagon {
-    width: 200px;
-    height: 115px;
-    background: black;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-weight: bold;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-}
+        .timeline-item:nth-child(even) {
+            margin-top: 100px;
+        }
 
-.hexagon h3 {
-    margin: 0;
-    font-size: 1.2rem;
-}
+        .timeline-item:nth-child(odd) {
+            margin-bottom: 100px;
+        }
 
-.hexagon p {
-    margin: 5px 0 0;
-    font-size: 1rem;
-}
+        .hexagon {
+            width: 200px;
+            height: 220px;
+            background: var(--primary-dark);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            padding: 20px;
+        }
 
-/* CONNECTING ARROWS */
-.arrow {
-    width: 50px;
-    height: 50px;
-    border-top: 5px solid black;
-    border-right: 5px solid black;
-    transform: rotate(45deg);
-    position: absolute;
-    left: 50%;
-    margin-left: -25px;
-    top: 50%;
-    margin-top: -10px;
-}
+        .hexagon h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
 
-.timeline-item.right .arrow {
-    left: auto;
-    right: 50%;
-    margin-right: -25px;
-    transform: rotate(-135deg);
-}
+        .hexagon p {
+            margin: 0;
+            font-size: 1rem;
+            white-space: nowrap;
+        }
 
-@media (max-width: 768px) {
-    .timeline-item {
-        flex-direction: column !important;
-    }
-    .arrow {
-        left: 50%;
-        transform: rotate(90deg);
-    }
-    .timeline-item.right .arrow {
-        right: 50%;
-        transform: rotate(-90deg);
-    }
-}
+        .connector {
+            width: 160px;
+            height: 120px;
+        }
+
+        .timeline-item:nth-child(even) .connector svg {
+            transform: scaleY(-1);
+        }
+
+        @media (max-width: 768px) {
+            .timeline-container {
+                flex-direction: column;
+                gap: 2rem;
+                padding: 20px 0;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                margin: 0 !important;
+            }
+
+            .connector {
+                height: 80px;
+                width: 40px;
+            }
+
+            .connector svg {
+                transform: rotate(90deg) !important;
+                width: 40px;
+                height: 80px;
+            }
+
+            .timeline-item:last-child .connector {
+                display: none;
+            }
+        }
 
         .prize-gif-section {
         display: flex;
@@ -334,7 +355,7 @@
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="hexagon">
-                        <h3>ANNOUNCEMENT</h3>
+                        <h3>ANNOUNCEMENT/ REGISTRATION OPEN</h3>
                         <p>03 MARCH '25</p>
                     </div>
                     <div class="arrow"></div>
@@ -355,6 +376,13 @@
                     </div>
                     <div class="arrow"></div>
                 </div>
+
+                <div class="timeline-item right">
+                    <div class="hexagon">
+                        <h3>WORKING ON DT</h3>
+                        <p>13 May – 25 May '25</p>
+                    </div>
+                </div>
     
                 <div class="timeline-item right">
                     <div class="hexagon">
@@ -362,6 +390,35 @@
                         <p>26 MAY - 14 JUNE '25</p>
                     </div>
                 </div>
+
+                <div class="timeline-item right">
+                    <div class="hexagon">
+                        <h3>WORKING ON BMC</h3>
+                        <p>15 Jun – 22 Jun '25</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="hexagon">
+                        <h3>SAP ROUND</h3>
+                        <p>23 Jun – 04 Jul '25</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="hexagon">
+                        <h3>WORKING ON PROTOTYPE</h3>
+                        <p>05 Jul – 05 Aug '25</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="hexagon">
+                        <h3>Grand Finale</h3>
+                        <p>06 Aug 25</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
