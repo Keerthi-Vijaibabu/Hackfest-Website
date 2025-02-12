@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackfest 2025</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <style>
+        :root {
+            --primary: #533e60;
+            --primary-dark: #21052d;
+            --bg-dark: #070718;
+            --bg-darker: #151515;
+        }
+        
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: var(--bg-dark);
+            color: white;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            background-color: rgba(28, 28, 28, 0.95);
+            padding: 1rem 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
+            margin: 0 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--primary) !important;
+        }
+
+        /* Home Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--bg-dark), #1d0541);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            padding-top: 80px;
+        }
+/* vscode */
+        .hero-content {
+            color: white;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .theme-text {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .register-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.8rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            opacity : 1;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .register-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Decorative Triangle */
+        .triangle {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 0 200px 200px;
+            border-color: transparent transparent rgba(255, 255, 255, 0.1) transparent;
+        }
+
+        /*Timeline Section
+
+        .timeline-section {
+            padding: 6rem 0;
+            background: linear-gradient(180deg, var(--bg-darker), var(--bg-dark));
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .timeline-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .timeline-item h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .timeline-item p {
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .timeline {
+                padding: 1rem;
+            }
+            
+            .timeline-item {
+                padding: 1rem;
+            }
+        }
+        */
+
+        .timeline-section {
+            padding: 2rem;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .timeline {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 1400px;
+            position: relative;
+        }
+
+        .timeline-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            padding: 100px 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            gap: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            margin-top: 100px;
+        }
+
+        .timeline-item:nth-child(odd) {
+            margin-bottom: 100px;
+        }
+
+        .hexagon {
+            width: 200px;
+            height: 220px;
+            background: var(--primary-dark);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            padding: 20px;
+        }
+
+        .hexagon h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .hexagon p {
+            margin: 0;
+            font-size: 1rem;
+            white-space: nowrap;
+        }
+
+        .connector {
+            width: 160px;
+            height: 120px;
+        }
+
+        .timeline-item:nth-child(even) .connector svg {
+            transform: scaleY(-1);
+        }
+
+        @media (max-width: 768px) {
+            .timeline-container {
+                flex-direction: column;
+                gap: 2rem;
+                padding: 20px 0;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                margin: 0 !important;
+            }
+
+            .connector {
+                height: 80px;
+                width: 40px;
+            }
+
+            .connector svg {
+                transform: rotate(90deg) !important;
+                width: 40px;
+                height: 80px;
+            }
+
+            .timeline-item:last-child .connector {
+                display: none;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">HACKFEST 2025</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="HOME.HTML">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Theme.html">Theme</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#partners">Partners</a></li>
+                    <li class="nav-item"><a class="nav-link" href="FAQ.html">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">HACKFEST 2025</h1>
+            <p class="hero-subtitle">PSG iTech and SAP are proud to announce the 3rd edition of Hackfest</p>
+            <p class="theme-text">To know more about the themes</p>
+            <a href="#register" class="register-btn">REGISTER NOW</a>
+            <br>
+            <br>
+            <p class="mb-2">Hackfest begins on 8th March 2024</p>
+            <p>Last date for registration is 25th May 2024</p>
+        </div>
+        <div class="triangle"></div>
+    </section>
+
+    
+
+
+    <!-- Time Line -->
+    <section class="timeline-section">
+        <div class="container">
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="hexagon">
+                        <h3>ANNOUNCEMENT/ REGISTRATION OPEN</h3>
+                        <p>03 MARCH '25</p>
+                    </div>
+                    <div class="arrow"></div>
+                </div>
+    
+                <div class="timeline-item right">
+                    <div class="hexagon">
+                        <h3>REGISTRATION CLOSURE</h3>
+                        <p>28 MARCH '25</p>
+                    </div>
+                    <div class="arrow"></div>
+                </div>
+    
+                <div class="timeline-item">
+                    <div class="hexagon">
+                        <h3>REGIONAL ROUND</h3>
+                        <p>31 MARCH – 12 MAY '25</p>
+                    </div>
+                    <div class="arrow"></div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="hexagon">
+                        <h3>WORKING ON DT</h3>
+                        <p>13 May – 25 May '25</p>
+                    </div>
+                </div>
+    
+                <div class="timeline-item right">
+                    <div class="hexagon">
+                        <h3>START HUB ROUND</h3>
+                        <p>26 MAY - 14 JUNE '25</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="hexagon">
+                        <h3>WORKING ON BMC</h3>
+                        <p>15 Jun – 22 Jun '25</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="hexagon">
+                        <h3>SAP ROUND</h3>
+                        <p>23 Jun – 04 Jul '25</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="hexagon">
+                        <h3>WORKING ON PROTOTYPE</h3>
+                        <p>05 Jul – 05 Aug '25</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="hexagon">
+                        <h3>Grand Finale</h3>
+                        <p>06 Aug 25</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        gsap.from(".hero-section h1", {opacity: 0, y: 30, duration: 1, ease: "power3.out"});
+        gsap.from(".hero-section p", {opacity: 0, y: 30, duration: 1, delay: 0.3, ease: "power3.out"});
+        gsap.from(".register-btn", {opacity: 1, y: 0, duration: 1, delay: 0.6, ease: "power3.out"});// Temprory Fix needs to be revisited later
+
+        gsap.from(".timeline-item", {
+            opacity: 0,
+            x: -50,
+            duration: 0.8,
+            stagger: 0.2,
+            scrollTrigger: {
+                trigger: ".timeline-section",
+                start: "top center"
+            }
+        });
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
