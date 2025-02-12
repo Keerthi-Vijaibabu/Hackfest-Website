@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackFest 2025</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        :root {
+            --primary: #563e64;
+            --bg-dark: #070718;
+            --bg-darker: #151515;
+            --text-light: rgba(255, 255, 255, 0.9);
+        }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: var(--bg-dark);
+            color: white;
+            line-height: 1.6;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: rgba(28, 28, 28, 0.95);
+            padding: 1rem 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .nav-link:hover {
+            color: var(--primary) !important;
+        }
+        h1 {
+      text-align: center;
+      color: #644787;
+      margin-top: 150px;
+      font-size: 36px;
+      font-weight: bold;
+    }
+        .theme-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: var(--bg-dark);
+            padding: 4rem;
+        }
+
+        .theme-card {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            padding: 3rem;
+            max-width: 800px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .theme-image {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        .theme-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .theme-description {
+            font-size: 1rem;
+            color: var(--text-light);
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">HACKFEST 2025</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="HOME.HTML">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#theme">Theme</a></li>
+                <li class="nav-item"><a class="nav-link" href="#partners">Partners</a></li>
+                <li class="nav-item"><a class="nav-link" href="FAQ.html">FAQ</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<h1>THEMES</h1>
+<section class="theme-section">
+    <div class="theme-card">
+        <h2 class="theme-title">Theme 1: Sustainable Business</h2>
+        <img src="..\assets\Theme 1.jpeg" class="theme-image" alt="Theme 1">
+        <p class="theme-description">Building an Equitable Future
+            <br>
+            In an era of rapid economic growth and globalization, businesses play a crucial role in shaping a sustainable future. While profitability drives industries forward, it is equally important to build enterprises that foster social well-being, cultural preservation, and fair economic opportunities. However, many existing business models often prioritize short-term gains over long-term sustainability, leading to wage disparities, loss of traditional livelihoods, and environmental degradation.
+            
+            <br><br>For example, small-scale artisans and local craftspeople struggle to compete in global markets, often losing their cultural heritage in the process. Similarly, workers in emerging industries lack access to proper upskilling programs, limiting their ability to participate in the green economy transition. Additionally, supply chains frequently suffer from a lack of transparency, making it difficult to ensure fair wages and equitable profit distribution.
+            
+           <br><br> Recognizing these challenges, this theme invites participants to design innovative business solutions that promote sustainability across multiple dimensions:
+            <br>
+        </p>
+        Create Sustainable Livelihoods
+<ul style="text-align: left;">
+    <li>Design solutions that generate stable, fair-paying jobs across all socioeconomic levels.</li>
+    <li>Develop platforms that connect skilled workers with opportunities in emerging sustainable industries.</li>
+    <li>Create tools for upskilling and reskilling workers for the green economy transition.</li>
+</ul>
+
+<br><br>
+
+Foster Cultural Sustainability
+<ul style="text-align: left;">
+    <li>Build systems that help preserve and promote local cultural practices while scaling businesses.</li>
+    <li>Develop frameworks for indigenous knowledge integration into modern business practices.</li>
+    <li>Create platforms that enable traditional craftspeople to reach global markets sustainably.</li>
+</ul>
+
+<br><br>
+
+ Enable Equitable Economics
+<ul style="text-align: left;">
+    <li>Design fair profit-sharing models across supply chains.</li>
+    <li>Create transparency tools for wage equality and fair labor practices.</li>
+    <li>Develop systems that ensure small businesses and local communities benefit from economic growth.</li>
+</ul>
+
+<br>
+
+<p>
+    Participants are encouraged to leverage technology, data, and innovative business models to create solutions that ensure businesses are not just profitable but also socially responsible and culturally inclusive.
+</p>
+
+    </div>
+</section>
+
+<section class="theme-section">
+    <div class="theme-card">
+        <h2 class="theme-title">Theme 2: Preventing Digital Fraud</h2>
+        <img src="..\assets\Theme 2.jpeg" class="theme-image" alt="Theme 2">
+        <p class="theme-description">Protecting the Digital Economy’s Foundation
+            <br>
+            As digital transactions and online interactions become an integral part of everyday life, the risk of fraud continues to rise. From financial scams to data breaches, cybercriminals are using increasingly sophisticated methods to exploit vulnerabilities. While businesses and governments implement security measures, fraudsters constantly adapt, making digital fraud prevention a continuous challenge.  
+            <br><br>
+            For example, consumers often fall victim to phishing scams or identity theft due to weak authentication mechanisms, while businesses struggle with insider threats and fraudulent transactions. Emerging technologies like IoT and blockchain offer new opportunities but also introduce unique security risks. Additionally, industries operate in silos, limiting the ability to share intelligence and combat fraud collectively.  
+            <br><br>
+            Recognizing these challenges, this theme invites participants to design innovative solutions to enhance security, protect consumers, and safeguard business operations in the digital landscape.  
+            <br><br>
+            
+        </p>
+        Protect Consumer Trust<br>
+            <ul style="text-align: left;">
+                <li> Design early warning systems for emerging fraud patterns.</li> 
+                <li> Create user-friendly authentication methods that don’t compromise security.</li>
+                <li> Develop educational tools that help users identify and avoid scams.</li>
+                </ul>
+                <br><br>
+                Safeguard Business Operations
+                <ul style="text-align: left;">
+                <li> Build AI-powered fraud detection systems for real-time transaction monitoring.</li> 
+                <li> Create secure supply chain verification systems.</li>
+                <li> Develop solutions for preventing employee and insider fraud.</li>
+                </ul>
+                <br><br>
+                Enable Secure Innovation
+                <ul style="text-align: left;">
+                <li>Design frameworks for secure digital transformation.</li>
+                <li> Create tools for safe adoption of emerging technologies.</li>  
+                <li> Develop security solutions for IoT and connected devices.</li> 
+                </ul>
+                <br><br>
+                Foster Cross-Industry Protection
+                <ul style="text-align: left;">
+                    <li> Build collaborative fraud prevention networks. </li> 
+                        <li> Create shared threat intelligence platforms.  </li>
+                            <li> Develop industry-specific fraud prevention tools. </li> 
+                </ul>
+                <br>
+                Participants are encouraged to leverage artificial intelligence, blockchain, and cybersecurity best practices to create scalable solutions that enhance trust, transparency, and security in the digital economy.
+                    
+        
+    </div>
+</section>
+
+<section class="theme-section">
+    <div class="theme-card">
+        <h2 class="theme-title">Theme 3: Ethics in AI Models for Business</h2>
+        <img src="..\assets\Theme 3.jpeg" class="theme-image" alt="Theme 3">
+        <p class="theme-description">
+            Ensuring Responsible Innovation<br>
+
+As artificial intelligence becomes a core part of business operations, ensuring ethical and responsible implementation is essential. AI-driven decisions impact hiring, lending, customer service, and more, making it crucial to prevent bias, enhance transparency, and uphold privacy. However, challenges such as algorithmic discrimination, opaque decision-making, and unethical data usage threaten trust in AI systems.  
+
+<br><br>For instance, biased AI hiring tools may favor certain demographics, leading to unfair recruitment practices. Similarly, businesses may struggle to explain AI-driven financial decisions, raising concerns about accountability. Additionally, large-scale AI models often require vast amounts of data, increasing the risk of privacy breaches and unethical data handling.  
+
+<br><br>Recognizing these challenges, this theme invites participants to develop innovative solutions that ensure fairness, accountability, and responsible AI governance in business applications.  
+<br><br>
+</p>
+Fairness and Bias Prevention
+        <br>
+        <ul style="text-align: left;">
+            <li> Create tools to detect and mitigate algorithmic bias.  </li>
+                <li> Design frameworks for inclusive AI model development.  </li>
+                    <li> Develop solutions for fair AI-driven decision-making in hiring, lending, and customer service.</li>  
+        </ul>
+        <br><br>
+        Transparency and Accountability 
+        <ul style="text-align: left;">
+            <li> Build explainable AI solutions for business decisions. </li> 
+                <li> Create audit trails for AI model decisions.  </li>
+                    <li>Develop tools for stakeholder oversight of AI systems.  </li>
+        </ul>
+        <br><br>
+        Privacy Protection  
+        <ul style="text-align: left;">
+        <li> Design privacy-preserving AI training methods.  </li>
+            <li> Create secure data handling frameworks. </li> 
+                <li> Develop solutions for ethical data collection and usage. </li> 
+        </ul>
+        <br><br>
+        Responsible AI Governance
+        <ul style="text-align: left;">
+            <li> Build AI ethics monitoring systems.  </li>
+                <li> Create impact assessment tools for AI deployment.</li>  
+                    <li> Develop frameworks for ethical AI policy implementation. </li> 
+        </ul>
+        Participants are encouraged to explore AI ethics through innovative frameworks, bias detection algorithms, and privacy-focused AI systems to promote fairness, accountability, and responsible AI use in businesses.
+            
+    </div>
+</section>
+
+</body>
+</html>

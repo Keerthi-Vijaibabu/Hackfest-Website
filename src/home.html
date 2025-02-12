@@ -113,7 +113,7 @@
             border-color: transparent transparent rgba(255, 255, 255, 0.1) transparent;
         }
 
-        /*Timeline Section*/
+        /*Timeline Section
 
         .timeline-section {
             padding: 6rem 0;
@@ -160,6 +160,91 @@
                 padding: 1rem;
             }
         }
+        */
+
+        .timeline-section {
+    padding: 6rem 0;
+    background: #777; /* Adjust to match your theme */
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 20px 0;
+}
+
+.timeline-item.right {
+    flex-direction: row-reverse; /* Reverse position for alternating effect */
+}
+
+/* HEXAGON SHAPE */
+.hexagon {
+    width: 200px;
+    height: 115px;
+    background: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.hexagon h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.hexagon p {
+    margin: 5px 0 0;
+    font-size: 1rem;
+}
+
+/* CONNECTING ARROWS */
+.arrow {
+    width: 50px;
+    height: 50px;
+    border-top: 5px solid black;
+    border-right: 5px solid black;
+    transform: rotate(45deg);
+    position: absolute;
+    left: 50%;
+    margin-left: -25px;
+    top: 50%;
+    margin-top: -10px;
+}
+
+.timeline-item.right .arrow {
+    left: auto;
+    right: 50%;
+    margin-right: -25px;
+    transform: rotate(-135deg);
+}
+
+@media (max-width: 768px) {
+    .timeline-item {
+        flex-direction: column !important;
+    }
+    .arrow {
+        left: 50%;
+        transform: rotate(90deg);
+    }
+    .timeline-item.right .arrow {
+        right: 50%;
+        transform: rotate(-90deg);
+    }
+}
+
     </style>
 </head>
 <body>
@@ -173,10 +258,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#theme">Theme</a></li>
+                    <li class="nav-item"><a class="nav-link" href="HOME.HTML">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Theme.html">Theme</a></li>
                     <li class="nav-item"><a class="nav-link" href="#partners">Partners</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="FAQ.html">FAQ</a></li>
                 </ul>
             </div>
         </div>
