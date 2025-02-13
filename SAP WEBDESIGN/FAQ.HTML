@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs - HackFest 2025</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <style>
+        :root {
+            --primary: #533e60;
+            --bg-dark: #070718;
+            --bg-darker: #151515;
+            --text-light: rgba(255, 255, 255, 0.9);
+        }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: var(--bg-dark);
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: rgba(28, 28, 28, 0.95);
+            padding: 1rem 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .nav-link:hover {
+            color: var(--primary) !important;
+        }
+
+
+        
+    h1 {
+      text-align: center;
+      color: #644787;
+      margin-top: 100px;
+      font-size: 36px;
+      font-weight: bold;
+    }
+
+    
+    .card-container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 80%;
+      max-width: 700px;
+      margin: 40px auto;
+    }
+
+  
+    .card {
+      background-color: #2c2c2c;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #444;
+      text-align: left;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+      transition: transform 0.2s ease;
+    }
+
+   
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 4px 4px 12px rgba(255, 255, 255, 0.2);
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #604c77;
+      cursor: pointer;
+    }
+    .card-content {
+      margin-top: 10px;
+      display: none;
+      color: #e7dbdb;
+    }
+    .card.active .card-content {
+      display: block;
+    }
+  </style>
+  <script>
+    function toggleAnswer(card) {
+      card.classList.toggle('active');
+    }
+  </script>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">HACKFEST 2025</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="HOME.HTML">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="THEME.HTML">Theme</a></li>
+                <li class="nav-item"><a class="nav-link" href="#partners">Partners</a></li>
+                <li class="nav-item"><a class="nav-link" href="FAQ.HTML">FAQ</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<h1>FAQ Section</h1>
+<div class="card-container">
+  <div class="card" onclick="toggleAnswer(this)">
+    <div class="card-title">What is the prize amount for the winners?</div>
+    <div class="card-content">The first prize is ₹ 1.5 lakh, second prize is ₹ 1 lakh, and third prize is ₹ 50 thousand.</div>
+  </div>
+  <div class="card" onclick="toggleAnswer(this)">
+    <div class="card-title">What is expected in the evaluation of the regional round?</div>
+    <div class="card-content">Only ideas will be evaluated, it is not mandatory to have a working prototype.</div>
+  </div>
+  <div class="card" onclick="toggleAnswer(this)">
+    <div class="card-title">What is expected in the evaluation of the State Hub Round? 
+    </div>
+    <div class="card-content">Teams should have gone through the Design Thinking workshop and their presentation should be as per it.</div>
+  </div>
+  <div class="card" onclick="toggleAnswer(this)">
+    <div class="card-title">What is expected in the evaluation of the SAP Round? 
+    </div>
+    <div class="card-content">Teams must present a comprehensive Business Model Canvas.</div>
+  </div>
+  <div class="card" onclick="toggleAnswer(this)">
+    <div class="card-title">What is expected in the evaluation of the final round?</div>
+    <div class="card-content">In the final Hackathon, teams will be asked to implement and demonstrate the working prototype.</div>
+  </div>
+  <div class="card" onclick="toggleAnswer(this)">
+    <div class="card-title">How are teams shortlisted in the regional round?</div>
+    <div class="card-content">Teams are shortlisted based on their project presentations and adherence to the provided guidelines.</div>
+  </div>
+  <div class="card" onclick="toggleAnswer(this)">
+    <div class="card-title">How are the winners selected in the final round?</div>
+    <div class="card-content">Winners are selected by a panel of expert judges considering innovation, technical skills, and presentation quality.</div>
+  </div>
+  <div class="card" onclick="toggleAnswer(this)">
+    <div class="card-title">Is accommodation provided for the participants in the regional round?</div>
+    <div class="card-content">Yes, accommodation will be provided for outstation participants during the regional round.</div>
+  </div>
+  <div class="card" onclick="toggleAnswer(this)">
+    <div class="card-title">Is accommodation provided for the participants in the final round?</div>
+    <div class="card-content">Yes, final round participants will also be provided with accommodation.</div>
+  </div>
+  <div class="card" onclick="toggleAnswer(this)">
+    <div class="card-title">Who will evaluate the projects at Hackathon?</div>
+    <div class="card-content">Industry experts and university professors will evaluate the projects.</div>
+  </div>
+  <div class="card" onclick="toggleAnswer(this)">
+    <div class="card-title">What is the registration fee for the regional round Hackathon?</div>
+    <div class="card-content">There is no registration fee for participating in the regional round of Hackathon.</div>
+  </div>
+</div>
+</body>
+</html>
