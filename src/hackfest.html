@@ -24,6 +24,11 @@ body {
     align-items: center;
     justify-content: center;
     scroll-behavior: smooth;
+    background: radial-gradient(circle at 30% 30%, 
+        #533e60, #1d0b40, #070718, black);
+    background-size: cover;
+    color: white;
+
 }
 
 .section {
@@ -38,6 +43,114 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px); /* Adds blur effect */
     border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+}
+.hall-of-fame {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.hall-of-fame h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.hall-of-fame-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.hexagon {
+    width: 408.8px;
+    height: 353px;
+    background: linear-gradient(100deg, #a0a3d6, #ffffff); /* Gradient Background */
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 0px; /* Space around the circle */
+}
+
+.circle-image {
+    width: 284.4px;
+    height: 361.8px;
+    border-radius: 50%; /* Makes it a circle */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.circle-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hex-container {
+    position: relative;  /* Needed for absolute positioning of .text-box */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text-box {
+    position: absolute;  /* Overlaps the hexagon */
+    bottom: -25px;  /* Adjust this to control the overlap */
+    left: 50%;
+    transform: translateX(-50%); /* Centers the text box */
+    padding: 10px 20px;
+    background-color: #b8b8ff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 50px;
+}
+
+.year-text {
+    font-size: 30px;
+    font-weight: bold;
+    color: #000;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+/* Positioning dots at corners */
+.dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #333;
+    border-radius: 50%;
+}
+
+.dot-1 {
+    top: 5px;
+    left: 5px;
+}
+
+.dot-2 {
+    top: 5px;
+    right: 5px;
+}
+
+.dot-3 {
+    bottom: 5px;
+    left: 5px;
+}
+
+.dot-4 {
+    bottom: 5px;
+    right: 5px;
 }
 
 .media-container {
@@ -117,16 +230,61 @@ p {
 </head>
 <body>
    
-    <!-- Image Gallery Section for Navigation -->
-    <div class="section">
-        <div class="image-gallery">
-            <img src="../assets/2k22.jpg" alt="2K22 Event" onclick="scrollToSection('event-2k22')">
-            <img src="../assets/2k23.png" alt="2K23 Event" onclick="scrollToSection('event-2k23')">
-            <img src="../assets/2k24.jpg" alt="2K24 Event" onclick="scrollToSection('event-2k24')">
-            
-            <!-- <img src="../assets/sap.png" alt="2K24 Event"> -->
+    <!-- Hackfest Hall of Fame Section -->
+<div class="hall-of-fame">
+    <h2>Hackfest Hall of Fame</h2>
+    <div class="hall-of-fame-gallery">
+        <div class="hex-container">
+            <div class="hexagon">
+                <div class="circle-image">
+                    <img src="../assets/2k23.png" alt="2K22 Event" onclick="scrollToSection('event-2k22')">
+                </div>
+            </div>
+                <div class="text-box">
+                    <div class="dot dot-1"></div>
+                    <div class="dot dot-2"></div>
+                    <div class="dot dot-3"></div>
+                    <div class="dot dot-4"></div>
+                    <h1 class="year-text">2022</h1>
+                </div>
         </div>
+        
+        <div class="hex-container">
+            <div class="hexagon">
+                <div class="circle-image">
+                    <img src="../assets/2k22.jpg" alt="2K23 Event" onclick="scrollToSection('event-2k23')">
+                </div>
+            </div>
+            <div class="container">
+                <div class="text-box">
+                    <div class="dot dot-1"></div>
+                    <div class="dot dot-2"></div>
+                    <div class="dot dot-3"></div>
+                    <div class="dot dot-4"></div>
+                    <h1 class="year-text">2023</h1>
+                </div>
+            </div>
+        </div>
+        <div class="hex-container">
+            <div class="hexagon">
+                <div class="circle-image">
+                    <img src="../assets/2k24.jpg" alt="2K23 Event" onclick="scrollToSection('event-2k24')">
+                </div>
+            </div>
+            <div class="container">
+                <div class="text-box">
+                    <div class="dot dot-1"></div>
+                    <div class="dot dot-2"></div>
+                    <div class="dot dot-3"></div>
+                    <div class="dot dot-4"></div>
+                    <h1 class="year-text">2024</h1>
+                </div>
+            </div>
+        </div>
+                
     </div>
+</div>
+
  <!-- Section 1: Event 2K22 -->
 <div class="section" id="event-2k22" style="display: flex; flex-direction: column; align-items: center;">
     <!-- Row 1: Video & Image -->
@@ -142,11 +300,37 @@ p {
             allowfullscreen>
             </iframe>
         </div>
-        <!-- Image -->
-        <div class="media-container">
-            <img src="../assets/2k22.jpg" alt="2K22 Event">
+              <!-- Table -->
+              <div class="table-container" style="background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 10px;">
+                <table style="width: 100%; border-collapse: collapse; color: white; text-align: left;">
+                    <tr style="background: rgba(255, 255, 255, 0.2);">
+                        <th style="padding: 10px; border: 1px solid white;">Category</th>
+                        <th style="padding: 10px; border: 1px solid white;">Details</th>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border: 1px solid white;">Overall Reach</td>
+                        <td style="padding: 10px; border: 1px solid white;">2500 students</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border: 1px solid white;">Teams</td>
+                        <td style="padding: 10px; border: 1px solid white;">650</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border: 1px solid white;">States</td>
+                        <td style="padding: 10px; border: 1px solid white;">06</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border: 1px solid white;">Regional Rounds</td>
+                        <td style="padding: 10px; border: 1px solid white;">06</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border: 1px solid white;">Colleges/Universities</td>
+                        <td style="padding: 10px; border: 1px solid white;">56</td>
+                    </tr>
+                </table>
+            </div>
         </div>
-    </div>
+    
 
     <!-- Row 2: Overview (on the next line) -->
     <div class="text-container" style="margin-top: 20px; text-align: center; width: 100%;">
