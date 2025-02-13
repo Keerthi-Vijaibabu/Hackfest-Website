@@ -161,7 +161,7 @@
                 padding: 1rem;
             }
         }
-        */
+        
 
         .timeline-section {
             padding: 2rem;
@@ -219,7 +219,7 @@
             gap: 2rem;
         }
 
-       /* Enhanced Hexagon Styles */
+       /* Enhanced Hexagon Styles 
 .hexagon {
     width: 170px;
     height: 160px;
@@ -238,7 +238,7 @@
                 inset 0 0 15px rgba(255, 255, 255, 0.1);
 }
 
-/* Inner Glow Effect */
+/* Inner Glow Effect 
 .hexagon::before {
     content: '';
     position: absolute;
@@ -251,7 +251,7 @@
     pointer-events: none;
 }
 
-/* Neon Hover Effect */
+/* Neon Hover Effect 
 .hexagon:hover {
     transform: scale(1.05) translateY(-5px);
     box-shadow: 0 15px 30px rgba(33, 5, 45, 0.4),
@@ -261,7 +261,7 @@
     background: linear-gradient(145deg, #2d0940, #421254);
 }
 
-/* Enhanced Text Styles */
+/* Enhanced Text Styles 
 .hexagon h3 {
     margin: 0;
     font-size: 1rem;
@@ -280,14 +280,14 @@
     transition: all 0.3s ease;
 }
 
-/* Hover Text Enhancement */
+/* Hover Text Enhancement 
 .hexagon:hover h3,
 .hexagon:hover p {
     text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
     color: #ffffff;
 }
 
-/* Enhanced Connector Styles */
+/* Enhanced Connector Styles 
 .connector {
     position: absolute;
     width: 9rem;
@@ -313,7 +313,7 @@
     filter: drop-shadow(0 0 5px rgba(83, 62, 96, 0.4));
 }
 
-/* Enhanced Vertical Connector */
+/* Enhanced Vertical Connector 
 .vertical-connector {
     border-right: 3px solid var(--primary);
     border-bottom: 3px solid var(--primary);
@@ -324,7 +324,7 @@
     filter: drop-shadow(0 0 5px rgba(83, 62, 96, 0.4));
 }
 
-/* Responsive Adjustments */
+/* Responsive Adjustments 
 @media (max-width: 1200px) {
     .hexagon {
         width: 160px;
@@ -336,7 +336,7 @@
     }
 }
 
-        /* Connector arrows */
+        /* Connector arrows 
         .connector {
             position: absolute;
             width: 7rem;
@@ -350,25 +350,25 @@
         .connector::after {
     content: '';
     position: absolute;
-    right: -5px; /* Adjust as needed */
+    right: -5px; /* Adjust as needed 
     top: 50%;
     transform: translateY(-50%);
     width: 0;
     height: 0;
-    border-left: 12px solid var(--primary); /* Larger arrow */
+    border-left: 12px solid var(--primary); /* Larger arrow 
     border-top: 6px solid transparent;
     border-bottom: 6px solid transparent;
 }
 
         .vertical-connector {
     position: absolute;
-    width: 100px; /* Increased width for proper bending */
-    height: 250px; /* Vertical drop */
-    border-right: 3px solid var(--primary); /* Vertical part */
-    border-bottom: 3px solid var(--primary); /* Horizontal part */
-    border-bottom-right-radius: 70px; /* Curve for right to left */
-    right: 85px; /* Adjust this value to match the layout */
-    bottom: -250px; /* Position it correctly */
+    width: 100px; /* Increased width for proper bending 
+    height: 250px; /* Vertical drop 
+    border-right: 3px solid var(--primary); /* Vertical part 
+    border-bottom: 3px solid var(--primary); /* Horizontal part 
+    border-bottom-right-radius: 70px; /* Curve for right to left 
+    right: 85px; /* Adjust this value to match the layout 
+    bottom: -250px; /* Position it correctly 
 }
 
 .vertical-connector::after {
@@ -378,10 +378,10 @@
     height: 0;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
-    border-right: 15px solid var(--primary); /* Arrowhead */
-    bottom: -11px; /* Adjust to fit the curve */
-    left : -18px; /* Position at the end */
-    transform: rotate(0deg); /* Align arrow with path */
+    border-right: 15px solid var(--primary); /* Arrowhead 
+    bottom: -11px; /* Adjust to fit the curve 
+    left : -18px; /* Position at the end 
+    transform: rotate(0deg); /* Align arrow with path 
 }
 
 
@@ -414,7 +414,126 @@
         left: -7rem;
         transform: translateY(-50%) rotate(180deg);
     }
+*/
+/*Time Line Section*/
 
+    .timeline-section {
+            padding: 6rem 0;
+            background: linear-gradient(180deg, var(--bg-darker), var(--bg-dark));
+        }
+        
+        .timeline-text {
+            margin-top: 20px;
+            font-size: 60px;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+        }
+.hexagon-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            width: 500px;
+            position: relative;
+        }
+
+        .hex-row {
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hex {
+            width: 170px;
+            height: 147px;/*width * (3**0.5)/2*/
+            background: linear-gradient(145deg,  rgba(119, 56, 149, 0.703), rgba(33, 5, 45, 0.3));
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-weight: bold;
+            color: white;
+            transition: all 0.3s ease;
+            font-size: smaller;
+            border: 2px solid  rgba(25, 3, 34, 0.86);
+            margin: -5px 10px;
+            padding: 10px;
+            
+        }
+            
+
+        .hex:hover {
+            background: linear-gradient(145deg,  rgba(81, 17, 68, 0.703), rgba(37, 4, 27, 0.3));
+            box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.8);
+        }
+
+        .hex1{
+            transform: translateX(268px) translateY(-73px);
+        }
+
+        .hex2{
+            transform: translateX(208px);
+        }
+
+        .hex3{
+            transform: translateX(149px) translateY(-73px);
+        }
+
+        .hex4{
+            transform: translateX(88px) translateY(0px);
+        }
+
+        .hex5{
+            transform: translateX(28px) translateY(-73px);
+        }
+
+        .hex6{
+            transform: translateX(-33px) translateY(0px);
+        }
+
+        .hex7{
+            transform: translateX(-93px) translateY(-73px);
+        }
+
+        .hex8{
+            transform: translateX(-153px) translateY(0px);
+        }
+
+        .hex9{
+            transform: translateX(-215px) translateY(-73px);
+        }
+        .timeline-text {
+            margin-top: 20px;
+            font-family: 'Brush Script MT', cursive;
+            font-size: 60px;
+            color: white;
+            text-shadow: 4px 4px 10px rgba(255, 255, 255, 0.7);
+            border: 2px solid white;
+            padding: 10px 20px;
+            display: inline-block;
+        }
+
+        @media (max-width: 768px) {
+            .hexagon-container {
+                flex-direction: column;
+                align-items: center;
+                flex-flow: column;
+                
+            }
+
+            .hex-row{
+                flex-direction: column;
+                align-items: center;
+                flex-flow: column;
+            }
+
+            .hex {
+                transform: translateX(0) translateY(0);
+                margin-top: 10px;
+            }
+        }
 /*Video Section*/
 .video-section {
             display: flex;
@@ -547,82 +666,63 @@
     
 <!-- Timeline Section HTML -->
 <section class="timeline-section">
-    <div class="timeline">
-        <div class="timeline-container">
-            <!-- First Row -->
-            <div class="timeline-row first-row">
-                <div class="timeline-item">
-                    <div class="hexagon">
-                        <h3>ANNOUNCEMENT/ REGISTRATION OPEN</h3>
-                        <p>03 MARCH '25</p>
-                    </div>
-                    <div class="connector"></div>
-                </div>
-                <div class="timeline-item">
-                    <div class="hexagon">
-                        <h3>REGISTRATION CLOSURE</h3>
-                        <p>28 MARCH '25</p>
-                    </div>
-                    <div class="connector"></div>
-                </div>
-                <div class="timeline-item">
-                    <div class="hexagon">
-                        <h3>REGIONAL ROUND</h3>
-                        <p>31 MARCH – 12 MAY '25</p>
-                    </div>
-                    <div class="connector"></div>
-                </div>
-                <div class="timeline-item">
-                    <div class="hexagon">
-                        <h3>WORKING ON DT</h3>
-                        <p>13 May – 25 May '25</p>
-                    </div>
-                    <div class="connector"></div>
-                </div>
-                <div class="timeline-item">
-                    <div class="hexagon">
-                        <h3>START HUB ROUND</h3>
-                        <p>26 MAY - 14 JUNE '25</p>
-                    </div>
-                    <div class="vertical-connector"></div>
-                </div>
+    <div class="timeline-text">Timeline</div>
+    <div class="hexagon-container">
+        <div class="hex-row">
+            <div class="hex hex1">
+                ANNOUNCEMENT/ REGISTRATION OPEN
+                <br><br>
+                03 MARCH '25
+            </div>
+
+            <div class="hex hex2">
+                REGISTRATION CLOSURE
+                <br><br>
+                28 MARCH '25
             </div>
             
-            <!-- Second Row -->
-            <div class="timeline-row second-row">
-                <div class="timeline-item">
-                    <div class="hexagon">
-                        <h3>WORKING ON BMC</h3>
-                        <p>15 Jun – 22 Jun '25</p>
-                    </div>
-                    <div class="connector"></div>
-                </div>
-                <div class="timeline-item">
-                    <div class="hexagon">
-                        <h3>SAP ROUND</h3>
-                        <p>23 Jun – 04 Jul '25</p>
-                    </div>
-                    <div class="connector"></div>
-                </div>
-              
-                
-                <div class="timeline-item">
-                    <div class="hexagon">
-                        <h3>WORKING ON PROTOTYPE</h3>
-                        <p>05 Jul – 05 Aug '25</p>
-                    </div>
-                    <div class="connector"></div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="hexagon">
-                        <h3>Grand Finale</h3>
-                        <p>06 Aug 25</p>
-                    </div>
-                </div>
+            <div class="hex hex3">
+                REGIONAL ROUND
+                <br><br>
+                31 MARCH – 12 MAY '25
+            </div>
+            <div class="hex hex4">
+                WORKING ON DT
+                <br><br>
+                13 May – 25 May '25
+            </div>
+            <div class="hex hex5">
+                START HUB ROUND
+                <br>
+                <br>
+                26 MAY - 14 JUNE '25
+            </div>
+            <div class="hex hex6">
+                WORKING ON BMC
+                <br>
+                <br>
+                15 Jun – 22 Jun '25
+            </div>
+            <div class="hex hex7">
+                SAP ROUND
+                <br><br>
+                23 Jun – 04 Jul '25
+            </div>
+            <div class="hex hex8">
+                WORKING ON PROTOTYPE
+                <br>
+                05 Jul – 05 Aug '25
+            </div>
+            <div class="hex hex9">
+                GRAND FINALE
+                <br>
+                <br>
+                06 Aug 25
             </div>
         </div>
+        
     </div>
+
 </section>
 
 <!-- Intro video section -->
