@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: 'Inter', Arial, sans-serif;
-            background: radial-gradient(circle, #2a1b5d, #1a1a4d);
+            background: radial-gradient(circle, #08031a, #010117);
             color: white;
             text-align: center;
             padding: 40px;
@@ -23,8 +23,8 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            align-items: center;
             width: 500px;
-            padding-left: 750px;
             position: relative;
         }
 
@@ -37,7 +37,7 @@
         .hex {
             width: 170px;
             height: 147px;/*width * (3**0.5)/2*/
-            background: linear-gradient(145deg, #6A3FC8, #50308F);
+            background: linear-gradient(145deg,  rgba(119, 56, 149, 0.703), rgba(33, 5, 45, 0.3));
             clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
             display: flex;
             justify-content: center;
@@ -47,24 +47,53 @@
             color: white;
             transition: all 0.3s ease;
             font-size: smaller;
-            border: 2px solid #8B5CF6;
-            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+            border: 2px solid  rgba(25, 3, 34, 0.86);
             margin: -5px 10px;
             padding: 10px;
+            
         }
-       
-
-        .hex-up-left{
-            transform: translateX(-270px) translateY(0px);
-        }
-
-        
+            
 
         .hex:hover {
-            background: #8B5CF6;
+            background: linear-gradient(145deg,  rgba(81, 17, 68, 0.703), rgba(37, 4, 27, 0.3));
             box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.8);
         }
 
+        .hex1{
+            transform: translateX(268px) translateY(-73px);
+        }
+
+        .hex2{
+            transform: translateX(208px);
+        }
+
+        .hex3{
+            transform: translateX(149px) translateY(-73px);
+        }
+
+        .hex4{
+            transform: translateX(88px) translateY(0px);
+        }
+
+        .hex5{
+            transform: translateX(28px) translateY(-73px);
+        }
+
+        .hex6{
+            transform: translateX(-33px) translateY(0px);
+        }
+
+        .hex7{
+            transform: translateX(-93px) translateY(-73px);
+        }
+
+        .hex8{
+            transform: translateX(-153px) translateY(0px);
+        }
+
+        .hex9{
+            transform: translateX(-215px) translateY(-73px);
+        }
         .timeline-text {
             margin-top: 20px;
             font-family: 'Brush Script MT', cursive;
@@ -80,14 +109,19 @@
             .hexagon-container {
                 flex-direction: column;
                 align-items: center;
+                flex-flow: column;
+                
             }
-            .hex-row:nth-child(even) {
-                transform: translateX(0);
+
+            .hex-row{
+                flex-direction: column;
+                align-items: center;
+                flex-flow: column;
             }
+
             .hex {
-                width: 100px;
-                height: 115px;
-                margin: 0px;
+                transform: translateX(0) translateY(0);
+                margin-top: 10px;
             }
         }
     </style>
@@ -95,24 +129,59 @@
 <body>
     <div class="hexagon-container">
         <div class="hex-row">
-            <div class="hex hex-norm" style = "transform: translateX(0px);">
+            <div class="hex hex1">
                 ANNOUNCEMENT/ REGISTRATION OPEN
-                <br>
+                <br><br>
                 03 MARCH '25
             </div>
-            <div class="hex" style="transform: translateX(-190px) translateY(148px);">1</div>
-            <div class="hex" style="transform: translateX(-251px) translateY(-73px);">3</div>
-            <div class="hex hex-up-left">4</div>
-        
-            <div class="hex hex-up-right", style="transform: translateX(-325px) translateY(-60px);"></div>
-            <div class="hex", style="transform: translateX(-380px) translateY(0px);"></div>
-            <div class="hex", style="transform: translateX(-435px) translateY(-60px);"></div>
-            <div class="hex", style="transform: translateX(-490px) translateY(0px);"></div>
-            <div class="hex", style="transform: translateX(-650px) translateY(120px);"></div>
+
+            <div class="hex hex2">
+                REGISTRATION CLOSURE
+                <br><br>
+                28 MARCH '25
+            </div>
+            
+            <div class="hex hex3">
+                REGIONAL ROUND
+                <br><br>
+                31 MARCH – 12 MAY '25
+            </div>
+            <div class="hex hex4">
+                WORKING ON DT
+                <br><br>
+                13 May – 25 May '25
+            </div>
+            <div class="hex hex5">
+                START HUB ROUND
+                <br>
+                <br>
+                26 MAY - 14 JUNE '25
+            </div>
+            <div class="hex hex6">
+                WORKING ON BMC
+                <br>
+                <br>
+                15 Jun – 22 Jun '25
+            </div>
+            <div class="hex hex7">
+                SAP ROUND
+                <br><br>
+                23 Jun – 04 Jul '25
+            </div>
+            <div class="hex hex8">
+                WORKING ON PROTOTYPE
+                <br>
+                05 Jul – 05 Aug '25
+            </div>
+            <div class="hex hex9">
+                GRAND FINALE
+                <br>
+                <br>
+                06 Aug 25
+            </div>
         </div>
-        <!--
+        
     </div>
-    <div class="timeline-text">TIMELINE</div>
--->
+    
 </body>
 </html>
