@@ -28,7 +28,6 @@ body {
         #533e60, #1d0b40, #070718, black);
     background-size: cover;
     color: white;
-
 }
 
 .section {
@@ -41,9 +40,10 @@ body {
     border-radius: 15px;
     margin: 20px 0;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px); /* Adds blur effect */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
+
 .hall-of-fame {
     text-align: center;
     margin: 40px 0;
@@ -63,94 +63,26 @@ body {
     gap: 50px;
 }
 
-.hexagon {
-    width: 408.8px;
-    height: 353px;
-    background: linear-gradient(100deg, #04000c, #121010); /* Gradient Background */
-    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    padding: 0px; /* Space around the circle */
-}
-
 .circle-image {
-    width: 284.4px;
-    height: 361.8px;
-    border-radius: 50%; /* Makes it a circle */
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
 }
 
 .circle-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
 }
 
-.hex-container {
-    position: relative;  /* Needed for absolute positioning of .text-box */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.text-box {
-    position: absolute;  /* Overlaps the hexagon */
-    bottom: -25px;  /* Adjust this to control the overlap */
-    left: 50%;
-    transform: translateX(-50%); /* Centers the text box */
-    padding: 10px 20px;
-    background-color: #b8b8ff;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 120px;
-    height: 50px;
-}
-
-.year-text {
-    font-size: 30px;
-    font-weight: bold;
-    color: #000;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    text-align: center;
-}
-
-/* Positioning dots at corners */
-.dot {
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    background-color: #333;
-    border-radius: 50%;
-}
-
-.dot-1 {
-    top: 5px;
-    left: 5px;
-}
-
-.dot-2 {
-    top: 5px;
-    right: 5px;
-}
-
-.dot-3 {
-    bottom: 5px;
-    left: 5px;
-}
-
-.dot-4 {
-    bottom: 5px;
-    right: 5px;
+.circle-image img:hover {
+    transform: scale(1.1);
 }
 
 .media-container {
@@ -191,33 +123,11 @@ p {
     line-height: 1.6;
 }
 
-/* Image Gallery Navigation */
-.image-gallery {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 42px;
-    margin-bottom: 20px;
-}
-
-.image-gallery img {
-    width: 300px;
-    height: 200px;
-    border-radius: 10px;
-    transition: transform 0.2s, width 0.2s, height 0.2s;
-    padding: 10px;
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
-}
-
-.image-gallery img:hover {
-    transform: scale(1.1);
-}
-
 .video-wrapper {
-    width: 60%; /* Reduce width to 60% of container */
-    max-width: 600px; /* Set max width */
-    aspect-ratio: 16 / 9; /* Maintain aspect ratio */
-    margin: 0 auto; /* Center align */
+    width: 60%;
+    max-width: 600px;
+    aspect-ratio: 16 / 9;
+    margin: 0 auto;
 }
 
 .video-wrapper iframe {
@@ -225,121 +135,43 @@ p {
     height: 100%;
     border-radius: 10px;
 }
-
     </style>
 </head>
 <body>
    
     <!-- Hackfest Hall of Fame Section -->
-<div class="hall-of-fame">
-    <h2>Hackfest Hall of Fame</h2>
-    <div class="hall-of-fame-gallery">
-        <div class="hex-container">
-            <div class="hexagon">
-                <div class="circle-image">
-                    <img src="../assets/2k23.png" alt="2K22 Event" onclick="scrollToSection('event-2k22')">
-                </div>
+    <div class="hall-of-fame">
+        <h2>Hackfest Hall of Fame</h2>
+        <div class="hall-of-fame-gallery">
+            <div class="circle-image">
+                <img src="../assets/2k22.jpg" alt="2K22 Event" onclick="scrollToSection('event-2k22')">
             </div>
-                <div class="text-box">
-                    <div class="dot dot-1"></div>
-                    <div class="dot dot-2"></div>
-                    <div class="dot dot-3"></div>
-                    <div class="dot dot-4"></div>
-                    <h1 class="year-text">2022</h1>
-                </div>
-        </div>
-        
-        <div class="hex-container">
-            <div class="hexagon">
-                <div class="circle-image">
-                    <img src="../assets/2k22.jpg" alt="2K23 Event" onclick="scrollToSection('event-2k23')">
-                </div>
+            <div class="circle-image">
+                <img src="../assets/2k23.png" alt="2K23 Event" onclick="scrollToSection('event-2k23')">
             </div>
-            <div class="container">
-                <div class="text-box">
-                    <div class="dot dot-1"></div>
-                    <div class="dot dot-2"></div>
-                    <div class="dot dot-3"></div>
-                    <div class="dot dot-4"></div>
-                    <h1 class="year-text">2023</h1>
-                </div>
+            <div class="circle-image">
+                <img src="../assets/2k24.jpg" alt="2K24 Event" onclick="scrollToSection('event-2k24')">
             </div>
         </div>
-        <div class="hex-container">
-            <div class="hexagon">
-                <div class="circle-image">
-                    <img src="../assets/2k24.jpg" alt="2K23 Event" onclick="scrollToSection('event-2k24')">
-                </div>
-            </div>
-            <div class="container">
-                <div class="text-box">
-                    <div class="dot dot-1"></div>
-                    <div class="dot dot-2"></div>
-                    <div class="dot dot-3"></div>
-                    <div class="dot dot-4"></div>
-                    <h1 class="year-text">2024</h1>
-                </div>
-            </div>
-        </div>
-                
     </div>
-</div>
 
- <!-- Section 1: Event 2K22 -->
-<div class="section" id="event-2k22" style="display: flex; flex-direction: column; align-items: center;">
-    <!-- Row 1: Video & Image -->
-    <div class="row-container" style="display: flex; gap: 20px; justify-content: center; align-items: center; width: 100%;">
-        <!-- Video -->
-        <div class="media-container video-wrapper">
-            <iframe 
-            src="https://www.youtube.com/embed/jmdHT8igHQ8?si=GvMkSabj7LmKTmKS" 
-            title="YouTube video player" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" 
-            allowfullscreen>
-            </iframe>
-        </div>
-              <!-- Table -->
-              <div class="table-container" style="background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 10px;">
-                <table style="width: 100%; border-collapse: collapse; color: white; text-align: left;">
-                    <tr style="background: rgba(255, 255, 255, 0.2);">
-                        <th style="padding: 10px; border: 1px solid white;">Category</th>
-                        <th style="padding: 10px; border: 1px solid white;">Details</th>
-                    </tr>
-                    <tr>
-                        <td style="padding: 10px; border: 1px solid white;">Overall Reach</td>
-                        <td style="padding: 10px; border: 1px solid white;">2500 students</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 10px; border: 1px solid white;">Teams</td>
-                        <td style="padding: 10px; border: 1px solid white;">650</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 10px; border: 1px solid white;">States</td>
-                        <td style="padding: 10px; border: 1px solid white;">06</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 10px; border: 1px solid white;">Regional Rounds</td>
-                        <td style="padding: 10px; border: 1px solid white;">06</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 10px; border: 1px solid white;">Colleges/Universities</td>
-                        <td style="padding: 10px; border: 1px solid white;">56</td>
-                    </tr>
-                </table>
+    <!-- Section 1: Event 2K22 -->
+    <div class="section" id="event-2k22">
+        <div class="row-container" style="display: flex; gap: 20px; justify-content: center; align-items: center; width: 100%;">
+            <div class="media-container video-wrapper">
+                <iframe src="https://www.youtube.com/embed/jmdHT8igHQ8?si=GvMkSabj7LmKTmKS" 
+                title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            </div>
+            <div class="text-container">
+                <h2>Event 2K22 Overview</h2>
+                <p>A look back at the 2022 event, highlighting key achievements and memorable moments.</p>
             </div>
         </div>
-    
-
-    <!-- Row 2: Overview (on the next line) -->
-    <div class="text-container" style="margin-top: 20px; text-align: center; width: 100%;">
-        <h2>Event 2K22 Overview</h2>
-        <p>A look back at the 2022 event, highlighting key achievements and memorable moments.</p>
     </div>
-</div>
 
-   <!-- Section 2: Event 2K23 -->
+    <!-- Section 2: Event 2K23 -->
     <div class="section" id="event-2k23">
         <div class="media-container">
             <video controls>
