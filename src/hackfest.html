@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Timeline</title>
+    <style>
+:root {
+    --primary: #533e60;
+    --primary-dark: #21052d;
+    --bg-dark: #070718;
+    --box-light: rgba(41, 41, 41, 0.6); /* Transparent with 60% opacity */
+    --box-dark: rgba(62, 62, 62, 0.7);
+    --text-color: white;
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-color);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    scroll-behavior: smooth;
+    background: radial-gradient(circle at 30% 30%, 
+        #533e60, #1d0b40, #070718, black);
+    background-size: cover;
+    color: white;
+}
+
+.section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--box-light);
+    padding: 40px;
+    width: 80%;
+    border-radius: 15px;
+    margin: 20px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hall-of-fame {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.hall-of-fame h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.hall-of-fame-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.circle-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.circle-image img:hover {
+    transform: scale(1.1);
+}
+
+.media-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--box-dark);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.media-container img, .media-container video {
+    max-width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.media-container img:hover, .media-container video:hover {
+    transform: scale(1.05);
+}
+
+.text-container {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+}
+
+h2 {
+    color: #f2a365;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.video-wrapper {
+    width: 60%;
+    max-width: 600px;
+    aspect-ratio: 16 / 9;
+    margin: 0 auto;
+}
+
+.video-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+    </style>
+</head>
+<body>
+   
+    <!-- Hackfest Hall of Fame Section -->
+    <div class="hall-of-fame">
+        <h2>Hackfest Hall of Fame</h2>
+        <div class="hall-of-fame-gallery">
+            <div class="circle-image">
+                <img src="../assets/2k22.jpg" alt="2K22 Event" onclick="scrollToSection('event-2k22')">
+            </div>
+            <div class="circle-image">
+                <img src="../assets/2k23.png" alt="2K23 Event" onclick="scrollToSection('event-2k23')">
+            </div>
+            <div class="circle-image">
+                <img src="../assets/2k24.jpg" alt="2K24 Event" onclick="scrollToSection('event-2k24')">
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 1: Event 2K22 -->
+    <div class="section" id="event-2k22">
+        <div class="row-container" style="display: flex; gap: 20px; justify-content: center; align-items: center; width: 100%;">
+            <div class="media-container video-wrapper">
+                <iframe src="https://www.youtube.com/embed/jmdHT8igHQ8?si=GvMkSabj7LmKTmKS" 
+                title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            </div>
+            <div class="text-container">
+                <h2>Event 2K22 Overview</h2>
+                <p>A look back at the 2022 event, highlighting key achievements and memorable moments.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 2: Event 2K23 -->
+    <div class="section" id="event-2k23">
+        <div class="media-container">
+            <video controls>
+                <source src="2k23.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="text-container">
+            <h2>Event 2K23</h2>
+            <p>A look back at the 2023 event, capturing exciting moments and major milestones.</p>
+        </div>
+    </div>
+
+    <!-- Section 3: Event 2K24 -->
+    <div class="section" id="event-2k24">
+        <div class="media-container">
+            <img src="../assets/2k24.jpg" alt="2K24 Event">
+        </div>
+        <div class="text-container">
+            <h2>Event 2K24</h2>
+            <p>The latest edition of our event, featuring a dynamic and engaging experience.</p>
+        </div>
+    </div>
+
+    <script>
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+</html>

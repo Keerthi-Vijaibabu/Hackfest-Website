@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
 
     <style>
         :root {
@@ -58,7 +61,7 @@
             position: relative;
             padding-top: 80px;
         }
-/* vscode */
+
         .hero-content {
             color: white;
             z-index: 2;
@@ -114,156 +117,209 @@
             border-color: transparent transparent rgba(255, 255, 255, 0.1) transparent;
         }
 
-        /*Timeline Section
+       
+/*Time Line Section*/
 
-        .timeline-section {
+    .timeline-section {
             padding: 6rem 0;
             background: linear-gradient(180deg, var(--bg-darker), var(--bg-dark));
-        }
-
-        .timeline {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        .timeline-item {
-            background: rgba(255, 255, 255, 0.05);
-            border-left: 4px solid var(--primary);
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            border-radius: 8px;
-            transition: transform 0.3s;
-        }
-
-        .timeline-item:hover {
-            transform: translateX(10px);
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .timeline-item h3 {
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .timeline-item p {
-            margin: 0;
-            opacity: 0.9;
-        }
-
-        @media (max-width: 768px) {
-            .timeline {
-                padding: 1rem;
-            }
-            
-            .timeline-item {
-                padding: 1rem;
-            }
-        }
-        */
-
-        .timeline-section {
-            padding: 2rem;
-            min-height: 100vh;
-            display: flex;
             align-items: center;
-            justify-content: center;
         }
-
-        .timeline {
+        
+        .timeline-text {
+            margin-top: 10px;
+            margin-left: 50px;
+            font-size: 60px;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-family: "Dancing Script", serif;
+            text-align: left;
+        }
+.hexagon-container {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            max-width: 1400px;
+            width: 500px;
+            position: relative;
+            padding-left: 45%;
+            padding-top: 170px;
+        }
+
+        .hex-row {
+            display: flex;
+            justify-content: center;
             position: relative;
         }
 
-        .timeline-container {
+        .hex {
+            width: 170px;
+            height: 147px;/*width * (3**0.5)/2*/
+            background: linear-gradient(145deg,  rgba(119, 56, 149, 0.703), rgba(33, 5, 45, 0.3));
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
             display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-            padding: 100px 0;
-        }
-
-        .timeline-item {
-            display: flex;
-            align-items: center;
-            gap: 0;
-        }
-
-        .timeline-item:nth-child(even) {
-            margin-top: 100px;
-        }
-
-        .timeline-item:nth-child(odd) {
-            margin-bottom: 100px;
-        }
-
-        .hexagon {
-            width: 200px;
-            height: 220px;
-            background: var(--primary-dark);
-            color: white;
-            display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            padding: 20px;
-        }
-
-        .hexagon h3 {
-            margin: 0;
-            font-size: 1.2rem;
             font-weight: bold;
-            margin-bottom: 0.5rem;
+            color: white;
+            transition: all 0.3s ease;
+            font-size: smaller;
+            border: 2px solid  rgba(25, 3, 34, 0.86);
+            margin: -5px 10px;
+            padding: 10px;
+            
+        }
+            
+
+        .hex:hover {
+            background: linear-gradient(145deg,  rgba(81, 17, 68, 0.703), rgba(37, 4, 27, 0.3));
+            box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.8);
         }
 
-        .hexagon p {
-            margin: 0;
-            font-size: 1rem;
-            white-space: nowrap;
+        .hex1{
+            transform: translateX(268px) translateY(-73px);
         }
 
-        .connector {
-            width: 160px;
-            height: 120px;
+        .hex2{
+            transform: translateX(208px);
         }
 
-        .timeline-item:nth-child(even) .connector svg {
-            transform: scaleY(-1);
+        .hex3{
+            transform: translateX(149px) translateY(-73px);
+        }
+
+        .hex4{
+            transform: translateX(88px) translateY(0px);
+        }
+
+        .hex5{
+            transform: translateX(28px) translateY(-73px);
+        }
+
+        .hex6{
+            transform: translateX(-33px) translateY(0px);
+        }
+
+        .hex7{
+            transform: translateX(-93px) translateY(-73px);
+        }
+
+        .hex8{
+            transform: translateX(-153px) translateY(0px);
+        }
+
+        .hex9{
+            transform: translateX(-215px) translateY(-73px);
         }
 
         @media (max-width: 768px) {
-            .timeline-container {
+            .hexagon-container {
                 flex-direction: column;
-                gap: 2rem;
-                padding: 20px 0;
+                align-items: center;
+                flex-flow: column;
+                padding: 0;
+                
             }
 
-            .timeline-item {
+            .hex-row{
                 flex-direction: column;
-                margin: 0 !important;
+                align-items: center;
+                flex-flow: column;
             }
 
-            .connector {
-                height: 80px;
-                width: 40px;
+            .hex {
+                transform: translateX(0) translateY(0);
+                margin-top: 10px;
             }
+        }
+/*Video Section*/
+.video-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 40px auto;
+            background: #1C1C3A;
+            padding: 20px;
+            border-radius: 10px;
+        }
 
-            .connector svg {
-                transform: rotate(90deg) !important;
-                width: 40px;
-                height: 80px;
-            }
+        .video-container {
+            flex: 1;
+        }
 
-            .timeline-item:last-child .connector {
-                display: none;
+        .video-container iframe {
+            width: 100%;
+            height: 315px;
+            border-radius: 10px;
+        }
+
+        .description {
+            flex: 1;
+            color: white;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .video-section {
+                flex-direction: column;
+                text-align: center;
             }
+        }
+
+    /* Prize Section*/
+            .prize-gif {
+        max-width: 400px; /* Adjust the GIF size */
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .prize-content {
+        flex: 1; /* Makes text & image take remaining space */
+    }
+
+    .prize-image {
+        max-width: 300px; /* Adjust the size */
+        width: 100%;
+        border-radius: 15px;
+        margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+        .content-wrapper {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .prize-gif {
+            max-width: 100%;
+        }
+    }
+
+/* Guideline section*/
+.guidelines-section {
+            max-width: 80%;
+            margin: 0 auto;
+            background: #17012f95;
+            padding: 20px;
+            border-radius: 10px;
+            justify-content: center;
+            
+        }
+
+        .guidelines-section h2 {
+            color: #edeee5;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .guidelines-section a {
+            color: #c8a1d4;
+            text-decoration: none;
+            font-weight: bold;
         }
 
     </style>
@@ -280,9 +336,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="HOME.HTML">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="Theme.html">Theme</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#partners">Partners</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Theme.html">Themes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="partners.html">Partners</a></li>
                     <li class="nav-item"><a class="nav-link" href="FAQ.html">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="hackfest.html">Hackfest</a></li>
                 </ul>
             </div>
         </div>
@@ -292,13 +349,13 @@
     <section class="hero-section">
         <div class="hero-content">
             <h1 class="hero-title">HACKFEST 2025</h1>
-            <p class="hero-subtitle">PSG iTech and SAP are proud to announce the 3rd edition of Hackfest</p>
+            <p class="hero-subtitle">PSG iTech and SAP are proud to announce the 4th edition of Hackfest</p>
             <p class="theme-text">To know more about the themes</p>
             <a href="#register" class="register-btn">REGISTER NOW</a>
             <br>
             <br>
-            <p class="mb-2">Hackfest begins on 8th March 2024</p>
-            <p>Last date for registration is 25th May 2024</p>
+            <p class="mb-2">Hackfest begins on 3rd March 2025</p>
+            <p>Last date for registration is 28th March 2025</p>
         </div>
         <div class="triangle"></div>
     </section>
@@ -306,80 +363,148 @@
     
 
 
-    <!-- Time Line -->
-    <section class="timeline-section">
-        <div class="container">
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="hexagon">
-                        <h3>ANNOUNCEMENT/ REGISTRATION OPEN</h3>
-                        <p>03 MARCH '25</p>
-                    </div>
-                    <div class="arrow"></div>
-                </div>
     
-                <div class="timeline-item right">
-                    <div class="hexagon">
-                        <h3>REGISTRATION CLOSURE</h3>
-                        <p>28 MARCH '25</p>
-                    </div>
-                    <div class="arrow"></div>
-                </div>
-    
-                <div class="timeline-item">
-                    <div class="hexagon">
-                        <h3>REGIONAL ROUND</h3>
-                        <p>31 MARCH – 12 MAY '25</p>
-                    </div>
-                    <div class="arrow"></div>
-                </div>
+<!-- Timeline Section HTML -->
+<section class="timeline-section">
+    <h1 class="timeline-text"><u>Timeline</u></h1><br>
+    <div class="hexagon-container">
+        <div class="hex-row">
+            <div class="hex hex1">
+                ANNOUNCEMENT/ REGISTRATION OPEN
+                <br><br>
+                03 MARCH '25
+            </div>
 
-                <div class="timeline-item right">
-                    <div class="hexagon">
-                        <h3>WORKING ON DT</h3>
-                        <p>13 May – 25 May '25</p>
-                    </div>
-                </div>
-    
-                <div class="timeline-item right">
-                    <div class="hexagon">
-                        <h3>START HUB ROUND</h3>
-                        <p>26 MAY - 14 JUNE '25</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item right">
-                    <div class="hexagon">
-                        <h3>WORKING ON BMC</h3>
-                        <p>15 Jun – 22 Jun '25</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item right">
-                    <div class="hexagon">
-                        <h3>SAP ROUND</h3>
-                        <p>23 Jun – 04 Jul '25</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item right">
-                    <div class="hexagon">
-                        <h3>WORKING ON PROTOTYPE</h3>
-                        <p>05 Jul – 05 Aug '25</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item right">
-                    <div class="hexagon">
-                        <h3>Grand Finale</h3>
-                        <p>06 Aug 25</p>
-                    </div>
-                </div>
-
+            <div class="hex hex2">
+                REGISTRATION CLOSURE
+                <br><br>
+                28 MARCH '25
+            </div>
+            
+            <div class="hex hex3">
+                REGIONAL ROUND
+                <br><br>
+                31 MARCH – 12 MAY '25
+            </div>
+            <div class="hex hex4">
+                WORKING ON DT
+                <br><br>
+                13 May – 25 May '25
+            </div>
+            <div class="hex hex5">
+                START HUB ROUND
+                <br>
+                <br>
+                26 MAY - 14 JUNE '25
+            </div>
+            <div class="hex hex6">
+                WORKING ON BMC
+                <br>
+                <br>
+                15 Jun – 22 Jun '25
+            </div>
+            <div class="hex hex7">
+                SAP ROUND
+                <br><br>
+                23 Jun – 04 Jul '25
+            </div>
+            <div class="hex hex8">
+                WORKING ON PROTOTYPE
+                <br>
+                05 Jul – 05 Aug '25
+            </div>
+            <div class="hex hex9">
+                GRAND FINALE
+                <br>
+                <br>
+                06 Aug 25
             </div>
         </div>
-    </section>
+        
+    </div>
+
+</section>
+
+<!-- Intro video section -->
+
+<section class="video-section">
+    <div class="video-container">
+        <iframe width="560" 
+        height="315"
+         src="https://www.youtube.com/embed/uojH-nlCDB4?si=-4tIbfosJtWyqKYM"
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen>
+        </iframe>
+    </div>
+    <div class="description">
+        <h2>Hackathon Introduction</h2>
+        <p>Get to know about the upcoming PSGiTech Hackathon. Learn about the challenges, guidelines, and expectations for participants. Watch this video to understand the hackathon process and how you can make an impact!</p>
+    </div>
+</section>
+
+<!-- Prize Section-->
+
+<section class="prize-gif-section py-5">
+    <div class="container text-center">
+        <div class="prize-content text-center">
+            <h2 class="mb-4">🏆 Prizes Await You! 🏆</h2>
+            <p class="lead">Exciting rewards for the champions of Hackfest 2025</p>
+            <img src="..\assets\prize-image .png" alt="Hackfest 2025 Prizes" class="prize-image">
+            
+            <div class="row justify-content-center">
+                <!-- First Prize -->
+                <div class="col-md-4">
+                    <img src="../assets/1-prize.png" alt="First Prize" class="prize-image img-fluid">
+                    <h4 class="mt-3">🥇 First Prize</h4>
+                </div>
+                <!-- Second Prize -->
+                <div class="col-md-4">
+                    <img src="../assets/2-prize.png" alt="Second Prize" class="prize-image img-fluid">
+                    <h4 class="mt-3">🥈 Second Prize</h4>
+                </div>
+                <!-- Third Prize -->
+                <div class="col-md-4">
+                    <img src="../assets/3-prize.png" alt="Third Prize" class="prize-image img-fluid">
+                    <h4 class="mt-3">🥉 Third Prize</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Guidelines section-->
+<section class="guidelines-section">
+    <h2>Guidelines for Final Hackathon</h2>
+    <ul>
+        <li>Selected teams for the final Hackathon must register separately by paying Rs.2500 per team (Online Payment).</li>
+        <li>Boarding and Lodging at PSGiTech Hostel Rs.500 per day/per person. (Spot Payment).</li>
+        <li>The final Hackathon will take place at PSGiTech, Neelambur, Coimbatore, Tamil Nadu – 641062.</li>
+        <li>In the final Hackathon, teams will be asked to implement and demonstrate the working prototype.</li>
+    </ul>
     
+    <h2>Rules and Regulations</h2>
+    <ul>
+        <li>Student College ID card is mandatory for all the participants in a team.</li>
+        <li>Participants are asked to bring their own laptops, extension cables, ethernet connector (if required) for the event.</li>
+        <li>Wi-Fi facility will be provided.</li>
+    </ul>
+    
+    <p><strong>Registration Link:</strong> <a href="https://forms.gle/okfKZCNKqQM2GTyF7" target="_blank">Click here to register</a></p>
+    
+    <p><strong>Last date for registration and payment:</strong> 25.06.2024</p>
+    
+    <p><strong>For more details:</strong> <a href="https://hackfest.info/" target="_blank">Visit our website</a></p>
+    
+    <p><strong>Any Queries? Contact us:</strong></p>
+    <p>Email: <a href="mailto:itechhackfest@psgitech.ac.in">itechhackfest@psgitech.ac.in</a></p>
+    
+    <p>With regards,<br>Coordinators<br><strong>PSGiTech HackFest 2024</strong></p>
+</section>
+
+
     <script>
         gsap.from(".hero-section h1", {opacity: 0, y: 30, duration: 1, ease: "power3.out"});
         gsap.from(".hero-section p", {opacity: 0, y: 30, duration: 1, delay: 0.3, ease: "power3.out"});
@@ -396,6 +521,61 @@
             }
         });
     </script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+     
+     <script>
+         gsap.registerPlugin(ScrollTrigger);
+ 
+         // Animate first row
+         gsap.to(".first-row", {
+             opacity: 1,
+             y: 0,
+             duration: 1,
+             ease: "power3.out",
+             scrollTrigger: {
+                 trigger: ".timeline-section",
+                 start: "top center"
+             }
+         });
+ 
+         // Animate second row with delay
+         gsap.to(".second-row", {
+             opacity: 1,
+             y: 0,
+             duration: 1,
+             delay: 1,
+             ease: "power3.out",
+             scrollTrigger: {
+                 trigger: ".timeline-section",
+                 start: "top center"
+             }
+         });
+ 
+         // Animate connectors
+         gsap.from(".connector", {
+             scaleX: 0,
+             duration: 0.5,
+             stagger: 0.2,
+             ease: "power1.inOut",
+             scrollTrigger: {
+                 trigger: ".timeline-section",
+                 start: "top center"
+             }
+         });
+ 
+         // Animate vertical connector
+         gsap.from(".vertical-connector", {
+             scaleY: 0,
+             duration: 0.5,
+             delay: 0.8,
+             ease: "power1.inOut",
+             scrollTrigger: {
+                 trigger: ".timeline-section",
+                 start: "top center"
+             }
+         });
+     </script>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
