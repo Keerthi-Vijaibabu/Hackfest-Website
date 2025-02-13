@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partners - HackFest 2025</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <style>
+        :root {
+            --primary: #533e60;
+            --bg-dark: #070718;
+            --bg-darker: #151515;
+            --text-light: rgba(255, 255, 255, 0.9);
+        }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: var(--bg-dark);
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: rgba(28, 28, 28, 0.95);
+            padding: 1rem 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .nav-link:hover {
+            color: var(--primary) !important;
+        }
+
+        h1 {
+            text-align: center;
+            color: #644787;
+            margin-top: 100px;
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .card-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 80%;
+            max-width: 700px;
+            margin: 40px auto;
+        }
+
+        .card {
+            background-color: #2c2c2c;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #444;
+            text-align: left;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            transition: transform 0.2s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 4px 4px 12px rgba(255, 255, 255, 0.2);
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #604c77;
+        }
+        .card-content {
+            display: none;
+            margin-top: 10px;
+        }
+        .card-content .card {
+    color: white; 
+    background-color: #333; 
+}
+
+        .card.active .card-content {
+            display: block;
+        }
+        .district.highlight {
+    background-color: #644787; /* Highlight color */
+    color: white;
+    font-weight: bold;
+}
+
+
+        .logo-container {
+            display: none;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .logo-container img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+        }
+    </style>
+    
+    <script>
+       function toggleAnswer(card) {
+    // Close all other state cards except the clicked one
+    document.querySelectorAll('.card').forEach(otherCard => {
+        if (otherCard !== card) {
+            otherCard.classList.remove('active');
+            let content = otherCard.querySelector('.card-content');
+            if (content) {
+                content.style.display = 'none';
+            }
+        }
+    });
+
+    // Toggle the clicked card
+    card.classList.toggle("active");
+
+    // Show or hide the content of the clicked card
+    let content = card.querySelector('.card-content');
+    if (content) {
+        content.style.display = card.classList.contains("active") ? "block" : "none";
+    }
+
+    // Hide all logos when switching states
+    document.querySelectorAll('.logo-container').forEach(logo => logo.style.display = 'none');
+
+    // Remove highlight from all districts
+    document.querySelectorAll('.district').forEach(district => district.classList.remove('highlight'));
+}
+
+
+
+function showLogos(districtId, event) {
+    event.stopPropagation(); // Prevent Tamil Nadu from closing
+
+    // Hide all logo containers
+    document.querySelectorAll('.logo-container').forEach(logo => logo.style.display = 'none');
+    
+    // Remove highlight from all districts
+    document.querySelectorAll('.district').forEach(district => district.classList.remove('highlight'));
+
+    // Keep Tamil Nadu open
+    let tamilNaduCard = document.querySelector('.card'); 
+    tamilNaduCard.classList.add('active');
+
+    // Show the clicked district's logos
+    let targetLogo = document.getElementById(districtId);
+    if (targetLogo) {
+        targetLogo.style.display = 'flex';
+    }
+
+    // Highlight the selected district
+    event.target.classList.add('highlight');
+}
+    </script>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">HACKFEST 2025</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="HOME.HTML">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="THEME.HTML">Theme</a></li>
+                <li class="nav-item"><a class="nav-link" href="#partners">Partners</a></li>
+                <li class="nav-item"><a class="nav-link" href="FAQ.HTML">FAQ</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<h1>Our Partners</h1>
+
+<div class="card-container">
+    <div class="card" onclick="toggleAnswer(this)">
+        <div class="card-title">TAMIL NADU</div>
+        <div class="card-content">
+            <div class="card district" onclick="showLogos('CHENNAI', event)">CHENNAI</div>
+            <div class="card district" onclick="showLogos('COIMBATORE', event)">COIMBATORE</div>
+            <div class="card district" onclick="showLogos('MADURAI', event)">MADURAI</div>
+            <div class="card district" onclick="showLogos('SALEM', event)">SALEM</div>
+        </div>
+        
+    </div>
+
+    <div id="CHENNAI" class="logo-container">
+        <img src="TAMILNADU/CHENNAI/29a0357c-c6d9-4740-9b93-eea14ee4b806.jpg">
+        <img src="TAMILNADU/CHENNAI/5de90759-3c28-46d1-b62f-f107ccf0b646.jpg">
+        <img src="TAMILNADU/CHENNAI/625a4086-9e5c-4496-8971-aef23a0ea5e9.jpg">
+        <img src="TAMILNADU/CHENNAI/9bebab6b-e07a-4052-95d5-be4676f966c3.jpg">
+        <img src="TAMILNADU/CHENNAI/ad77b105-5043-4b71-a1d4-c58556c1a628.jpg">
+        <img src="TAMILNADU/CHENNAI/cf755c9c-a9c6-4da8-969d-f13925133194.jpg">
+        <img src="TAMILNADU/CHENNAI/e1aadf5a-7264-4189-aee5-af85a8409123.jpg">
+        <img src="TAMILNADU/CHENNAI/fa015ee2-6c66-4103-b107-f1e424703556.jpg">
+    </div>
+
+    <div id="COIMBATORE" class="logo-container">
+        <img src="TAMILNADU/COIMBATORE/10b084e4-cefa-4037-8532-73d27e240996.jpg">
+        <img src="TAMILNADU/COIMBATORE/2b816069-501d-406e-a014-437556822319.jpg">
+        <img src="TAMILNADU/COIMBATORE/471eb99a-8caa-418e-948b-a840f357f004.jpg">
+        <img src="TAMILNADU/COIMBATORE/5d1c8401-7589-4b7c-8c2a-a6a4a2bc9b89.jpg">
+        <img src="TAMILNADU/COIMBATORE/8bf4522c-03ad-4262-91c0-df8db73d2d00.jpg">
+        <img src="TAMILNADU/COIMBATORE/c1551810-7977-47f6-b8a6-af0ef4542ea1.jpg">
+        <img src="TAMILNADU/COIMBATORE/cbb404af-a9ac-495d-ad34-a483c52878e2.jpg">
+        <img src="TAMILNADU/COIMBATORE/e4511e31-4358-46d0-80e7-4cd3435408de.jpg">
+    </div>
+
+    <div id="MADURAI" class="logo-container">
+        <img src="TAMILNADU/MADURAI/72578d52-391b-4489-b6bf-e0523aed9e9b.jpg">
+    </div>
+
+    <div id="SALEM" class="logo-container">
+        <img src="TAMILNADU/SALEM/0706dd55-5d43-4ecf-9d15-320d51f0c7e5.jpg">
+        <img src="TAMILNADU/SALEM/205b616e-bb4a-4ec9-9e34-aa331f1a1ab9.jpg">
+        <img src="TAMILNADU/SALEM/2d7a8a7d-60c3-4913-8772-531687174e72.jpg">
+        <img src="TAMILNADU/SALEM/744ea8c6-974a-4662-ac9e-a49176a91ec5.jpg">
+        <img src="TAMILNADU/SALEM/9044da8b-be81-42fc-bc31-5efac1714f6b.jpg">
+        <img src="TAMILNADU/SALEM/aa506390-036d-4cb4-a4a8-328dbf80d7f0.jpg">
+        <img src="TAMILNADU/SALEM/d0c0b2b0-886d-4142-925d-570d482d0a37.jpg">
+    </div>
+</div>
+<div class="card-container">
+    <div class="card" onclick="toggleAnswer(this)">
+        <div class="card-title">TELUNGANA</div>
+        <div class="card-content">
+            <div class="card district" onclick="showLogos('HYDERABAD', event)">HYDERABAD</div>
+        </div>
+      </div>  
+      <div id="HYDERABAD" class="logo-container">
+        <img src="TELUGANA/HYDERABAD/H1.jfif">
+        <img src="TELUGANA/HYDERABAD/H2.jfif">
+        <img src="TELUGANA/HYDERABAD/H3.jfif">
+        <img src="TELUGANA/HYDERABAD/H4.jfif">
+        <img src="TELUGANA/HYDERABAD/H5.jfif">
+        <img src="TELUGANA/HYDERABAD/H6.jfif">
+    </div>
+    </div>
+    <div class="card-container">
+        <div class="card" onclick="toggleAnswer(this)">
+            <div class="card-title">KERALA</div>
+            <div class="card-content">
+                <div class="card district" onclick="showLogos('COCHIN', event)">COCHIN</div>
+            </div>
+          </div>  
+          <div id="COCHIN" class="logo-container">
+            <img src="KERALA/COCHIN/K1.jfif">
+            <img src="KERALA/COCHIN/K2.jfif">
+            <img src="KERALA/COCHIN/K4.jfif">
+            <img src="KERALA/COCHIN/K5.jfif">
+            <img src="KERALA/COCHIN/K6.jfif">
+            <img src="KERALA/COCHIN/K7.jfif">
+            <img src="KERALA/COCHIN/K8.jfif">
+            <img src="KERALA/COCHIN/K9.jfif">
+            <img src="KERALA/COCHIN/K10.jfif">
+            <img src="KERALA/COCHIN/K11.jfif">
+            <img src="KERALA/COCHIN/K12.jfif">
+            
+        </div>
+        </div>
+
+
+</body>
+</html>
