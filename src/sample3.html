@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: 'Inter', Arial, sans-serif;
-            background: radial-gradient(circle, #2a1b5d, #1a1a4d);
+            background: radial-gradient(circle, #08031a, #010117);
             color: white;
             text-align: center;
             padding: 40px;
@@ -37,7 +37,7 @@
         .hex {
             width: 170px;
             height: 147px;/*width * (3**0.5)/2*/
-            background: linear-gradient(145deg, #6A3FC8, #50308F);
+            background: linear-gradient(145deg,  rgba(61, 17, 81, 0.703), rgba(33, 5, 45, 0.3));
             clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
             display: flex;
             justify-content: center;
@@ -47,21 +47,15 @@
             color: white;
             transition: all 0.3s ease;
             font-size: smaller;
-            border: 2px solid #8B5CF6;
+            border: 2px solid  rgba(25, 3, 34, 0.86);
             box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
             margin: -5px 10px;
             padding: 10px;
         }
-       
-
-        .hex-up-left{
-            transform: translateX(-270px) translateY(0px);
-        }
-
-        
+            
 
         .hex:hover {
-            background: #8B5CF6;
+            background: #6c2952;
             box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.8);
         }
 
@@ -96,16 +90,30 @@
     <div class="hexagon-container">
         <div class="hex-row">
             <div class="hex hex-norm" style = "transform: translateX(0px);">
-                ANNOUNCEMENT/ REGISTRATION OPEN
-                <br>
-                03 MARCH '25
+                REGISTRATION CLOSURE
+                <br><br>
+                28 MARCH '25
             </div>
-            <div class="hex" style="transform: translateX(-190px) translateY(148px);">1</div>
-            <div class="hex" style="transform: translateX(-251px) translateY(-73px);">3</div>
-            <div class="hex hex-up-left">4</div>
-        
-            <div class="hex hex-up-right", style="transform: translateX(-325px) translateY(-60px);"></div>
-            <div class="hex", style="transform: translateX(-380px) translateY(0px);"></div>
+            <div class="hex" style="transform: translateX(-190px) translateY(148px);">
+                ANNOUNCEMENT/ REGISTRATION OPEN
+                <br><br>
+                03 MARCH '25</div>
+            <div class="hex" style="transform: translateX(-251px) translateY(-73px);">
+                REGIONAL ROUND
+                <br><br>
+                31 MARCH – 12 MAY '25
+            </div>
+            <div class="hex" style="transform: translateX(-312px) translateY(0px);">
+                WORKING ON DT
+                <br><br>
+                13 May – 25 May '25
+            </div>
+            <div class="hex", style="transform: translateX(-372px) translateY(-73px);">
+                START HUB ROUND
+                <br>
+                26 MAY - 14 JUNE '25
+            </div>
+            <div class="hex", style="transform: translateX(-433px) translateY(0px);"></div>
             <div class="hex", style="transform: translateX(-435px) translateY(-60px);"></div>
             <div class="hex", style="transform: translateX(-490px) translateY(0px);"></div>
             <div class="hex", style="transform: translateX(-650px) translateY(120px);"></div>
