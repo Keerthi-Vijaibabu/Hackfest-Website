@@ -299,23 +299,25 @@
             }
         }
 
-    /* Prize Section*/
-            .prize-gif {
-        max-width: 400px; /* Adjust the GIF size */
-        width: 100%;
-        border-radius: 10px;
-    }
+    .prize-image {
+    max-width: 900px;
+    width: 100%;
+    border-radius: 15px;
+    margin-top: 0px;
+    float: left;
+    margin-left: 100px;
+}
+
 
     .prize-content {
-        flex: 1; /* Makes text & image take remaining space */
-    }
+        margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Use `flex-start` for left alignment, `flex-end` for right */
+    flex-direction: column; /* Keeps text above the image */
+    text-align: center;
+}
 
-    .prize-image {
-        max-width: 300px; /* Adjust the size */
-        width: 100%;
-        border-radius: 15px;
-        margin-top: 20px;
-    }
 
     @media (max-width: 768px) {
         .content-wrapper {
@@ -371,8 +373,8 @@
                     <li class="nav-item"><a class="nav-link" href="HOME.HTML">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="Theme.html">Themes</a></li>
                     <li class="nav-item"><a class="nav-link" href="partners.html">Partners</a></li>
+                    <li class="nav-item"><a class="nav-link" href="hackfest.html">Hall of frame</a></li>
                     <li class="nav-item"><a class="nav-link" href="FAQ.html">FAQ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="hackfest.html">Hackfest</a></li>
                 </ul>
             </div>
         </div>
@@ -490,24 +492,7 @@
         <div class="prize-content text-center">
             <h2 class="mb-4">🏆 Prizes Await You! 🏆</h2>
             <p class="lead">Exciting rewards for the champions of Hackfest 2025</p>
-            <img src="..\assets\prize-image .png" alt="Hackfest 2025 Prizes" class="prize-image">
-            
-            <div class="row justify-content-center">
-                <!-- First Prize -->
-                <div class="col-md-4">
-                    <img src="../assets/1-prize.png" alt="First Prize" class="prize-image img-fluid">
-                    <h4 class="mt-3">🥇 First Prize</h4>
-                </div>
-                <!-- Second Prize -->
-                <div class="col-md-4">
-                    <img src="../assets/2-prize.png" alt="Second Prize" class="prize-image img-fluid">
-                    <h4 class="mt-3">🥈 Second Prize</h4>
-                </div>
-                <!-- Third Prize -->
-                <div class="col-md-4">
-                    <img src="../assets/3-prize.png" alt="Third Prize" class="prize-image img-fluid">
-                    <h4 class="mt-3">🥉 Third Prize</h4>
-                </div>
+            <img src="..\assets\prize (2).png" alt="Hackfest 2025 Prizes" class="prize-image">
             </div>
         </div>
     </div>
