@@ -8,9 +8,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=hk-modular@400&display=swap" rel="stylesheet">
     <style> 
         :root {
             --primary: #533e60;
@@ -34,6 +34,7 @@
         }
 
         .navbar-brand {
+            font-family: 'HK Modular', sans-serif;
             font-weight: bold;
             font-size: 1.5rem;
         }
@@ -72,6 +73,7 @@
             font-weight: 800;
             margin-bottom: 2rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            font-family: 'HK Modular', sans-serif;
         }
 
         .hero-subtitle {
@@ -221,6 +223,7 @@
         }
 
         .logo-container {
+            font-family: 'HK Modular', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -234,8 +237,9 @@
 }
 .hero-logo1 {
     gap: 30px;
-    width: 80px;  /* Adjust size as needed */
-    height: 90px;
+    width: 60px;  /* Adjust size as needed */
+    height: 70px;
+    margin-bottom: 30px;
 }
 
         @media (max-width: 768px) {
@@ -257,6 +261,18 @@
                 transform: translateX(0) translateY(0);
                 margin-top: 10px;
             }
+            .logo-container {
+        flex-direction: column !important;
+    }
+
+    .hero-logo, .hero-logo1 {
+        width: 60px; /* Adjust logo size for smaller screens */
+    }
+
+    .hero-title {
+        margin-top: 10px;
+        font-size: 1.8rem;
+    }
         }
 /*Video Section*/
 .video-section {
@@ -572,22 +588,7 @@
 </section>
 
 
-    <script>
-        gsap.from(".hero-section h1", {opacity: 0, y: 30, duration: 1, ease: "power3.out"});
-        gsap.from(".hero-section p", {opacity: 0, y: 30, duration: 1, delay: 0.3, ease: "power3.out"});
-        gsap.from(".register-btn", {opacity: 1, y: 0, duration: 1, delay: 0.6, ease: "power3.out"});// Temprory Fix needs to be revisited later
-
-        gsap.from(".timeline-item", {
-            opacity: 0,
-            x: -50,
-            duration: 0.8,
-            stagger: 0.2,
-            scrollTrigger: {
-                trigger: ".timeline-section",
-                start: "top center"
-            }
-        });
-    </script>
+   
      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
      
