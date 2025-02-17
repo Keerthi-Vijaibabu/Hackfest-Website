@@ -140,7 +140,7 @@
             border: none;
             padding: 10px 20px;
             font-family: 'Inter', Arial, sans-serif;
-            text-align: center;
+            text-align: left;
         }
 .hexagon-container {
             display: flex;
@@ -219,6 +219,24 @@
         .hex9{
             transform: translateX(-215px) translateY(-73px);
         }
+
+        .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Adjust spacing between logos and title */
+}
+
+.hero-logo {
+    margin-bottom: 40px;
+    width: 150px;  /* Adjust size as needed */
+    height: 150px;
+}
+.hero-logo1 {
+    gap: 30px;
+    width: 80px;  /* Adjust size as needed */
+    height: 90px;
+}
 
         @media (max-width: 768px) {
             .hexagon-container { 
@@ -388,7 +406,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="HOME.HTML">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="Theme.html">Themes</a></li>
                     <li class="nav-item"><a class="nav-link" href="partners.html">Partners</a></li>
                     <li class="nav-item"><a class="nav-link" href="hackfest.html">Hall-of-Fame</a></li>
@@ -397,11 +415,13 @@
             </div>
         </div>
     </nav>
-
-    <!-- Home section -->
     <section class="hero-section">
         <div class="hero-content">
-            <h1 class="hero-title">HACKFEST 2025</h1>
+            <div class="logo-container">
+                <img src="../assets/sap.png" alt="Logo 1" class="hero-logo">
+                <h1 class="hero-title">HACKFEST 2025</h1>
+                <img src="../assets/psg_itech_logo.png" alt="Logo 2" class="hero-logo1">
+            </div>
             <p class="hero-subtitle">PSG iTech and SAP are proud to announce the 4th edition of Hackfest</p>
             <p class="theme-text">To know more about the themes</p>
             <a href="regional round.html" class="register-btn">REGISTER NOW</a>
@@ -412,7 +432,6 @@
         </div>
         <div class="triangle"></div>
     </section>
-
     
 
 
