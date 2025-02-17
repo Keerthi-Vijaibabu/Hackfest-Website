@@ -13,7 +13,7 @@
             --primary: #533e60;
             --bg-dark: #070718;
             --bg-darker: #151515;
-            --text-light: rgba(255, 255, 255, 0.9);
+            --text-light: rgba(255, 255, 255, 0.8);
         }
 
         body {
@@ -49,7 +49,7 @@
 
         h1 {
             text-align: center;
-            color: #644787;
+            color: var(--text-light);
             margin-top: 100px;
             font-size: 36px;
             font-weight: bold;
@@ -83,15 +83,15 @@
         .card-title {
             font-size: 18px;
             font-weight: bold;
-            color: #604c77;
+            color: var(--text-light);
         }
         .card-content {
             display: none;
             margin-top: 10px;
         }
         .card-content .card {
-    color: white; 
-    background-color: #333; 
+            color: white; 
+            background-color: #333; 
 }
 
         .card.active .card-content {
