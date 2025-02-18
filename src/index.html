@@ -60,7 +60,7 @@
             align-items: center;
             text-align: center;
             position: relative;
-            padding-top: 80px;
+            padding-top: 80px; 
         }
 
         .hero-content {
@@ -231,14 +231,14 @@
 }
 
 .hero-logo {
-    margin-bottom: 40px;
-    width: 150px;  /* Adjust size as needed */
-    height: 150px;
+    margin-bottom: 30px;
+    width: 100px;  /* Adjust size as needed */
+    height: 50px;
 }
 .hero-logo1 {
     gap: 30px;
-    width: 60px;  /* Adjust size as needed */
-    height: 70px;
+    width: 50px;  /* Adjust size as needed */
+    height: 60px;
     margin-bottom: 30px;
 }
 
@@ -261,19 +261,27 @@
                 transform: translateX(0) translateY(0);
                 margin-top: 10px;
             }
-            .logo-container {
-        flex-direction: column !important;
-    }
 
-    .hero-logo, .hero-logo1 {
-        width: 60px; /* Adjust logo size for smaller screens */
-    }
+            .hero-logo
+            {
+                width: 110px;
+                height: 60px;
+                margin-bottom: 40px;
+            }
 
-    .hero-title {
-        margin-top: 10px;
-        font-size: 1.8rem;
+            .hero-logo1
+            {
+                width: 70px;
+                height: 80px;
+                margin-bottom: 30px;
+            }
+
+            .hero-title {
+                margin-top: 0px;
+                margin-bottom: 50px;
+                font-size: 1.8rem;
+            }
     }
-        }
 /*Video Section*/
 .video-section {
             background: radial-gradient(circle at center, #3d1f5b, #1a1a4d, #0d061a);
@@ -380,7 +388,38 @@
         .prize-gif {
             max-width: 100%;
         }
+
+           .navbar-brand {
+                margin-left: 10px;
+            }
+
+            .navbar-toggler {
+                margin-right: 10px;
+            }
+    .video-section {
+        flex-direction: column;
+        text-align: center;
+        height: auto; /* Allow dynamic height */
+        padding-bottom: 20px; /* Adds space at the bottom */
     }
+
+    .video-container iframe {
+        height: 200px; /* Adjust video size */
+    }
+
+    .prize-section {
+        padding-top: 50px; /* Space between video and prize section */
+    }
+
+    .prize-image {
+        margin-left: 0; /* Center image properly */
+        width: 90%;
+        max-width: 400px; /* Ensures it’s not too large */
+    }
+}
+
+
+    
 
 /* Guideline section*/
 .guidelines-section {
@@ -415,13 +454,13 @@
 
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
+        <div class="container d-flex justify-content-between align-items-center">
             <a class="navbar-brand" href="#">HACKFEST 2025</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto text-center">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="Theme.html">Themes</a></li>
                     <li class="nav-item"><a class="nav-link" href="partners.html">Partners</a></li>
@@ -431,6 +470,8 @@
             </div>
         </div>
     </nav>
+    
+    
     <section class="hero-section">
         <div class="hero-content">
             <div class="logo-container">
