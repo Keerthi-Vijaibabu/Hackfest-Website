@@ -31,6 +31,7 @@
         }
 
         .navbar-brand {
+            font-family: 'HK Modular', sans-serif;
             font-weight: bold;
             font-size: 1.5rem;
         }
@@ -180,13 +181,13 @@ function showLogos(districtId, event) {
 
 <!-- Navigation Bar -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="#">HACKFEST 2025</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-targetF="#navbarNav">
+    <div class="container d-flex justify-content-between align-items-center">
+        <a class="navbar-brand" href="index.html">HACKFEST 2025</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav ms-auto text-center">
                 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="Theme.html">Themes</a></li>
                 <li class="nav-item"><a class="nav-link" href="partners.html">Partners</a></li>
@@ -196,6 +197,7 @@ function showLogos(districtId, event) {
         </div>
     </div>
 </nav>
+
 <h1>Our Partners</h1>
 
 <div class="card-container">
@@ -459,6 +461,7 @@ function showLogos(districtId, event) {
                     
                 </div>
             </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
