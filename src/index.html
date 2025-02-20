@@ -496,6 +496,35 @@ footer p {
     color: var(--text-light);
     text-align: left;
 }
+.hover-box:hover .names-list,
+    .hover-box:focus-within .names-list {
+        display: block;
+    }
+    @media (max-width: 768px) {
+        .hover-box .names-list {
+            position: relative;
+            top: 10px;
+            left: 0;
+        }
+
+        .hover-box span {
+            font-size: 16px;
+        }
+
+        .names-list p {
+            font-size: 14px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .hover-box span {
+            font-size: 14px;
+        }
+
+        .names-list p {
+            font-size: 12px;
+        }
+    }
 
 
     </style>
@@ -742,9 +771,32 @@ footer p {
 <footer class="text-center text-white py-3" style="background-color: rgba(28, 28, 28, 0.95);">
     <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
         <!-- Developer Info -->
-        <div style="text-align: left;">
+        <div style="text-align: left; position: relative; flex: 1 1 100%;">
             <p class="mb-0">Designed and Developed by PSG iTECH Team</p>
+    
+            <!-- Hover Box -->
+            <div class="hover-box" style="position: relative; display: inline-block; cursor: pointer;">
+                <span style="text-decoration: underline;">Hover to see names</span>
+                
+                <!-- Hidden Names -->
+                <div class="names-list" style="
+                    display: none; 
+                    position: absolute; 
+                    background-color: #f9f9f9; 
+                    border: 1px solid #ccc; 
+                    padding: 10px; 
+                    border-radius: 5px; 
+                    z-index: 1;
+                    min-width: 150px;
+                    box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    <p style="margin: 0;">John Doe</p>
+                    <p style="margin: 0;">Jane Smith</p>
+                    <p style="margin: 0;">Alice Johnson</p>
+                </div>
+            </div>
         </div>
+    </div>
+    
 
         <!-- Visit Counter -->
         <div style="text-align: right;">
