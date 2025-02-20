@@ -26,6 +26,10 @@
             margin: 0;
             padding: 0;
         }
+        .nav-link.active {
+            color: pink !important;
+            font-weight: 700;
+        }
 
         h1 {
             text-align: center;
@@ -388,6 +392,23 @@
 <tr><td>DCT’s Srinivassa Sinai Dempo College of Commerce and Economics</td><td></td><td></td><td></td></tr>
         </table>
     </div>
+<script>
+    function toggleAnswer(card) {
+        card.classList.toggle('active');
+    }
+
+    // Highlight active page in navbar
+    document.addEventListener("DOMContentLoaded", function () {
+        let navLinks = document.querySelectorAll(".nav-link");
+        let currentUrl = window.location.pathname.split("/").pop().toUpperCase(); // Get current file name in uppercase
+
+        navLinks.forEach(link => {
+            if (link.getAttribute("href").toUpperCase() === currentUrl || (currentUrl === "" && link.getAttribute("href").toUpperCase() === "HOME.HTML")) {
+                link.classList.add("active");
+            }
+        });
+    });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
