@@ -50,7 +50,11 @@
             color: var(--primary) !important;
             font-weight: 600;
         }
-
+ /* Active Page Styling */
+ .nav-link.active {
+            color: #ff61ba !important;
+            font-weight: 700;
+        }
 
         h1 {
             text-align: center;
@@ -189,11 +193,11 @@ function showLogos(districtId, event) {
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto text-center">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="Theme.html">Themes</a></li>
-                <li class="nav-item"><a class="nav-link" href="partners.html">Partners</a></li>
-                <li class="nav-item"><a class="nav-link" href="hackfest.html">Hall-of-Fame</a></li>
-                <li class="nav-item"><a class="nav-link" href="FAQ.html">FAQ</a></li>
+                <li class="nav-item"><a class="nav-link" href="HOME.HTML">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="THEME.HTML">Themes</a></li>
+                <li class="nav-item"><a class="nav-link" href="PARTNER.HTML">Partners</a></li>
+                <li class="nav-item"><a class="nav-link" href="HACK.HTML">Hall-of-Fame</a></li>
+                <li class="nav-item"><a class="nav-link" href="FAQ.HTML">FAQ</a></li>
             </ul>
         </div>
     </div>
@@ -465,6 +469,27 @@ function showLogos(districtId, event) {
                 </div>
             </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    function toggleAnswer(card) {
+        card.classList.toggle('active');
+    }
+
+    // Highlight active page in navbar
+    document.addEventListener("DOMContentLoaded", function () {
+        let navLinks = document.querySelectorAll(".nav-link");
+        let currentUrl = window.location.pathname.split("/").pop().toUpperCase(); // Get current file name in uppercase
+
+        navLinks.forEach(link => {
+            if (link.getAttribute("href").toUpperCase() === currentUrl || (currentUrl === "" && link.getAttribute("href").toUpperCase() === "HOME.HTML")) {
+                link.classList.add("active");
+            }
+        });
+    });
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 
 </body>
 </html>
