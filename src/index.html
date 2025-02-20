@@ -373,8 +373,10 @@
     width: 100%;
     border-radius: 15px;
     margin-top: 0px;
-    float: left;
-    margin-left: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    flex-direction: column; 
 }
 
 
@@ -410,11 +412,6 @@
             flex-direction: column;
             text-align: center;
         }
-
-        .prize-gif {
-            max-width: 100%;
-        }
-
         .navbar-brand {
                 font-family: "Tilt Prism", serif;
                 font-weight: 300;
@@ -448,7 +445,9 @@
     }
 
         .prize-image {
+            margin-top: 10px;
         margin-left: 0; /* Center image properly */
+        margin-right: 20px;
         width: 90%;
         max-width: 400px; /* Ensures it’s not too large */
     }
@@ -483,6 +482,21 @@
             text-decoration: none;
             font-weight: bold;
         }
+
+/*Footer section*/
+footer {
+    font-size: 0.9rem;
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: left;
+}
+
+footer p {
+    margin: 0.2rem 0;
+    color: var(--text-light);
+    text-align: left;
+}
+
 
     </style>
 </head>
@@ -634,7 +648,7 @@
 <section class="guidelines-section">
     <h1>GUIDELINES</h1>
     <br>
-    <h2>Regional Round:</h2>
+    <h2>Regional Round</h2>
     <ul>
         <li>Team can consist of 4 to 5 Participants (min and max)</li>
         <li>Participants should belong to B.E, B.Tech, B.Sc., BCA, M.E, M.Tech, MCA or MSc and should be studying in any stream and any semester/year</li>
@@ -645,14 +659,14 @@
         <li>Each team will be given 10 mins of time to pitch and 5 mins for Q&A</li>
     </ul>
 
-    <h2>State Hub Round:</h2>
+    <h2>State Hub Round</h2>
     <ul> 
         <li>Teams who qualify from Regional Round progress to State Hub Round</li>
         <li>Teams should have a clear idea about User need, Market analysis, Implementation, Scaling, and Benefits</li>
         <li>Teams should have gone through the Design Thinking workshop and their presentation should be as per it</li>
         <li>Each team will be given 10 mins of time to pitch and 5 mins for Q&A</li>
     </ul>
-    <h2>SAP Round:</h2>
+    <h2>SAP Round</h2>
     <ul>
         <li>Teams who qualify from State Hub Round progress to SAP Round</li>
         <li>Teams must present a comprehensive Business Model Canvas </li>
@@ -723,8 +737,39 @@
              }
          });
          
-         
      </script>    
+
+<footer class="text-center text-white py-3" style="background-color: rgba(28, 28, 28, 0.95);">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+        <!-- Developer Info -->
+        <div style="text-align: left;">
+            <p class="mb-0">Designed and Developed by PSG iTECH Team</p>
+        </div>
+
+        <!-- Visit Counter -->
+        <div style="text-align: right;">
+            <p id="visit-count" style="margin: 0;">Page Visits: Loading...</p>
+        </div>
+    </div>
+</footer>
+
+
+<script>
+    const counterElement = document.getElementById('visit-count');
+  
+    // Replace 'hackfest2025' with a unique namespace and 'theme-page' with a unique key
+    fetch('https://api.countapi.xyz/hit/hackfest-9r7.pages.dev')
+      .then(response => response.json())
+      .then(data => {
+        counterElement.innerText = `Page Visits: ${data.value}`;
+      })
+      .catch(error => {
+        counterElement.innerText = 'Unable to load visit count.';
+        console.error('Error fetching visit count:', error);
+      });
+  </script>
+  
+         
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
