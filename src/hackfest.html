@@ -113,18 +113,18 @@
         gap: 50px;
       }
 
-      .circle-image {
+      .square-image {
         margin-top: 50px;
         width: 264.4px;
         height: 341.8px;
-        border-radius: 50%; /* Makes it a circle */
+        border-radius: 50%; /* Makes it a square */
         overflow: hidden;
         display: flex;
         justify-content: center;
         align-items: center;
       }
 
-      .circle-image img {
+      .square-image img {
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -303,7 +303,7 @@
           margin-right: auto;
         }
 
-        .circle-image {
+        .square-image {
           width: 180px;
           height: 180px;
         }
@@ -359,7 +359,7 @@
           font-size: 24px;
         }
 
-        .circle-image {
+        .square-image {
           width: 164.4px;
           height: 241.8px;
         }
@@ -409,9 +409,9 @@
           font-size: 0.8rem;
         }
 
-        .circle-image {
+        .square-image {
           width: 264.4px;
-          height: 341.8px;
+          height: 264.4px;
         }
 
         .year-text {
@@ -479,9 +479,7 @@
               <a class="nav-link" href="partners.html">Partners</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="hackfest.html" style="color: #ff61ba"
-                >Hall-of-Fame</a
-              >
+              <a class="nav-link" href="hackfest.html">Hall-of-Fame</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="FAQ.html">FAQ</a>
@@ -496,7 +494,7 @@
       <h2></h2>
       <div class="hall-of-fame-gallery">
         <div class="hall-of-fame-item">
-          <div class="circle-image">
+          <div class="square-image">
             <img
               src="assets/2k22.jpeg"
               alt="2K22 Event"
@@ -508,7 +506,7 @@
         </div>
 
         <div class="hall-of-fame-item">
-          <div class="circle-image">
+          <div class="square-image">
             <img
               src="assets/2k23.png"
               alt="2K23 Event"
@@ -520,7 +518,7 @@
         </div>
 
         <div class="hall-of-fame-item">
-          <div class="circle-image">
+          <div class="square-image">
             <img
               src="assets/2k24.png"
               alt="2K24 Event"
@@ -596,7 +594,7 @@
         class="text-container"
         style="margin-top: 20px; text-align: justify; width: 100%"
       >
-        <h2>Event 2K22 Overview</h2>
+        <h2>Overview</h2>
         <p>
           PSG Institute of Technology and Applied Research hosted iTech Hackfest
           2022 from August 25–27, in collaboration with SAP Academy for
@@ -679,7 +677,7 @@
         class="text-container"
         style="margin-top: 20px; text-align: justify; width: 100%"
       >
-        <h2>Event 2K23 Overview</h2>
+        <h2>Overview</h2>
         <p>
           iTech Hackfest 2023, held at PSG Institute of Technology from August
           24-26, was hosted by the CSE Department in collaboration with SAP
@@ -765,7 +763,7 @@
         class="text-container"
         style="margin-top: 20px; text-align: justify; width: 100%"
       >
-        <h2>Event 2k24 Overview</h2>
+        <h2>Overview</h2>
         <p>
           PSG Institute of Technology and Applied Research hosted iTech Hackfest
           2024 on July 25–26, organized by the CSE Department and sponsored by
@@ -792,7 +790,7 @@
       gsap.registerPlugin(ScrollTrigger);
 
       // Fade-in effect when scrolling
-      gsap.from(".circle-image", {
+      gsap.from(".square-image", {
         opacity: 0,
         scale: 0.5,
         y: 50,
@@ -806,7 +804,7 @@
       });
 
       // Hover effect: Scale up and glow
-      document.querySelectorAll(".circle-image img").forEach((img) => {
+      document.querySelectorAll(".square-image img").forEach((img) => {
         img.addEventListener("mouseenter", () => {
           gsap.to(img, {
             scale: 1.1,
