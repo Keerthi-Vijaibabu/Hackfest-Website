@@ -114,21 +114,25 @@
       }
 
       .square-image {
-        margin-top: 50px;
-        width: 264.4px;
-        height: 341.8px;
-        border-radius: 50%; /* Makes it a square */
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+    margin-top: 50px;
+    width: 264.4px;
+    height: 264.4px;;
+    border: 5px solid white; /* Adds a border */
+    border-radius: 80px; /* Ensures it's a square */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow */
+}
 
-      .square-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
+.square-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
 
       .media-container {
         flex: 1;
@@ -361,7 +365,7 @@
 
         .square-image {
           width: 164.4px;
-          height: 241.8px;
+          height:  164.4px ;
         }
 
         .year-text {
@@ -452,6 +456,63 @@
           overflow-x: auto; /* Allow horizontal scrolling if needed */
         }
       }
+      .tooltip-trigger {
+        position: relative;
+        cursor: pointer;
+        text-decoration: underline;
+        display: inline-block;
+    }
+
+    .tooltip-text {
+        visibility: hidden;
+        background-color: rgba(0, 0, 0, 0.9);
+        color: #fff;
+        text-align: left;
+        padding: 10px;
+        border-radius: 5px;
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        font-size: 14px;
+        z-index: 1000;
+        white-space: normal; /* Allows text wrapping */
+        width: 250px; /* Set a width for better readability */
+        max-width: 100%;
+    }
+
+    .tooltip-trigger:hover .tooltip-text {
+        visibility: visible;
+        opacity: 1;
+    }
+    footer {
+    all: unset; /* Resets inherited styles */
+    background-color: rgba(28, 28, 28, 0.95);
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    width: 100%;
+    position: relative;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Prevent footer from being affected by body's flexbox */
+body > footer {
+    display: block;
+}
+
     </style>
   </head>
   <body>
@@ -778,6 +839,35 @@
       </div>
     </div>
 
+    <footer class="text-center text-white py-3" style="background-color: rgba(28, 28, 28, 0.95);">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+          <!-- Developer Info -->
+          <div style="text-align: left; position: relative; flex: 1 1 100%;">
+              <p class="mb-0 hover-box">
+                  <span class="tooltip-trigger">
+                      Designed and Developed by PSG iTECH Team
+                      <span class="tooltip-text">
+                          <strong>Developer Team:</strong><br>
+                          1. Keerthi V - Lead<br>
+                          2. Madhu Subhiksha M.R<br>
+                          3. Rithanya S<br>
+                          4. Nija Priya S<br><br>
+                          <strong>Data Collection Team:</strong><br>
+                          1. Mythryee A - Lead<br>
+                          2. Loohetha P<br>
+                          3. Santhiya V<br>
+                          4. Sandra M
+                      </span>
+                  </span>
+              </p>
+          </div>
+          <!-- Visit Counter -->
+          <div style="text-align: right;">
+              <p id="visit-count" style="margin: 0;">Page Visits: Loading...</p>
+          </div>
+      </div>
+  </footer>
+  
     <script>
       function scrollToSection(sectionId) {
         document
