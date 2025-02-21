@@ -280,6 +280,7 @@
                 flex-direction: column;
                 align-items: center;
                 flex-flow: column;
+                width: 100%;
             }
 
             .hex {
@@ -405,6 +406,13 @@
     flex-direction: column; 
     text-align: center;
 }
+
+/* Responsiveness Code*/
+
+    @media (max-width: 1712px) {
+
+    }
+
     @media (max-width: 480px) {
     .navbar-brand {
         font-size: 1rem;
@@ -530,6 +538,56 @@ footer p {
     color: var(--text-light);
     text-align: left;
 }
+
+.tooltip-trigger {
+        position: relative;
+        cursor: pointer;
+        text-decoration: underline;
+        display: inline-block;
+    }
+
+    .tooltip-text {
+        visibility: hidden;
+        background-color: rgba(0, 0, 0, 0.9);
+        color: #fff;
+        text-align: left;
+        padding: 10px;
+        border-radius: 5px;
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        font-size: 14px;
+        z-index: 1000;
+        white-space: normal; /* Allows text wrapping */
+        width: 250px; /* Set a width for better readability */
+        max-width: 100%;
+    }
+
+    .tooltip-trigger:hover .tooltip-text {
+        visibility: visible;
+        opacity: 1;
+    }
+
+.names-list{
+    display: none; 
+    position: absolute; 
+    background-color: #f9f9f9; 
+    border: 1px solid #ccc; 
+                    padding: 10px; 
+                    border-radius: 5px; 
+                    z-index: 1;
+                    min-width: 150px;
+                    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.names-list{
+    position: relative; display: inline-block; cursor: pointer;
+}
+
 .hover-box:hover .names-list,
     .hover-box:focus-within .names-list {
         display: block;
@@ -813,39 +871,30 @@ footer p {
     <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
         <!-- Developer Info -->
         <div style="text-align: left; position: relative; flex: 1 1 100%;">
-            <p class="mb-0">Designed and Developed by PSG iTECH Team</p>
-    
-            <!-- Hover Box -->
-            <div class="hover-box" style="position: relative; display: inline-block; cursor: pointer;">
-                <span style="text-decoration: underline;">Hover to see names</span>
-                
-                <!-- Hidden Names -->
-                <div class="names-list" style="
-                    display: none; 
-                    position: absolute; 
-                    background-color: #f9f9f9; 
-                    border: 1px solid #ccc; 
-                    padding: 10px; 
-                    border-radius: 5px; 
-                    z-index: 1;
-                    min-width: 150px;
-                    box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                    <p style="margin: 0;">John Doe</p>
-                    <p style="margin: 0;">Jane Smith</p>
-                    <p style="margin: 0;">Alice Johnson</p>
-                </div>
-            </div>
+            <p class="mb-0 hover-box">
+                <span class="tooltip-trigger">
+                    Designed and Developed by PSG iTECH Team
+                    <span class="tooltip-text">
+                        <strong>Developer Team:</strong><br>
+                        1. Keerthi V - Lead<br>
+                        2. Madhu Subhiksha M.R<br>
+                        3. Rithanya S<br>
+                        4. Nija Priya S<br><br>
+                        <strong>Data Collection Team:</strong><br>
+                        1. Mythryee A - Lead<br>
+                        2. Loohetha P<br>
+                        3. Santhiya V<br>
+                        4. Sandra
+                    </span>
+                </span>
+            </p>
         </div>
-    </div>
-    
-
         <!-- Visit Counter -->
         <div style="text-align: right;">
             <p id="visit-count" style="margin: 0;">Page Visits: Loading...</p>
         </div>
     </div>
 </footer>
-
 
 <script>
     const counterElement = document.getElementById('visit-count');
