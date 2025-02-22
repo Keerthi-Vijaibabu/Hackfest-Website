@@ -11,24 +11,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+   
 
     <style> 
-        :root {
-            --primary: #ff61ba;
-            --primary-dark: #21052d; 
-            --bg-dark: #070718;
-            --bg-darker: #151515;
-        }
-        
-        body {
-            font-family: 'Inter', Arial, sans-serif;
-            background: var(--bg-dark);
-            color: white;
-            line-height: 1.6;
-            overflow-x: hidden;
-            width: 100%;
-        }
         
         .level1{
             margin-top: 10px;
@@ -48,35 +34,7 @@
         }
 
 
-        .navbar {
-            background-color: rgba(28, 28, 28, 0.95);
-            padding: 1rem 0;
-            backdrop-filter: blur(10px);
-            width: 100%;
-        }
-
-        .navbar-brand {
-            font-family: "Tilt Prism", serif;
-            font-weight: 300;
-            font-size: 1.5rem;
-        }
-
-        .nav-link {
-            font-weight: 500;
-            padding: 0.5rem 1rem !important;
-            margin: 0 0.5rem;
-            transition: color 0.3s;
-        }
-
-        .nav-link:hover {
-            color: var(--primary) !important;
-            font-weight: 600;
-        }
-
-        .nav-link.active {
-            color: #ff61ba !important;
-            font-weight: 700;
-        }
+       
 
         /* Home Section */
         .hero-section {
@@ -400,7 +358,7 @@
         background: var(--bg-dark); /* Updated to use --bg-dark */
     animation: gradient 15s ease infinite;
     background-size: 400% 400%;
-    background-attachment: fixed; 
+    background-attachment: fixed;
     
     }
     @keyframes gradient {
@@ -465,20 +423,12 @@
     }
 }
 
-@media (max-width: 480px) { /* Small screens */ 
+@media (max-width: 480px) { /* Small screens */
     .prize-content h2 {
         font-size: 30px;
     }
 }
     @media (max-width: 480px) {
-    .navbar-brand {
-        font-size: 1rem;
-    }
-
-    .nav-link {
-        font-size: 0.8rem;
-    }
-
     .hexagon-container{
 
         padding-left: 50%;
@@ -498,19 +448,12 @@
             flex-direction: column;
             text-align: center;
         }
-        .navbar-brand {
-                font-family: "Tilt Prism", serif;
-                font-weight: 300;
-                margin-left: 10px;
-            }
             .prize-content {
     font-size: 60px
     
 }
 
-        .navbar-toggler {
-                margin-right: 10px;
-            }
+       
 
         .hero-title {
         font-size: 2rem; /* Reduce title font size for mobile */
@@ -587,105 +530,29 @@
     font-weight: bold;
 }
 
-
-
-
-/*Footer section*/
-footer {
-    font-size: 0.9rem;
-    backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    text-align: left;
-}
-
-footer p {
-    margin: 0.2rem 0;
-    color: var(--text-light);
-    text-align: left;
-}
-    @media (max-width: 768px) {
-        .hover-box .names-list {
-            position: relative;
-            top: 10px;
-            left: 0;
-        }
-
-        .hover-box span {
-            font-size: 16px;
-        }
-
-        .names-list p {
-            font-size: 14px;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .hover-box span {
-            font-size: 14px;
-        }
-
-        .names-list p {
-            font-size: 12px;
-        }
-    }
-
-    .tooltip-trigger {
-        position: relative;
-        cursor: pointer;
-        text-decoration: underline;
-        display: inline-block;
-    }
-
-    .tooltip-text {
-        visibility: hidden;
-        background-color: rgba(0, 0, 0, 0.9);
-        color: #fff;
-        text-align: left;
-        padding: 10px;
-        border-radius: 5px;
-        position: absolute;
-        bottom: 30px;
-        left: 50%;
-        transform: translateX(-50%);
-        white-space: nowrap;
-        opacity: 0;
-        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-        font-size: 14px;
-        z-index: 1000;
-        white-space: normal; /* Allows text wrapping */
-        width: 250px; /* Set a width for better readability */
-        max-width: 100%;
-    }
-
-    .tooltip-trigger:hover .tooltip-text {
-        visibility: visible;
-        opacity: 1;
-    }
-
     </style>
 </head>
 <body>
 
-    <!-- Navigation Bar -->  
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="index.html">HACKFEST 2025</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
-                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
-                aria-label="Toggle navigation">
+        <a class="navbar-brand" href="#">HACKFEST 2025</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav text-lg-start">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
-                <li class="nav-item"><a class="nav-link" href="Theme.html">THEMES</a></li>
-                <li class="nav-item"><a class="nav-link" href="partners.html">PARTNERS</a></li>
-                <li class="nav-item"><a class="nav-link" href="hackfest.html">HALL-OF-FAME</a></li>
-                <li class="nav-item"><a class="nav-link" href="FAQ.html">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Theme.html">THEMES</a></li>
+                    <li class="nav-item"><a class="nav-link" href="partners.html">PARTNERS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="hackfest.html">HALL-OF-FAME</a></li>
+                    <li class="nav-item"><a class="nav-link" href="FAQ.html">FAQ</a></li>
             </ul>
         </div>
     </div>
 </nav>
+
 
     
     <section class="hero-section">
