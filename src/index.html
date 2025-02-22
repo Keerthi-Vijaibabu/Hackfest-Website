@@ -282,7 +282,7 @@
     height: 50px;
 }
 .hero-logo1 {
-    gap: 30px;
+    
     width: 50px;  
     height: 60px;
     margin-bottom: 30px;
@@ -309,25 +309,27 @@
                 margin-top: 10px;
             }
 
+
             .hero-logo
             {
-                width: 110px;
-                height: 60px;
-                margin-bottom: 40px;
+                width: 90px;
+                height: 40px;
+                margin-bottom: 20px;
+        
             }
 
             .hero-logo1
             {
-                width: 70px;
-                height: 80px;
-                margin-bottom: 30px;
+                width: 50px;
+                height: 60px;
+                margin-bottom: 10px;
             }
 
             .hero-title {
                 font-family: "Tilt Prism", serif;
                 margin-top: 0px;
-                margin-bottom: 50px;
-                font-size: 1.8rem;
+                margin-bottom: 30px;
+                font-size: 1.4rem;
             }
     }
 /*Video Section*/
@@ -411,7 +413,7 @@
 }
 
     .prize-image {
-    max-width: 900px;
+        max-width: 900px;
     width: 100%;
     border-radius: 15px;
     margin-top: 0px;
@@ -421,8 +423,18 @@
     flex-direction: column; 
 }
 
+.prize-content  {
+        margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    flex-direction: column; 
+    text-align: center;
+    font-size: 60px; /* Default size */
 
-    .prize-content {
+    
+}
+    .prize-content h2 {
         margin-left: 10px;
     display: flex;
     align-items: center;
@@ -431,6 +443,40 @@
     text-align: center;
     
     
+}
+@media (max-width: 992px) { /* Tablets */
+    .prize-content h2 {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 768px) { /* Mobile devices */
+    .prize-content h2 {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 480px) { /* Small screens */
+    .prize-content h2 {
+        font-size: 30px;
+    }
+}
+@media (max-width: 992px) { /* Tablets */
+    .prize-content h2 {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 768px) { /* Mobile devices */
+    .prize-content h2 {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 480px) { /* Small screens */
+    .prize-content h2 {
+        font-size: 30px;
+    }
 }
     @media (max-width: 480px) {
     .navbar-brand {
@@ -449,6 +495,10 @@
         width: 50px;
     }
     
+    .prize-content {
+    font-size: 60px
+    
+}
     }
 
     @media (max-width: 768px) {
@@ -461,6 +511,10 @@
                 font-weight: 300;
                 margin-left: 10px;
             }
+            .prize-content {
+    font-size: 60px
+    
+}
 
         .navbar-toggler {
                 margin-right: 10px;
@@ -557,10 +611,6 @@ footer p {
     color: var(--text-light);
     text-align: left;
 }
-.hover-box:hover .names-list,
-    .hover-box:focus-within .names-list {
-        display: block;
-    }
     @media (max-width: 768px) {
         .hover-box .names-list {
             position: relative;
@@ -766,8 +816,9 @@ footer p {
         <div class="prize-content text-center">
             <h2 class="mb-4 level1">🏆 Prizes Await You! 🏆</h2>
         </div>
+        <p>Exciting rewards for the champions of Hackfest 2025</p>
         <div class="prize-content text-center">
-             <p>Exciting rewards for the champions of Hackfest 2025</p>
+             
             <img src="assets\prize (2).png" alt="Hackfest 2025 Prizes" class="prize-image">
             </div>
            
