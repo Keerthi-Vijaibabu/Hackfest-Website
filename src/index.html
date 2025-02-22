@@ -441,9 +441,25 @@
     justify-content: center; 
     flex-direction: column; 
     text-align: center;
-    font-size: 60px; /* Default size */
-
     
+    
+}
+@media (max-width: 992px) { /* Tablets */
+    .prize-content h2 {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 768px) { /* Mobile devices */
+    .prize-content h2 {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 480px) { /* Small screens */
+    .prize-content h2 {
+        font-size: 30px;
+    }
 }
 @media (max-width: 992px) { /* Tablets */
     .prize-content h2 {
@@ -798,7 +814,7 @@ footer p {
     
     <div class="container text-center">
         <div class="prize-content text-center">
-            <h2 class="mb-4 level">🏆 Prizes Await You! 🏆</h2>
+            <h2 class="mb-4 level1">🏆 Prizes Await You! 🏆</h2>
         </div>
         <p>Exciting rewards for the champions of Hackfest 2025</p>
         <div class="prize-content text-center">
