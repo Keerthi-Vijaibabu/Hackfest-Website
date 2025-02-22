@@ -190,7 +190,7 @@
             
 
         }
-.hexagon-container {
+/* .hexagon-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -209,8 +209,8 @@
 
         .hex {
             width: 170px;
-            height: 147px;/*width * (3**0.5)/2*/
-            background: linear-gradient(145deg,  rgba(81, 31, 104, 0.971), rgba(38, 3, 67, 0.955));
+            height: 147px;width * (3**0.5)/2 */
+            /* background: linear-gradient(145deg,  rgba(81, 31, 104, 0.971), rgba(38, 3, 67, 0.955));
             clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
             display: flex;
             justify-content: center;
@@ -266,7 +266,7 @@
 
         .hex9{
             transform: translateX(-215px) translateY(-73px);
-        }
+        } */
 
         .logo-container {
             font-family: 'HK Modular', sans-serif;
@@ -289,7 +289,7 @@
 }
 
         @media (max-width: 768px) {
-            .hexagon-container { 
+            /* .hexagon-container { 
                 flex-direction: column;
                 align-items: center;
                 flex-flow: column;
@@ -307,7 +307,7 @@
             .hex {
                 transform: translateX(0) translateY(0);
                 margin-top: 10px;
-            }
+            } */
 
 
             .hero-logo
@@ -445,17 +445,6 @@
     text-align: center;
     
     
-}
-@media (max-width: 992px) { /* Tablets */
-    .prize-content h2 {
-        font-size: 50px;
-    }
-}
-
-@media (max-width: 768px) { /* Mobile devices */
-    .prize-content h2 {
-        font-size: 40px;
-    }
 }
 
 @media (max-width: 480px) { /* Small screens */
@@ -719,70 +708,15 @@ footer p {
 
     
 <!-- Timeline Section HTML -->
-<section class="timeline-section">
-    <h1 class="timeline-text" >TIMELINE</h1><br>
-    <div class="hexagon-container">
-        <div class="hex-row">
-            <div class="hex hex1">
-            <p>
-                ANNOUNCEMENT/ REGISTRATION OPEN
-                <br><br>
-                03 Mar '25
-            </p>
-            </div>
-
-            <div class="hex hex2">
-            <p>
-                REGISTRATION CLOSURE
-                <br><br>
-                28 Mar '25
-            </p>
-            </div>
-            
-            <div class="hex hex3">
-                REGIONAL ROUND
-                <br><br>
-                31 Mar – 12 May '25
-            </div>
-            <div class="hex hex4">
-                WORKING ON DT
-                <br><br>
-                13 May – 25 May '25
-            </div>
-            <div class="hex hex5">
-                <p>
-                START HUB ROUND
-                <br>
-                <br>
-                26 May - 14 June '25
-                </p>
-            </div>
-            <div class="hex hex6">
-                WORKING ON BMC
-                <br>
-                <br>
-                15 Jun – 22 Jun '25
-            </div>
-            <div class="hex hex7">
-                SAP ROUND
-                <br><br>
-                23 Jun – 04 Jul '25
-            </div>
-            <div class="hex hex8">
-                WORKING ON PROTOTYPE
-                <br>
-                05 Jul – 05 Aug '25
-            </div>
-            <div class="hex hex9">
-                GRAND FINALE
-                <br>
-                <br>
-                06 Aug 25
-            </div>
-        </div>
-        
-    </div>
-
+<section class="timeline-section text-center">
+    <h1 class="timeline-text">TIMELINE</h1>
+    <br>
+    <picture>
+        <!-- Image for desktop view -->
+        <source srcset="assets/timeline.png" media="(min-width: 768px)">
+        <!-- Image for mobile view -->
+        <img src="assets/timeline-v.png" alt="Timeline" class="img-fluid">
+    </picture>
 </section>
 
 <!-- Intro video section -->
