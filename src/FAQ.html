@@ -26,6 +26,12 @@
         max-width: 700px;
         margin: 40px auto;
       }
+      h1 {
+        text-align: center;
+        color: var(--text-light);
+        margin-top: 100px;
+        font-size: 36px;
+      }
 
       .card {
         background: rgba(255, 255, 255, 0.1);
@@ -61,6 +67,11 @@
         cursor: pointer;
         text-decoration: underline;
         display: inline-block;
+      }
+      .faq-below {
+        font-size: 1.8rem;
+        color: var(--text-light);
+        margin-bottom: 2rem;
       }
     </style>
     <script>
@@ -107,7 +118,8 @@
       </div>
     </nav>
 
-    <h1>FAQ SECTION</h1>
+    <h1>FAQ</h1><br>
+    <h2 class="faq-below">Answers to the most frequently asked questions!</h2>
     <div class="card-container">
       <div class="card" onclick="toggleAnswer(this)">
         <div class="card-title">What is the prize amount for the winners?</div>
