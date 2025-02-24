@@ -1,299 +1,415 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Theme - HackFest 2025</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
 
     <style>
-        
-        .theme-image {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    margin-bottom: 1rem;
-    border-radius: 15px; /* This will make the corners rounded */
-}
+      .theme-image {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        margin-bottom: 1rem;
+        border-radius: 15px; /* This will make the corners rounded */
+      }
 
-        .theme-section {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: justify;
-            background: var(--bg-dark);
-            padding: 4rem;
-        }
+      .theme-section {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: justify;
+        background: var(--bg-dark);
+        padding: 4rem;
+      }
 
-        .theme-card {
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            padding: 3rem;
-            max-width: 800px;
-            border-radius: 18px;
-            text-align: center;
-            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4);
-        }
+      .theme-card {
+        background: rgba(255, 255, 255, 0.1);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        padding: 3rem;
+        max-width: 800px;
+        border-radius: 18px;
+        text-align: center;
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4);
+      }
 
-        .theme-image {
-            width: 100%;
-            max-width: 400px;
-            height: auto;
-            margin-bottom: 1rem;
-        }
+      .theme-image {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        margin-bottom: 1rem;
+      }
 
-        .theme-title {
-            font-size: 2rem;
-            color: var(--text-light);
-            margin-bottom: 2rem;
-        }
+      .theme-title {
+        font-size: 2rem;
+        color: var(--text-light);
+        margin-bottom: 2rem;
+      }
 
+      .theme-description {
+        font-size: 1rem;
+        color: var(--text-light);
+        text-align: justify;
+      }
+
+      .theme-description p {
+        text-align: justify;
+      }
+
+      @media (max-width: 480px) {
         .theme-description {
-            font-size: 1rem;
-            color: var(--text-light);
-            text-align: justify;
+          font-size: 1rem;
+          color: var(--text-light);
+          text-align: left;
         }
-
-        .theme-description p{
-            text-align: justify;
-        }
-
-        @media (max-width: 480px){
-            .theme-description {
-            font-size: 1rem;
-            color: var(--text-light);
-            text-align: left;
-        }
-        }
-        
+      }
     </style>
-</head>
-<body>
-
-<!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container">
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
         <a class="navbar-brand" href="#">HACKFEST 2025</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
-                    <li class="nav-item"><a class="nav-link" href="Theme.html">THEMES</a></li>
-                    <li class="nav-item"><a class="nav-link" href="partners.html">PARTNERS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="hackfest.html">HALL-OF-FAME</a></li>
-                    <li class="nav-item"><a class="nav-link" href="FAQ.html">FAQ</a></li>
-            </ul>
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Theme.html" style="color: #ff61ba"
+                >THEMES</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="partners.html">PARTNERS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="hackfest.html">HALL-OF-FAME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="FAQ.html">FAQ</a>
+            </li>
+          </ul>
         </div>
-    </div>
-</nav>
+      </div>
+    </nav>
 
-<h1>THEMES</h1>
-<section class="theme-section">
-    <div class="theme-card">
+    <h1>THEMES</h1>
+    <section class="theme-section">
+      <div class="theme-card">
         <h2 class="theme-title">Sustainable Business</h2>
-        <img src="assets/Theme 1.png" class="theme-image" alt="Theme 1">
-        <br>
+        <img src="assets/Theme 1.png" class="theme-image" alt="Theme 1" />
+        <br />
         <b>Building an Equitable Future</b>
         <p class="theme-description">
-            <br>
-            In an era of rapid economic growth and globalization, businesses play a crucial role in shaping a sustainable future. While profitability drives industries forward, it is equally important to build enterprises that foster social well-being, cultural preservation, and fair economic opportunities. However, many existing business models often prioritize short-term gains over long-term sustainability, leading to wage disparities, loss of traditional livelihoods, and environmental degradation.
-           
-            <br><br>For example, small-scale artisans and local craftspeople struggle to compete in global markets, often losing their cultural heritage in the process. Similarly, workers in emerging industries lack access to proper upskilling programs, limiting their ability to participate in the green economy transition. Additionally, supply chains frequently suffer from a lack of transparency, making it difficult to ensure fair wages and equitable profit distribution.
-           
-           <br><br> Recognizing these challenges, this theme invites participants to design innovative business solutions that promote sustainability across multiple dimensions:
-            <br>
+          <br />
+          In an era of rapid economic growth and globalization, businesses play
+          a crucial role in shaping a sustainable future. While profitability
+          drives industries forward, it is equally important to build
+          enterprises that foster social well-being, cultural preservation, and
+          fair economic opportunities. However, many existing business models
+          often prioritize short-term gains over long-term sustainability,
+          leading to wage disparities, loss of traditional livelihoods, and
+          environmental degradation.
+
+          <br /><br />For example, small-scale artisans and local craftspeople
+          struggle to compete in global markets, often losing their cultural
+          heritage in the process. Similarly, workers in emerging industries
+          lack access to proper upskilling programs, limiting their ability to
+          participate in the green economy transition. Additionally, supply
+          chains frequently suffer from a lack of transparency, making it
+          difficult to ensure fair wages and equitable profit distribution.
+
+          <br /><br />
+          Recognizing these challenges, this theme invites participants to
+          design innovative business solutions that promote sustainability
+          across multiple dimensions:
+          <br />
         </p>
-       <b><p style="text-align: left;">  Create Sustainable Livelihoods</p></b>
-<ul style="text-align: left;">
-    <li>Design solutions that generate stable, fair-paying jobs across all socioeconomic levels.</li>
-    <li>Develop platforms that connect skilled workers with opportunities in emerging sustainable industries.</li>
-    <li>Create tools for upskilling and reskilling workers for the green economy transition.</li>
-</ul>
+        <b><p style="text-align: left">Create Sustainable Livelihoods</p></b>
+        <ul style="text-align: left">
+          <li>
+            Design solutions that generate stable, fair-paying jobs across all
+            socioeconomic levels.
+          </li>
+          <li>
+            Develop platforms that connect skilled workers with opportunities in
+            emerging sustainable industries.
+          </li>
+          <li>
+            Create tools for upskilling and reskilling workers for the green
+            economy transition.
+          </li>
+        </ul>
 
-<br>
+        <br />
 
-<b><p style="text-align: left;">Foster Cultural Sustainability</p></b>
-<ul style="text-align: left;">
-    <li>Build systems that help preserve and promote local cultural practices while scaling businesses.</li>
-    <li>Develop frameworks for indigenous knowledge integration into modern business practices.</li>
-    <li>Create platforms that enable traditional craftspeople to reach global markets sustainably.</li>
-</ul>
+        <b><p style="text-align: left">Foster Cultural Sustainability</p></b>
+        <ul style="text-align: left">
+          <li>
+            Build systems that help preserve and promote local cultural
+            practices while scaling businesses.
+          </li>
+          <li>
+            Develop frameworks for indigenous knowledge integration into modern
+            business practices.
+          </li>
+          <li>
+            Create platforms that enable traditional craftspeople to reach
+            global markets sustainably.
+          </li>
+        </ul>
 
-<br>
+        <br />
 
-<b><p style="text-align: left;">Enable Equitable Economics</p></b>
-<ul style="text-align: left;">
-    <li>Design fair profit-sharing models across supply chains.</li>
-    <li>Create transparency tools for wage equality and fair labor practices.</li>
-    <li>Develop systems that ensure small businesses and local communities benefit from economic growth.</li>
-</ul>
+        <b><p style="text-align: left">Enable Equitable Economics</p></b>
+        <ul style="text-align: left">
+          <li>Design fair profit-sharing models across supply chains.</li>
+          <li>
+            Create transparency tools for wage equality and fair labor
+            practices.
+          </li>
+          <li>
+            Develop systems that ensure small businesses and local communities
+            benefit from economic growth.
+          </li>
+        </ul>
 
-<br>
+        <br />
 
-<p>
-    Participants are encouraged to leverage technology, data, and innovative business models to create solutions that ensure businesses are not just profitable but also socially responsible and culturally inclusive.
-</p>
+        <p>
+          Participants are encouraged to leverage technology, data, and
+          innovative business models to create solutions that ensure businesses
+          are not just profitable but also socially responsible and culturally
+          inclusive.
+        </p>
+      </div>
+    </section>
 
-    </div>
-</section>
-
-<section class="theme-section">
-    <div class="theme-card">
+    <section class="theme-section">
+      <div class="theme-card">
         <h2 class="theme-title">Preventing Digital Fraud</h2>
-        <img src="assets/Theme 2.png" class="theme-image" alt="Theme 2">
-        <br>
+        <img src="assets/Theme 2.png" class="theme-image" alt="Theme 2" />
+        <br />
         <b>Protecting the Digital Economy’s Foundation</b>
-            <p class="theme-description">
-            <br>
-            As digital transactions and online interactions become an integral part of everyday life, the risk of fraud continues to rise. From financial scams to data breaches, cybercriminals are using increasingly sophisticated methods to exploit vulnerabilities. While businesses and governments implement security measures, fraudsters constantly adapt, making digital fraud prevention a continuous challenge.  
-            <br><br>
-            For example, consumers often fall victim to phishing scams or identity theft due to weak authentication mechanisms, while businesses struggle with insider threats and fraudulent transactions. Emerging technologies like IoT and blockchain offer new opportunities but also introduce unique security risks. Additionally, industries operate in silos, limiting the ability to share intelligence and combat fraud collectively.  
-            <br><br>
-            Recognizing these challenges, this theme invites participants to design innovative solutions to enhance security, protect consumers, and safeguard business operations in the digital landscape.  
-            <br><br>
-           
+        <p class="theme-description">
+          <br />
+          As digital transactions and online interactions become an integral
+          part of everyday life, the risk of fraud continues to rise. From
+          financial scams to data breaches, cybercriminals are using
+          increasingly sophisticated methods to exploit vulnerabilities. While
+          businesses and governments implement security measures, fraudsters
+          constantly adapt, making digital fraud prevention a continuous
+          challenge.
+          <br /><br />
+          For example, consumers often fall victim to phishing scams or identity
+          theft due to weak authentication mechanisms, while businesses struggle
+          with insider threats and fraudulent transactions. Emerging
+          technologies like IoT and blockchain offer new opportunities but also
+          introduce unique security risks. Additionally, industries operate in
+          silos, limiting the ability to share intelligence and combat fraud
+          collectively.
+          <br /><br />
+          Recognizing these challenges, this theme invites participants to
+          design innovative solutions to enhance security, protect consumers,
+          and safeguard business operations in the digital landscape.
+          <br /><br />
         </p>
-        <b><p style="text-align: left;">Protect Consumer Trust</p></b>
-            <ul style="text-align: left;">
-                <li> Design early warning systems for emerging fraud patterns.</li>
-                <li> Create user-friendly authentication methods that don’t compromise security.</li>
-                <li> Develop educational tools that help users identify and avoid scams.</li>
-                </ul>
-                <br>
-                <b><p style="text-align: left;">Safeguard Business Operations</p></b>
-                <ul style="text-align: left;">
-                <li> Build AI-powered fraud detection systems for real-time transaction monitoring.</li>
-                <li> Create secure supply chain verification systems.</li>
-                <li> Develop solutions for preventing employee and insider fraud.</li>
-                </ul>
-                <br>
-                <b><p style="text-align: left;">Enable Secure Innovation</p></b>
-                <ul style="text-align: left;">
-                <li>Design frameworks for secure digital transformation.</li>
-                <li> Create tools for safe adoption of emerging technologies.</li>  
-                <li> Develop security solutions for IoT and connected devices.</li>
-                </ul>
-                <br>
-                <b><p style="text-align: left;">Foster Cross-Industry Protection</p></b>
-                <ul style="text-align: left;">
-                    <li> Build collaborative fraud prevention networks. </li>
-                        <li> Create shared threat intelligence platforms.  </li>
-                            <li> Develop industry-specific fraud prevention tools. </li>
-                </ul>
-                <br>
-                Participants are encouraged to leverage artificial intelligence, blockchain, and cybersecurity best practices to create scalable solutions that enhance trust, transparency, and security in the digital economy.
-                   
-       
-    </div>
-</section>
+        <b><p style="text-align: left">Protect Consumer Trust</p></b>
+        <ul style="text-align: left">
+          <li>Design early warning systems for emerging fraud patterns.</li>
+          <li>
+            Create user-friendly authentication methods that don’t compromise
+            security.
+          </li>
+          <li>
+            Develop educational tools that help users identify and avoid scams.
+          </li>
+        </ul>
+        <br />
+        <b><p style="text-align: left">Safeguard Business Operations</p></b>
+        <ul style="text-align: left">
+          <li>
+            Build AI-powered fraud detection systems for real-time transaction
+            monitoring.
+          </li>
+          <li>Create secure supply chain verification systems.</li>
+          <li>Develop solutions for preventing employee and insider fraud.</li>
+        </ul>
+        <br />
+        <b><p style="text-align: left">Enable Secure Innovation</p></b>
+        <ul style="text-align: left">
+          <li>Design frameworks for secure digital transformation.</li>
+          <li>Create tools for safe adoption of emerging technologies.</li>
+          <li>Develop security solutions for IoT and connected devices.</li>
+        </ul>
+        <br />
+        <b><p style="text-align: left">Foster Cross-Industry Protection</p></b>
+        <ul style="text-align: left">
+          <li>Build collaborative fraud prevention networks.</li>
+          <li>Create shared threat intelligence platforms.</li>
+          <li>Develop industry-specific fraud prevention tools.</li>
+        </ul>
+        <br />
+        Participants are encouraged to leverage artificial intelligence,
+        blockchain, and cybersecurity best practices to create scalable
+        solutions that enhance trust, transparency, and security in the digital
+        economy.
+      </div>
+    </section>
 
-<section class="theme-section">
-    <div class="theme-card">
+    <section class="theme-section">
+      <div class="theme-card">
         <h2 class="theme-title">Ethics in AI Models for Business</h2>
-        <img src="assets/Theme 3.png" class="theme-image" alt="Theme 3">
-            <br>
-            <b>Ensuring Responsible Innovation</b>
-            <br>
-            <p class="theme-description">
+        <img src="assets/Theme 3.png" class="theme-image" alt="Theme 3" />
+        <br />
+        <b>Ensuring Responsible Innovation</b>
+        <br />
+        <p class="theme-description">
+          As artificial intelligence becomes a core part of business operations,
+          ensuring ethical and responsible implementation is essential.
+          AI-driven decisions impact hiring, lending, customer service, and
+          more, making it crucial to prevent bias, enhance transparency, and
+          uphold privacy. However, challenges such as algorithmic
+          discrimination, opaque decision-making, and unethical data usage
+          threaten trust in AI systems.
 
-As artificial intelligence becomes a core part of business operations, ensuring ethical and responsible implementation is essential. AI-driven decisions impact hiring, lending, customer service, and more, making it crucial to prevent bias, enhance transparency, and uphold privacy. However, challenges such as algorithmic discrimination, opaque decision-making, and unethical data usage threaten trust in AI systems.  
+          <br /><br />For instance, biased AI hiring tools may favor certain
+          demographics, leading to unfair recruitment practices. Similarly,
+          businesses may struggle to explain AI-driven financial decisions,
+          raising concerns about accountability. Additionally, large-scale AI
+          models often require vast amounts of data, increasing the risk of
+          privacy breaches and unethical data handling.
 
-<br><br>For instance, biased AI hiring tools may favor certain demographics, leading to unfair recruitment practices. Similarly, businesses may struggle to explain AI-driven financial decisions, raising concerns about accountability. Additionally, large-scale AI models often require vast amounts of data, increasing the risk of privacy breaches and unethical data handling.  
+          <br /><br />Recognizing these challenges, this theme invites
+          participants to develop innovative solutions that ensure fairness,
+          accountability, and responsible AI governance in business
+          applications. <br /><br />
+        </p>
+        <b><p style="text-align: left">Fairness and Bias Prevention</p></b>
 
-<br><br>Recognizing these challenges, this theme invites participants to develop innovative solutions that ensure fairness, accountability, and responsible AI governance in business applications.  
-<br><br>
-</p>
-<b><p style="text-align: left;">Fairness and Bias Prevention</p></b>
-        
-        <ul style="text-align: left;">
-            <li> Create tools to detect and mitigate algorithmic bias.  </li>
-                <li> Design frameworks for inclusive AI model development.  </li>
-                    <li> Develop solutions for fair AI-driven decision-making in hiring, lending, and customer service.</li>  
+        <ul style="text-align: left">
+          <li>Create tools to detect and mitigate algorithmic bias.</li>
+          <li>Design frameworks for inclusive AI model development.</li>
+          <li>
+            Develop solutions for fair AI-driven decision-making in hiring,
+            lending, and customer service.
+          </li>
         </ul>
-        <br>
-        <b><p style="text-align: left;">Transparency and Accountability</p></b>
-        <ul style="text-align: left;">
-            <li> Build explainable AI solutions for business decisions. </li>
-                <li> Create audit trails for AI model decisions.  </li>
-                    <li>Develop tools for stakeholder oversight of AI systems.  </li>
+        <br />
+        <b><p style="text-align: left">Transparency and Accountability</p></b>
+        <ul style="text-align: left">
+          <li>Build explainable AI solutions for business decisions.</li>
+          <li>Create audit trails for AI model decisions.</li>
+          <li>Develop tools for stakeholder oversight of AI systems.</li>
         </ul>
-        <br>
-        <b><p style="text-align: left;">Privacy Protection</p></b> 
-        <ul style="text-align: left;">
-        <li> Design privacy-preserving AI training methods.  </li>
-            <li> Create secure data handling frameworks. </li>
-                <li> Develop solutions for ethical data collection and usage. </li>
+        <br />
+        <b><p style="text-align: left">Privacy Protection</p></b>
+        <ul style="text-align: left">
+          <li>Design privacy-preserving AI training methods.</li>
+          <li>Create secure data handling frameworks.</li>
+          <li>Develop solutions for ethical data collection and usage.</li>
         </ul>
-        <br>
-        <b><p style="text-align: left;">Responsible AI Governance</p></b>
-        <ul style="text-align: left;">
-            <li> Build AI ethics monitoring systems.  </li>
-                <li> Create impact assessment tools for AI deployment.</li>  
-                    <li> Develop frameworks for ethical AI policy implementation. </li>
+        <br />
+        <b><p style="text-align: left">Responsible AI Governance</p></b>
+        <ul style="text-align: left">
+          <li>Build AI ethics monitoring systems.</li>
+          <li>Create impact assessment tools for AI deployment.</li>
+          <li>Develop frameworks for ethical AI policy implementation.</li>
         </ul>
-        Participants are encouraged to explore AI ethics through innovative frameworks, bias detection algorithms, and privacy-focused AI systems to promote fairness, accountability, and responsible AI use in businesses.
-           
-    </div>
-</section>
-<footer class="text-center text-white py-3" style="background-color: rgba(28, 28, 28, 0.95);">
-    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+        Participants are encouraged to explore AI ethics through innovative
+        frameworks, bias detection algorithms, and privacy-focused AI systems to
+        promote fairness, accountability, and responsible AI use in businesses.
+      </div>
+    </section>
+    <footer
+      class="text-center text-white py-3"
+      style="background-color: rgba(28, 28, 28, 0.95)"
+    >
+      <div
+        style="
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: center;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px;
+        "
+      >
         <!-- Developer Info -->
-        <div style="text-align: left; position: relative; flex: 1 1 100%;">
-            <p class="mb-0 hover-box">
-                <span class="tooltip-trigger">
-                    Designed and Developed by PSG iTECH Team
-                    <span class="tooltip-text">
-                        <strong>Developer Team:</strong><br>
-                        1. Keerthi V - Lead<br>
-                        2. Madhu Subhiksha M.R<br>
-                        3. Rithanya S<br>
-                        4. Nija Priya S<br><br>
-                        <strong>Data Collection Team:</strong><br>
-                        1. Mythryee A - Lead<br>
-                        2. Loohetha P<br>
-                        3. Santhiya V<br>
-                        4. Sandra M
-                    </span>
-                </span>
-            </p>
+        <div style="text-align: left; position: relative; flex: 1 1 100%">
+          <p class="mb-0 hover-box">
+            <span class="tooltip-trigger">
+              Designed and Developed by PSG iTECH Team
+              <span class="tooltip-text">
+                <strong>Developer Team:</strong><br />
+                1. Keerthi V - Lead<br />
+                2. Madhu Subhiksha M.R<br />
+                3. Rithanya S<br />
+                4. Nija Priya S<br /><br />
+                <strong>Data Collection Team:</strong><br />
+                1. Mythryee A - Lead<br />
+                2. Loohetha P<br />
+                3. Santhiya V<br />
+                4. Sandra M
+              </span>
+            </span>
+          </p>
         </div>
         <!-- Visit Counter -->
-        <div style="text-align: right;">
-            <p id="visit-count" style="margin: 0;">Page Visits: Loading...</p>
+        <div style="text-align: right">
+          <p id="visit-count" style="margin: 0">Page Visits: Loading...</p>
         </div>
-    </div>
-</footer>
+      </div>
+    </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      function toggleAnswer(card) {
+        card.classList.toggle("active");
+      }
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    function toggleAnswer(card) {
-        card.classList.toggle('active');
-    }
-
-    // Highlight active page in navbar
-    document.addEventListener("DOMContentLoaded", function () {
+      // Highlight active page in navbar
+      document.addEventListener("DOMContentLoaded", function () {
         let navLinks = document.querySelectorAll(".nav-link");
-        let currentUrl = window.location.pathname.split("/").pop().toUpperCase(); // Get current file name in uppercase
+        let currentUrl = window.location.pathname
+          .split("/")
+          .pop()
+          .toUpperCase(); // Get current file name in uppercase
 
-        navLinks.forEach(link => {
-            if (link.getAttribute("href").toUpperCase() === currentUrl || (currentUrl === "" && link.getAttribute("href").toUpperCase() === "HOME.HTML")) {
-                link.classList.add("active");
-            }
+        navLinks.forEach((link) => {
+          if (
+            link.getAttribute("href").toUpperCase() === currentUrl ||
+            (currentUrl === "" &&
+              link.getAttribute("href").toUpperCase() === "HOME.HTML")
+          ) {
+            link.classList.add("active");
+          }
         });
-    });
-</script>
-
-
-
-</body>
+      });
+    </script>
+  </body>
 </html>
