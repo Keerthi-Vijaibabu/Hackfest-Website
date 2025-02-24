@@ -1,866 +1,781 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
 
-    <title>Hall of Fame - Hackfest 2025</title>
-    <style>
-      .section {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background: rgba(255, 255, 255, 0.1);
-        /* Keeping the updated background */
-        border: 2px solid rgba(255, 255, 255, 0.2);
-        /* Keeping the updated border */
-        padding: 40px;
-        /* Adjusted padding */
-        width: 80%;
-        max-width: 1200px;
-        /* Adjusted to match the reference box shape */
-        border-radius: 25px;
-        /* More rounded corners */
-        margin: 60px auto;
-        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
-        /* Keeping the updated box-shadow */
-        backdrop-filter: blur(10px);
-        /* Keeps the blur effect */
-        text-align: center;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css">
 
-      .hall-of-fame {
-        margin-top: 1000px;
-        text-align: center;
-        margin: 40px 0;
-      }
+  <title>Hall of Fame - Hackfest 2025</title>
+  <style>
+    .section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255,
+          255,
+          255,
+          0.1);
+      /* Keeping the updated background */
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      /* Keeping the updated border */
+      padding: 40px;
+      /* Adjusted padding */
+      width: 80%;
+      max-width: 1200px;
+      /* Adjusted to match the reference box shape */
+      border-radius: 25px;
+      /* More rounded corners */
+      margin: 60px auto;
+      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+      /* Keeping the updated box-shadow */
+      backdrop-filter: blur(10px);
+      /* Keeps the blur effect */
+      text-align: center;
+    }
 
-      .hall-of-fame h2 {
-        font-size: 32px;
-        font-weight: bold;
-        color: white;
-        margin-bottom: 20px;
-      }
+    .hall-of-fame {
+      margin-top: 1000px;
+      text-align: center;
+      margin: 40px 0;
+    }
 
+    .hall-of-fame h2 {
+      font-size: 32px;
+      font-weight: bold;
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    .hall-of-fame-gallery {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .square-image {
+      margin-top: 50px;
+      width: 364.4px;
+      max-width: 400px;
+      height: 264.4px;
+      margin-bottom: 1rem;
+      border-radius: 15px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+      /* Adds a subtle shadow */
+    }
+
+    .square-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+
+
+    .media-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* background: var(--box-dark); */
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .media-container img,
+    .media-container video {
+      max-width: 100%;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .media-container img:hover,
+    .media-container video:hover {
+      transform: scale(1.05);
+    }
+
+    .text-container {
+      flex: 1;
+      padding: 20px;
+      text-align: justify;
+    }
+
+    h2 {
+      color: #f2a365;
+      font-size: 24px;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* Image Gallery Navigation */
+    .image-gallery {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 42px;
+      margin-bottom: 20px;
+    }
+
+    .image-gallery img {
+      width: 300px;
+      height: 200px;
+      border-radius: 10px;
+      transition: transform 0.2s, width 0.2s, height 0.2s;
+      padding: 10px;
+      box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    }
+
+    .image-gallery img:hover {
+      transform: scale(1.1);
+    }
+
+    .video-wrapper {
+      width: 60%;
+      /* Reduce width to 60% of container */
+      max-width: 600px;
+      /* Set max width */
+      aspect-ratio: 16 / 9;
+      /* Maintain aspect ratio */
+      margin: 0 auto;
+      /* Center align */
+    }
+
+    .video-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+    }
+
+    /* Hall of Fame Layout */
+    .hall-of-fame-gallery {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+      position: relative;
+      /* Ensures positioning for vertical lines */
+    }
+
+    /* Year Text */
+    .year-text {
+      font-size: 24px;
+      font-weight: bold;
+      color: #f2a365;
+      margin-top: 10px;
+      position: relative;
+    }
+
+    .time-text {
+      font-size: 24px;
+      font-weight: bold;
+      color: #f2a365;
+      margin-top: 10px;
+      position: relative;
+    }
+
+    /* Vertical Line Connecting Year to Timeline */
+    .vertical-line {
+      width: 2px;
+      height: 60px;
+      /* Adjust based on spacing */
+      background: #f2a365;
+      margin: 5px auto;
+    }
+
+    /* Horizontal Timeline Bar */
+    .timeline-bar {
+      width: 90%;
+      height: 4px;
+      background: #f2a365;
+      margin-left: 40px;
+    }
+
+    /* Table container */
+    .table-container {
+      padding: 20px;
+      border-radius: 10px;
+      width: 40%;
+      /* Reduced size */
+      margin: auto;
+      /* Centers the table */
+    }
+
+    /* Table styling */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      color: white;
+      text-align: left;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Header row */
+    th {
+      padding: 10px;
+      border: 1px solid white;
+      background: rgba(255, 255, 255, 0.2);
+      font-weight: bold;
+    }
+
+    /* Table data */
+    td {
+      padding: 10px;
+      border: 1px solid white;
+    }
+
+    /* Hover effect */
+    tr:hover {
+      background: rgba(126, 116, 116, 0.63);
+      transition: 0.3s;
+    }
+
+    @media (max-width: 1024px) {
       .hall-of-fame-gallery {
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .hall-of-fame-item {
         display: flex;
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
-        gap: 50px;
+      }
+
+      .vertical-line {
+        height: 0px;
+      }
+
+      .timeline-bar {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .square-image {
-        margin-top: 50px;
-        width: 364.4px;
-        max-width: 400px;
-        height: 264.4px;
-        margin-bottom: 1rem;
-        border-radius: 15px;
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
-        /* Adds a subtle shadow */
+        width: 180px;
+        height: 180px;
       }
 
-      .square-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+      .image-gallery {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .section {
+        flex-direction: column;
+        text-align: center;
+        width: 95%;
+        padding: 20px;
       }
 
       .media-container {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        /* background: var(--box-dark); */
-        padding: 20px;
-        border-radius: 10px;
+        width: 100%;
+        padding: 10px;
       }
 
       .media-container img,
       .media-container video {
-        max-width: 100%;
-        border-radius: 10px;
-        cursor: pointer;
-        transition: transform 0.3s ease-in-out;
-      }
-
-      .media-container img:hover,
-      .media-container video:hover {
-        transform: scale(1.05);
-      }
-
-      .text-container {
-        flex: 1;
-        padding: 20px;
-        text-align: justify;
-      }
-
-      h2 {
-        color: #f2a365;
-        font-size: 24px;
-        text-transform: uppercase;
-      }
-
-      p {
-        font-size: 16px;
-        line-height: 1.6;
-      }
-
-      /* Image Gallery Navigation */
-      .image-gallery {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 42px;
-        margin-bottom: 20px;
-      }
-
-      .image-gallery img {
-        width: 300px;
-        height: 200px;
-        border-radius: 10px;
-        transition: transform 0.2s, width 0.2s, height 0.2s;
-        padding: 10px;
-        box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
-      }
-
-      .image-gallery img:hover {
-        transform: scale(1.1);
+        width: 100%;
+        height: auto;
       }
 
       .video-wrapper {
-        width: 60%;
-        /* Reduce width to 60% of container */
-        max-width: 600px;
-        /* Set max width */
-        aspect-ratio: 16 / 9;
-        /* Maintain aspect ratio */
-        margin: 0 auto;
+        width: 90%;
+        max-width: 400px;
+      }
+
+      .row-container {
+        flex-direction: column !important;
+        /* Stack elements vertically */
+        align-items: center;
         /* Center align */
       }
 
-      .video-wrapper iframe {
-        width: 100%;
-        height: 100%;
-        border-radius: 10px;
+      .table-container {
+        width: 90%;
+        /* Adjust width for smaller screens */
+        margin-top: 20px;
+        /* Add spacing */
       }
+    }
 
-      /* Hall of Fame Layout */
-      .hall-of-fame-gallery {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 50px;
-        position: relative;
-        /* Ensures positioning for vertical lines */
-      }
+    @media (max-width: 768px) {
 
-      /* Year Text */
-      .year-text {
+
+      .hall-of-fame h2 {
         font-size: 24px;
-        font-weight: bold;
-        color: #f2a365;
-        margin-top: 10px;
-        position: relative;
+      }
+
+      .square-image {
+        width: 164.4px;
+        height: 164.4px;
+      }
+
+      .year-text {
+        font-size: 20px;
       }
 
       .time-text {
-        font-size: 24px;
-        font-weight: bold;
-        color: #f2a365;
-        margin-top: 10px;
-        position: relative;
+        font-size: 0px;
       }
 
-      /* Vertical Line Connecting Year to Timeline */
-      .vertical-line {
-        width: 2px;
-        height: 60px;
-        /* Adjust based on spacing */
-        background: #f2a365;
-        margin: 5px auto;
-      }
-
-      /* Horizontal Timeline Bar */
       .timeline-bar {
-        width: 90%;
-        height: 4px;
-        background: #f2a365;
-        margin-left: 40px;
+        width: 0%;
       }
 
-      /* Table container */
-      .table-container {
-        padding: 20px;
-        border-radius: 10px;
-        width: 40%;
-        /* Reduced size */
-        margin: auto;
-        /* Centers the table */
-      }
-
-      /* Table styling */
-      table {
+      .section {
         width: 100%;
-        border-collapse: collapse;
-        color: white;
-        text-align: left;
-        font-family: Arial, sans-serif;
+        padding: 15px;
       }
 
-      /* Header row */
-      th {
+      .text-container {
         padding: 10px;
-        border: 1px solid white;
-        background: rgba(255, 255, 255, 0.2);
-        font-weight: bold;
+        text-align: justify;
       }
 
-      /* Table data */
-      td {
+      .video-wrapper {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .row-container {
+        flex-direction: column !important;
+        /* Stack elements vertically */
+        align-items: center;
+        /* Center align */
+      }
+
+      .table-container {
+        width: 90%;
+        /* Adjust width for smaller screens */
+        margin-top: 15px;
+        /* Add spacing */
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      .square-image {
+        width: 264.4px;
+        height: 264.4px;
+      }
+
+      .year-text {
+        font-size: 18px;
+      }
+
+      .time-text {
+        font-size: 0px;
+      }
+
+      .vertical-line {
+        height: 0px;
+      }
+
+      .timeline-bar {
+        height: 3px;
+      }
+
+      .section {
         padding: 10px;
-        border: 1px solid white;
       }
 
-      /* Hover effect */
-      tr:hover {
-        background: rgba(126, 116, 116, 0.63);
-        transition: 0.3s;
+      .text-container {
+        font-size: 14px;
       }
 
-      @media (max-width: 1024px) {
-        .hall-of-fame-gallery {
-          flex-direction: column;
-          gap: 30px;
-        }
-
-        .hall-of-fame-item {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .vertical-line {
-          height: 0px;
-        }
-
-        .timeline-bar {
-          width: 80%;
-          margin-left: auto;
-          margin-right: auto;
-        }
-
-        .square-image {
-          width: 180px;
-          height: 180px;
-        }
-
-        .image-gallery {
-          flex-direction: column;
-          gap: 20px;
-        }
-
-        .section {
-          flex-direction: column;
-          text-align: center;
-          width: 95%;
-          padding: 20px;
-        }
-
-        .media-container {
-          width: 100%;
-          padding: 10px;
-        }
-
-        .media-container img,
-        .media-container video {
-          width: 100%;
-          height: auto;
-        }
-
-        .video-wrapper {
-          width: 90%;
-          max-width: 400px;
-        }
-
-        .row-container {
-          flex-direction: column !important;
-          /* Stack elements vertically */
-          align-items: center;
-          /* Center align */
-        }
-
-        .table-container {
-          width: 90%;
-          /* Adjust width for smaller screens */
-          margin-top: 20px;
-          /* Add spacing */
-        }
+      .row-container {
+        flex-direction: column !important;
+        /* Stack elements vertically */
+        align-items: center;
+        /* Center align */
       }
 
-      @media (max-width: 768px) {
-        .hall-of-fame h2 {
-          font-size: 24px;
-        }
-
-        .square-image {
-          width: 164.4px;
-          height: 164.4px;
-        }
-
-        .year-text {
-          font-size: 20px;
-        }
-
-        .time-text {
-          font-size: 0px;
-        }
-
-        .timeline-bar {
-          width: 0%;
-        }
-
-        .section {
-          width: 100%;
-          padding: 15px;
-        }
-
-        .text-container {
-          padding: 10px;
-          text-align: justify;
-        }
-
-        .video-wrapper {
-          width: 100%;
-          max-width: 100%;
-        }
-
-        .row-container {
-          flex-direction: column !important;
-          /* Stack elements vertically */
-          align-items: center;
-          /* Center align */
-        }
-
-        .table-container {
-          width: 90%;
-          /* Adjust width for smaller screens */
-          margin-top: 15px;
-          /* Add spacing */
-        }
+      .video-wrapper {
+        width: 100%;
+        /* Full width on smaller screens */
+        max-width: 100%;
+        /* Ensure it takes full space */
       }
 
-      @media (max-width: 480px) {
-        .square-image {
-          width: 264.4px;
-          height: 264.4px;
-        }
-
-        .year-text {
-          font-size: 18px;
-        }
-
-        .time-text {
-          font-size: 0px;
-        }
-
-        .vertical-line {
-          height: 0px;
-        }
-
-        .timeline-bar {
-          height: 3px;
-        }
-
-        .section {
-          padding: 10px;
-        }
-
-        .text-container {
-          font-size: 14px;
-        }
-
-        .row-container {
-          flex-direction: column !important;
-          /* Stack elements vertically */
-          align-items: center;
-          /* Center align */
-        }
-
-        .video-wrapper {
-          width: 100%;
-          /* Full width on smaller screens */
-          max-width: 100%;
-          /* Ensure it takes full space */
-        }
-
-        .table-container {
-          width: 100%;
-          /* Make table full width */
-          margin-top: 20px;
-          /* Add spacing */
-          overflow-x: auto;
-          /* Allow horizontal scrolling if needed */
-        }
+      .table-container {
+        width: 100%;
+        /* Make table full width */
+        margin-top: 20px;
+        /* Add spacing */
+        overflow-x: auto;
+        /* Allow horizontal scrolling if needed */
       }
-    </style>
-  </head>
+    }
+  </style>
+</head>
 
-  <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="index.html"
-          ><img class="navtitle" src="assets/Hackfest.png"
-        /></a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">HOME</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="Theme.html">THEMES</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="partners.html">PARTNERS</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="hackfest.html" style="color: #ff61ba"
-                >HALL-OF-FAME</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="FAQ.html">FAQ</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Hackfest Hall of Fame Section -->
-    <div class="hall-of-fame">
-      <h2></h2>
-      <div class="hall-of-fame-gallery">
-        <div class="hall-of-fame-item">
-          <div class="square-image">
-            <img
-              src="assets/2k22.jpeg"
-              alt="2K22 Event"
-              onclick="scrollToSection('event-2k22')"
-            />
-          </div>
-          <h1 class="year-text">2022</h1>
-          <div class="vertical-line"></div>
-        </div>
-
-        <div class="hall-of-fame-item">
-          <div class="square-image">
-            <img
-              src="assets/2k23.png"
-              alt="2K23 Event"
-              onclick="scrollToSection('event-2k23')"
-            />
-          </div>
-          <h1 class="year-text">2023</h1>
-          <div class="vertical-line"></div>
-        </div>
-
-        <div class="hall-of-fame-item">
-          <div class="square-image">
-            <img
-              src="assets/2k24.png"
-              alt="2K24 Event"
-              onclick="scrollToSection('event-2k24')"
-            />
-          </div>
-          <h1 class="year-text">2024</h1>
-          <div class="vertical-line"></div>
-        </div>
-      </div>
-      <!-- Horizontal Timeline -->
-      <div class="timeline-bar">
-        <br />
-        <h1 class="time-text">TIMELINE</h1>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">HACKFEST 2025</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+          <li class="nav-item"><a class="nav-link" href="Theme.html">THEMES</a></li>
+          <li class="nav-item"><a class="nav-link" href="partners.html">PARTNERS</a></li>
+          <li class="nav-item"><a class="nav-link" href="hackfest.html">HALL-OF-FAME</a></li>
+          <li class="nav-item"><a class="nav-link" href="FAQ.html">FAQ</a></li>
+        </ul>
       </div>
     </div>
+  </nav>
 
-    <!-- Section 1: Event 2K22 -->
-    <div
-      class="section"
-      id="event-2k22"
-      style="display: flex; flex-direction: column; align-items: center"
-    >
-      <!-- Row 1: Video & Image -->
-      <div
-        class="row-container"
-        style="
+  <!-- Hackfest Hall of Fame Section -->
+  <div class="hall-of-fame">
+    <h2></h2>
+    <div class="hall-of-fame-gallery">
+      <div class="hall-of-fame-item">
+        <div class="square-image">
+          <img src="assets/2k22.jpeg" alt="2K22 Event" onclick="scrollToSection('event-2k22')" />
+        </div>
+        <h1 class="year-text">2022</h1>
+        <div class="vertical-line"></div>
+      </div>
+
+      <div class="hall-of-fame-item">
+        <div class="square-image">
+          <img src="assets/2k23.png" alt="2K23 Event" onclick="scrollToSection('event-2k23')" />
+        </div>
+        <h1 class="year-text">2023</h1>
+        <div class="vertical-line"></div>
+      </div>
+
+      <div class="hall-of-fame-item">
+        <div class="square-image">
+          <img src="assets/2k24.png" alt="2K24 Event" onclick="scrollToSection('event-2k24')" />
+        </div>
+        <h1 class="year-text">2024</h1>
+        <div class="vertical-line"></div>
+      </div>
+    </div>
+    <!-- Horizontal Timeline -->
+    <div class="timeline-bar">
+      <br />
+      <h1 class="time-text">TIMELINE</h1>
+    </div>
+  </div>
+
+  <!-- Section 1: Event 2K22 -->
+  <div class="section" id="event-2k22" style="display: flex; flex-direction: column; align-items: center">
+    <!-- Row 1: Video & Image -->
+    <div class="row-container" style="
           display: flex;
           gap: 20px;
           justify-content: center;
           align-items: center;
           width: 100%;
-        "
-      >
-        <!-- Video -->
-        <div class="media-container video-wrapper">
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/s2Vw_qcL1dY?si=nmy3olutm2oIuaaM"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          >
-          </iframe>
-        </div>
-        <!-- Table -->
-        <div class="table-container">
-          <table>
-            <tr>
-              <th>Category</th>
-              <th>Details</th>
-            </tr>
-            <tr>
-              <td>Overall Reach</td>
-              <td>600 students</td>
-            </tr>
-            <tr>
-              <td>Teams</td>
-              <td>120</td>
-            </tr>
-            <tr>
-              <td>States</td>
-              <td>01</td>
-            </tr>
-          </table>
-        </div>
+        ">
+      <!-- Video -->
+      <div class="media-container video-wrapper">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/s2Vw_qcL1dY?si=nmy3olutm2oIuaaM"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
       </div>
-      <!-- Row 2: Overview (on the next line) -->
-      <div
-        class="text-container"
-        style="margin-top: 20px; text-align: justify; width: 100%"
-      >
-        <h2>Overview</h2>
-        <p>
-          PSG Institute of Technology and Applied Research hosted iTech Hackfest
-          2022 from August 25–27, in collaboration with SAP Academy for
-          Engineering and Kaar Technologies. With a ₹2,00,000 prize pool,
-          Rajalakshmi Engineering College secured first place.Focusing on
-          digital commerce, sustainability, and inclusion, the event featured
-          industry mentorship, opportunities at SAP’s Startup Studio, and job
-          offers for top performers, strengthening academia-industry
-          collaboration.
-        </p>
+      <!-- Table -->
+      <div class="table-container">
+        <table>
+          <tr>
+            <th>Category</th>
+            <th>Details</th>
+          </tr>
+          <tr>
+            <td>Overall Reach</td>
+            <td>600 students</td>
+          </tr>
+          <tr>
+            <td>Teams</td>
+            <td>120</td>
+          </tr>
+          <tr>
+            <td>States</td>
+            <td>01</td>
+          </tr>
+        </table>
       </div>
     </div>
+    <!-- Row 2: Overview (on the next line) -->
+    <div class="text-container" style="margin-top: 20px; text-align: justify; width: 100%">
+      <h2>Overview</h2>
+      <p>
+        PSG Institute of Technology and Applied Research hosted iTech Hackfest
+        2022 from August 25–27, in collaboration with SAP Academy for
+        Engineering and Kaar Technologies. With a ₹2,00,000 prize pool,
+        Rajalakshmi Engineering College secured first place.Focusing on
+        digital commerce, sustainability, and inclusion, the event featured
+        industry mentorship, opportunities at SAP’s Startup Studio, and job
+        offers for top performers, strengthening academia-industry
+        collaboration.
+      </p>
+    </div>
+  </div>
 
-    <!-- Section 2: Event 2K23 -->
-    <div
-      class="section"
-      id="event-2k23"
-      style="display: flex; flex-direction: column; align-items: center"
-    >
-      <!-- Row 1: Video & Image -->
-      <div
-        class="row-container"
-        style="
+  <!-- Section 2: Event 2K23 -->
+  <div class="section" id="event-2k23" style="display: flex; flex-direction: column; align-items: center">
+    <!-- Row 1: Video & Image -->
+    <div class="row-container" style="
           display: flex;
           gap: 20px;
           justify-content: center;
           align-items: center;
           width: 100%;
-        "
-      >
-        <!-- Video -->
-        <div class="media-container video-wrapper">
-          <iframe
-            src="https://www.youtube.com/embed/jmdHT8igHQ8?si=GvMkSabj7LmKTmKS"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          >
-          </iframe>
-        </div>
-        <!-- Table -->
-        <div class="table-container">
-          <table>
-            <tr>
-              <th>Category</th>
-              <th>Details</th>
-            </tr>
-            <tr>
-              <td>Overall Reach</td>
-              <td>2500 students</td>
-            </tr>
-            <tr>
-              <td>Teams</td>
-              <td>650</td>
-            </tr>
-            <tr>
-              <td>States</td>
-              <td>06</td>
-            </tr>
-            <tr>
-              <td>Regional Rounds</td>
-              <td>06</td>
-            </tr>
-            <tr>
-              <td>Colleges/Universities</td>
-              <td>56</td>
-            </tr>
-            <tr>
-              <td>SAP Partners</td>
-              <td>02</td>
-            </tr>
-          </table>
-        </div>
+        ">
+      <!-- Video -->
+      <div class="media-container video-wrapper">
+        <iframe src="https://www.youtube.com/embed/jmdHT8igHQ8?si=GvMkSabj7LmKTmKS" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
       </div>
-
-      <!-- Row 2: Overview (on the next line) -->
-      <div
-        class="text-container"
-        style="margin-top: 20px; text-align: justify; width: 100%"
-      >
-        <h2>Overview</h2>
-        <p>
-          iTech Hackfest 2023, held at PSG Institute of Technology from August
-          24-26, was hosted by the CSE Department in collaboration with SAP
-          Academy and Kaar Technologies. With a ₹3,00,000 prize pool, the event
-          featured industry leaders like Mr. Jayanth Bagare (SAP) and Mr. Maran
-          Nagarajan (Kaar), inspiring innovation. Participants tackled
-          real-world challenges under faculty mentorship, while Mr. Ferose V R
-          (SAP) encouraged turning ideas into startups. Beyond cash prizes,
-          winners gained industry exposure, making the event a huge success and
-          setting the stage for an even bigger 2024 edition!
-        </p>
+      <!-- Table -->
+      <div class="table-container">
+        <table>
+          <tr>
+            <th>Category</th>
+            <th>Details</th>
+          </tr>
+          <tr>
+            <td>Overall Reach</td>
+            <td>2500 students</td>
+          </tr>
+          <tr>
+            <td>Teams</td>
+            <td>650</td>
+          </tr>
+          <tr>
+            <td>States</td>
+            <td>06</td>
+          </tr>
+          <tr>
+            <td>Regional Rounds</td>
+            <td>06</td>
+          </tr>
+          <tr>
+            <td>Colleges/Universities</td>
+            <td>56</td>
+          </tr>
+          <tr>
+            <td>SAP Partners</td>
+            <td>02</td>
+          </tr>
+        </table>
       </div>
     </div>
 
-    <!-- Section 3: Event 2K24 -->
-    <div
-      class="section"
-      id="event-2k24"
-      style="display: flex; flex-direction: column; align-items: center"
-    >
-      <!-- Row 1: Video & Image -->
-      <div
-        class="row-container"
-        style="
+    <!-- Row 2: Overview (on the next line) -->
+    <div class="text-container" style="margin-top: 20px; text-align: justify; width: 100%">
+      <h2>Overview</h2>
+      <p>
+        iTech Hackfest 2023, held at PSG Institute of Technology from August
+        24-26, was hosted by the CSE Department in collaboration with SAP
+        Academy and Kaar Technologies. With a ₹3,00,000 prize pool, the event
+        featured industry leaders like Mr. Jayanth Bagare (SAP) and Mr. Maran
+        Nagarajan (Kaar), inspiring innovation. Participants tackled
+        real-world challenges under faculty mentorship, while Mr. Ferose V R
+        (SAP) encouraged turning ideas into startups. Beyond cash prizes,
+        winners gained industry exposure, making the event a huge success and
+        setting the stage for an even bigger 2024 edition!
+      </p>
+    </div>
+  </div>
+
+  <!-- Section 3: Event 2K24 -->
+  <div class="section" id="event-2k24" style="display: flex; flex-direction: column; align-items: center">
+    <!-- Row 1: Video & Image -->
+    <div class="row-container" style="
           display: flex;
           gap: 20px;
           justify-content: center;
           align-items: center;
           width: 100%;
-        "
-      >
-        <!-- Video -->
-        <div class="media-container video-wrapper">
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/uojH-nlCDB4?si=CiF11HRL1m9fLTCe"
-            title="YouTube video player"
-            frameborder="8"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          >
-          </iframe>
-        </div>
-        <!-- Table -->
-        <div class="table-container">
-          <table>
-            <tr>
-              <th>Category</th>
-              <th>Details</th>
-            </tr>
-            <tr>
-              <td>Overall Reach</td>
-              <td>12,500 students</td>
-            </tr>
-            <tr>
-              <td>Teams</td>
-              <td>2,500</td>
-            </tr>
-            <tr>
-              <td>States</td>
-              <td>10</td>
-            </tr>
-            <tr>
-              <td>Regional Rounds</td>
-              <td>25</td>
-            </tr>
-            <tr>
-              <td>Colleges/Universities</td>
-              <td>110</td>
-            </tr>
-            <tr>
-              <td>SAP Partners</td>
-              <td>10</td>
-            </tr>
-          </table>
-        </div>
+        ">
+      <!-- Video -->
+      <div class="media-container video-wrapper">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/uojH-nlCDB4?si=CiF11HRL1m9fLTCe"
+          title="YouTube video player" frameborder="8"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
       </div>
-
-      <!-- Row 2: Overview (on the next line) -->
-      <div
-        class="text-container"
-        style="margin-top: 20px; text-align: justify; width: 100%"
-      >
-        <h2>Overview</h2>
-        <p>
-          PSG Institute of Technology and Applied Research hosted iTech Hackfest
-          2024 on July 25–26, organized by the CSE Department and sponsored by
-          SAP. The event featured a ₹4.75 lakh prize pool, with Team BroCode
-          (Thapar Institute) winning ₹2,50,000, followed by Team Matrix Infinity
-          (Rajalakshmi Engineering College) and Team Rudhraksha (Chandigarh
-          Engineering College). Participants tackled coding challenges, gaining
-          industry exposure, mentorship, and networking. With its growing
-          success, the hackathon continues to shape future tech leaders, setting
-          the stage for an even bigger 2025 edition.
-        </p>
+      <!-- Table -->
+      <div class="table-container">
+        <table>
+          <tr>
+            <th>Category</th>
+            <th>Details</th>
+          </tr>
+          <tr>
+            <td>Overall Reach</td>
+            <td>12,500 students</td>
+          </tr>
+          <tr>
+            <td>Teams</td>
+            <td>2,500</td>
+          </tr>
+          <tr>
+            <td>States</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>Regional Rounds</td>
+            <td>25</td>
+          </tr>
+          <tr>
+            <td>Colleges/Universities</td>
+            <td>110</td>
+          </tr>
+          <tr>
+            <td>SAP Partners</td>
+            <td>10</td>
+          </tr>
+        </table>
       </div>
     </div>
 
-    <footer
-      class="text-center text-white py-3"
-      style="background-color: rgba(28, 28, 28, 0.95)"
-    >
-      <div
-        style="
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-between;
-          align-items: center;
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 0 20px;
-        "
-      >
-        <!-- Developer Info -->
-        <div style="text-align: left; position: relative; flex: 1 1 100%">
-          <p class="mb-0 hover-box">
-            <span class="tooltip-trigger">
-              Designed and Developed by PSG iTECH Team
-              <span class="tooltip-text">
-                <strong>Developer Team:</strong><br />
-                1. Keerthi V - Lead<br />
-                2. Madhu Subhiksha M.R<br />
-                3. Rithanya S<br />
-                4. Nija Priya S<br /><br />
-                <strong>Data Collection Team:</strong><br />
-                1. Mythryee A - Lead<br />
-                2. Loohetha P<br />
-                3. Santhiya V<br />
-                4. Sandra M
-              </span>
+    <!-- Row 2: Overview (on the next line) -->
+    <div class="text-container" style="margin-top: 20px; text-align: justify; width: 100%">
+      <h2>Overview</h2>
+      <p>
+        PSG Institute of Technology and Applied Research hosted iTech Hackfest
+        2024 on July 25–26, organized by the CSE Department and sponsored by
+        SAP. The event featured a ₹4.75 lakh prize pool, with Team BroCode
+        (Thapar Institute) winning ₹2,50,000, followed by Team Matrix Infinity
+        (Rajalakshmi Engineering College) and Team Rudhraksha (Chandigarh
+        Engineering College). Participants tackled coding challenges, gaining
+        industry exposure, mentorship, and networking. With its growing
+        success, the hackathon continues to shape future tech leaders, setting
+        the stage for an even bigger 2025 edition.
+      </p>
+    </div>
+  </div>
+
+  <footer class="text-center text-white py-3" style="background-color: rgba(28, 28, 28, 0.95);">
+    <div
+      style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+      <!-- Developer Info -->
+      <div style="text-align: left; position: relative; flex: 1 1 100%;">
+        <p class="mb-0 hover-box">
+          <span class="tooltip-trigger">
+            Designed and Developed by PSG iTECH Team
+            <span class="tooltip-text">
+              <strong>Developer Team:</strong><br>
+              1. Keerthi V - Lead<br>
+              2. Madhu Subhiksha M.R<br>
+              3. Rithanya S<br>
+              4. Nija Priya S<br><br>
+              <strong>Data Collection Team:</strong><br>
+              1. Mythryee A - Lead<br>
+              2. Loohetha P<br>
+              3. Santhiya V<br>
+              4. Sandra M
             </span>
-          </p>
-        </div>
-        <!-- Visit Counter -->
-        <div style="text-align: right">
-          <p id="visit-count" style="margin: 0">Page Visits: Loading...</p>
-        </div>
+          </span>
+        </p>
       </div>
-    </footer>
+      <!-- Visit Counter -->
+      <div style="text-align: right;">
+        <p id="visit-count" style="margin: 0;">Page Visits: Loading...</p>
+      </div>
+    </div>
+  </footer>
 
-    <script>
-      function scrollToSection(sectionId) {
-        document
-          .getElementById(sectionId)
-          .scrollIntoView({ behavior: "smooth" });
-      }
-    </script>
+  <script>
+    function scrollToSection(sectionId) {
+      document
+        .getElementById(sectionId)
+        .scrollIntoView({ behavior: "smooth" });
+    }
+  </script>
 
-    <script>
-      gsap.registerPlugin(ScrollTrigger);
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
 
-      // Fade-in effect when scrolling
-      gsap.from(".square-image", {
-        opacity: 0,
-        scale: 0.5,
-        y: 50,
-        duration: 1.5,
-        stagger: 0.3, // Delays each image animation slightly
-        scrollTrigger: {
-          trigger: ".hall-of-fame-gallery",
-          start: "top 80%",
-          toggleActions: "play none none none",
-        },
-      });
+    // Fade-in effect when scrolling
+    gsap.from(".square-image", {
+      opacity: 0,
+      scale: 0.5,
+      y: 50,
+      duration: 1.5,
+      stagger: 0.3, // Delays each image animation slightly
+      scrollTrigger: {
+        trigger: ".hall-of-fame-gallery",
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+    });
 
-      // Hover effect: Scale up and glow
-      document.querySelectorAll(".square-image img").forEach((img) => {
-        img.addEventListener("mouseenter", () => {
-          gsap.to(img, {
-            scale: 1.1,
-            boxShadow: "0px 0px 15px rgba(255, 255, 255, 0.8)",
-            duration: 0.3,
-          });
-        });
-
-        img.addEventListener("mouseleave", () => {
-          gsap.to(img, { scale: 1, boxShadow: "none", duration: 0.3 });
-        });
-      });
-    </script>
-    <script>
-      function toggleAnswer(card) {
-        card.classList.toggle("active");
-      }
-
-      // Highlight active page in navbar
-      document.addEventListener("DOMContentLoaded", function () {
-        let navLinks = document.querySelectorAll(".nav-link");
-        let currentUrl = window.location.pathname
-          .split("/")
-          .pop()
-          .toUpperCase(); // Get current file name in uppercase
-
-        navLinks.forEach((link) => {
-          if (
-            link.getAttribute("href").toUpperCase() === currentUrl ||
-            (currentUrl === "" &&
-              link.getAttribute("href").toUpperCase() === "HOME.HTML")
-          ) {
-            link.classList.add("active");
-          }
+    // Hover effect: Scale up and glow
+    document.querySelectorAll(".square-image img").forEach((img) => {
+      img.addEventListener("mouseenter", () => {
+        gsap.to(img, {
+          scale: 1.1,
+          boxShadow: "0px 0px 15px rgba(255, 255, 255, 0.8)",
+          duration: 0.3,
         });
       });
-    </script>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+      img.addEventListener("mouseleave", () => {
+        gsap.to(img, { scale: 1, boxShadow: "none", duration: 0.3 });
+      });
+    });
+  </script>
+  <script>
+    function toggleAnswer(card) {
+      card.classList.toggle("active");
+    }
+
+    // Highlight active page in navbar
+    document.addEventListener("DOMContentLoaded", function () {
+      let navLinks = document.querySelectorAll(".nav-link");
+      let currentUrl = window.location.pathname
+        .split("/")
+        .pop()
+        .toUpperCase(); // Get current file name in uppercase
+
+      navLinks.forEach((link) => {
+        if (
+          link.getAttribute("href").toUpperCase() === currentUrl ||
+          (currentUrl === "" &&
+            link.getAttribute("href").toUpperCase() === "HOME.HTML")
+        ) {
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
 </html>
