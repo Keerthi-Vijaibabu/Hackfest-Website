@@ -222,11 +222,11 @@
     align-items: center;
     justify-content: center;
     gap: 20px; 
-    margin-top: 200px;
+    margin-top: 100px;
 }
 
 .hero-logo {
-    margin-bottom: 30px;
+    margin-bottom: 70px;
     width: 100px; 
     height: 50px;
 }
@@ -234,7 +234,7 @@
     
     width: 50px;  
     height: 60px;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
 }
 
         @media (max-width: 768px) {
@@ -263,7 +263,7 @@
             {
                 width: 100px;
                 height: 60px;
-                margin-bottom: 40px;
+                margin-bottom: 50px;
                 padding :10px;
             }
 
@@ -271,7 +271,7 @@
             {
                 width: 70px;
                 height: 80px;
-                margin-bottom: 10px;
+                margin-bottom: 50px;
                 padding :10px
             }
 
@@ -500,6 +500,21 @@
     font-family: 'Inter', Arial, sans-serif;
 }
 
+.hero-title img {
+    max-width: 100%; /* Ensures the image is responsive */
+    height: auto; /* Maintains aspect ratio */
+    display: block; /* Removes extra spacing below inline images */
+    margin: 0 auto; /* Centers the image */
+}
+
+/* Optional: Adjust size for different screen sizes */
+@media (max-width: 768px) { /* Mobile screens */
+    .hero-title img {
+        width: 80%; /* Adjust width for smaller screens */
+    }
+}
+
+
 .guidelines-section h2 {
     padding: 20px;
     color: #edeee5;
@@ -524,8 +539,8 @@
     max-width: 600px; /* Prevent it from becoming too large */
 }
 .img-fluid {
-    width: 60% !important;
-    max-width: 600px; /* Optional */
+    width: 90% !important;
+    max-width: 900px; /* Optional */
 }
 
 /* Default: Show Desktop, Hide Mobile */
@@ -607,6 +622,7 @@
 <section class="timeline-section text-center">
     <h1 class="timeline-text mb-1">TIMELINE</h1> <!-- Reduced bottom margin -->
     <img src="assets/timeline.png" alt="Timeline" class="img-fluid mb-1"> 
+    <br><br>
 </section>
 
 <!-- Intro video section -->
@@ -640,7 +656,7 @@
     
     <div class="container text-center">
         <div class="prize-content text-center">
-            <h2 class="mb-4 level1">🏆 Prizes and Awards 🏆</h2>
+            <h2 class="mb-4 level1">🏆Prizes and Awards🏆</h2>
         </div>
         <p class="level2">Exciting rewards for the champions of Hackfest 2025</p>
         <div class="prize-content text-center">
