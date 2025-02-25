@@ -16,7 +16,6 @@
       href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap"
       rel="stylesheet"
     />
-
     <link rel="stylesheet" href="styles.css" />
 
     <style>
@@ -127,35 +126,33 @@
         background-color: rgba(255, 255, 255, 0.1);
         font-size: 16px;
       }
-
       .college-table td {
         font-size: 14px;
       }
-
       .college-table img {
         width: 80px;
         height: 80px;
         object-fit: cover;
         border-radius: 5px;
       }
-
-      /* Force uniform column widths */
       .college-table th:nth-child(1),
       .college-table td:nth-child(1) {
-        width: 100px; /* Adjust as needed */
+        width: 100px; 
         text-align: center;
       }
 
       .college-table th:nth-child(2),
       .college-table td:nth-child(2) {
-        width: auto; /* Allows text to take remaining space */
+        width: auto; 
       }
-
       @media (max-width: 768px) {
         .hover-box .names-list {
           position: relative;
           top: 10px;
           left: 0;
+        }
+        .card-container{
+          width: 100vw;
         }
 
         .hover-box span {
@@ -170,6 +167,9 @@
       @media (max-width: 480px) {
         .hover-box span {
           font-size: 14px;
+        }
+        .card-container{
+          width: 100vw;
         }
 
         .names-list p {
@@ -200,8 +200,8 @@
         transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
         font-size: 14px;
         z-index: 1000;
-        white-space: normal; /* Allows text wrapping */
-        width: 250px; /* Set a width for better readability */
+        white-space: normal; 
+        width: 250px; 
         max-width: 100%;
       }
 
@@ -231,7 +231,6 @@
     </style>
   </head>
   <body>
-    <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
       <div class="container d-flex justify-content-between align-items-center">
         <a class="navbar-brand" href="index.html"
