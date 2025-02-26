@@ -18,29 +18,56 @@
 
     <style>
       .table-container {
-        width: 90%;
-        margin: auto;
-        margin-bottom: 50px;
-      }
+  width: 100%;
+  margin: auto;
+  margin-bottom: 50px;
+}
 
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        background: var(--bg-darker);
-        color: white;
-        text-align: left;
-        margin-top: 20px;
-      }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--bg-darker);
+  color: white;
+  text-align: left;
+  margin-top: 20px;
+}
 
-      th,
-      td {
-        padding: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
+th{
+    padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  word-wrap: break-word;
+    text-align: center;
+}
 
-      th {
-        background: var(--table-header);
-      }
+
+td {
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  word-wrap: break-word;
+  text-align: left; /* Centers the text for better alignment */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .table-container {
+    padding: 0 10px; /* Adds padding to ensure it doesn't touch edges */
+  }
+
+  table {
+    font-size: 10px; /* Reduces font size */
+    table-layout: fixed; /* Ensures the table adjusts within the screen */
+  }
+
+  th,
+  td {
+    padding: 5px; /* Reduces padding to fit content */
+    font-size: 8px;
+  }
+
+  th {
+    font-size: 9px; /* Slightly larger than table text */
+  }
+}
 
       h1 {
         text-align: center;
@@ -107,7 +134,7 @@
     </h6>-->
     <br />
     <div class="table-container">
-      <h2 style="text-align: left">Andhra Pradesh</h2>
+      <h2 style="text-align: left; margin-left: 20px;">Andhra Pradesh</h2>
       <table>
         <tr>
           <th>Hub</th>
@@ -396,7 +423,7 @@
     </div>
 
     <div class="table-container">
-      <h2 style="text-align: left">Karnataka</h2>
+      <h2 style="text-align: left; margin-left: 20px;">Karnataka</h2>
       <table>
         <tr>
           <th>Hub</th>
@@ -678,7 +705,7 @@
     </div>
 
     <div class="table-container">
-      <h2 style="text-align: left">Tamilnadu</h2>
+      <h2 style="text-align: left; margin-left: 20px;">Tamilnadu</h2>
       <table>
         <tr>
           <th>Hub</th>
@@ -847,7 +874,7 @@
     </div>
 
     <div class="table-container">
-      <h2 style="text-align: left">Kerala</h2>
+      <h2 style="text-align: left; margin-left: 20px;">Kerala</h2>
       <table>
         <tr>
           <th>Hub</th>
@@ -941,7 +968,7 @@
     </div>
 
     <div class="table-container">
-      <h2 style="text-align: left">Telangana</h2>
+      <h2 style="text-align: left; margin-left: 20px;">Telangana</h2>
       <table>
         <tr>
           <th>Hub</th>
@@ -991,7 +1018,8 @@
     </div>
 
     <div class="table-container">
-      <h2 style="text-align: left">Goa</h2>
+        <h2 style="text-align: left; margin-left: 20px;">Goa</h2>
+
       <table>
         <tr>
           <th>Hub</th>
@@ -1205,8 +1233,13 @@
             </span>
           </p>
         </div>
-      </div>
-    </footer>
+         <!-- Visit Counter -->
+         <div style="text-align: right">
+            <p id="visit-count" style="margin: 0">Page Visits: Loading...</p>
+          </div>
+        </div>
+      </footer>
+     
 
     <script>
       function toggleAnswer(card) {
