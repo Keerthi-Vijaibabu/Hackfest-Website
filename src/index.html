@@ -335,7 +335,6 @@
             flex: 1;
             color: white;
             font-size: 1rem;
-            text-align: left;
         }
 
         @media (max-width: 768px) {
@@ -350,6 +349,7 @@
     animation: gradient 15s ease infinite;
     background-size: 400% 400%;
     background-attachment: fixed;
+    text-align: center;
     
     }
     @keyframes gradient {
@@ -465,6 +465,7 @@
     }
 
         .prize-section {
+            
         padding-top: 50px; /* Space between video and prize section */
     }
 
@@ -483,21 +484,30 @@
 /* Guideline section*/
 /* GUIDELINES Section - Left Aligned */
 .guidelines-section {
+    all:unset;
     max-width: 80%; /* Adjust width as needed */
-    
+    /* margin: 0 auto;  */
+    /* Center the section */
     background: var(--bg-dark); /* Use the dark background */
+    /* padding: 20px; */
     border-radius: 10px;
-    text-align: left; /* Ensure all text is aligned to the left */
+    align-items: left;
+    justify-content: justify; 
+    text-align: justify;
 }
 
 .guidelines-section h1 {
+    align-items: left;
+    justify-content: left; 
+    text-align: justify;
     margin-top: 10px;
     margin-left: 0; /* Remove left margin for proper alignment */
-    font-size: 50px; /* Adjust font size as needed */
+    font-size: 40px; /* Adjust font size as needed */
     color: white;
     border: none;
-    text-align: left; /* Ensure h1 is aligned to the left */
+    text-align: center; /* Ensure h1 is aligned to the left */
     font-family: 'Inter', Arial, sans-serif;
+
 }
 
 .hero-title img {
@@ -516,7 +526,7 @@
 
 
 .guidelines-section h2 {
-    padding: 20px;
+    /* padding: 20px; */
     color: #edeee5;
     text-align: left; /* Align h2 to the left */
     margin-bottom: 10px;
@@ -524,9 +534,11 @@
 }
 
 .guidelines-section ul {
-    
+    /* padding-left: 40px;  */
+    /* Add padding for bullet points */
     text-align: left; /* Ensure list items are aligned to the left */
-    list-style-type: disc; /* Ensure bullet points are visible */
+    /* list-style-type: disc; */
+     /* Ensure bullet points are visible */
 }
 
 .guidelines-section a {
@@ -690,15 +702,15 @@
     <ul class ="level3"> 
         <li>Teams who qualify from Regional Round progress to State Hub Round</li>
         <li>Teams should have a clear idea about User need, Market analysis, Implementation, Scaling, and Benefits</li>
-        <li>All teams must complete the Design Thinking (DT) course available in the learning hub prior to submission. Presentations should strictly follow the Design Thinking methodology and framework outlined in the course materials.</li>
+        <li>Teams should have gone through the Design Thinking (DT) course in the learning hub and their presentation should be as per it</li>
         <li>Each team will be given 10 mins of time to pitch and 5 mins for Q&A</li>
     </ul>
 
     <h2>SAP Round</h2>
     <ul class=" level3">
         <li>Teams who qualify from State Hub Round progress to SAP Round</li>
-        <li>Teams should have finished the BMC course available in the Learning Hub prior to submission. </li>
-        <li>Teams must present a comprehensive Business Model Canvas as per the course</li>
+        <li>Teams should have finished the C course available on the SAP Octopus learning hub</li>
+        <li>Teams must present a comprehensive Business Model Canvas </li>
         <li>Each team will be given 10 mins of time to pitch and 5 mins for Q&A</li>
     </ul>
 
