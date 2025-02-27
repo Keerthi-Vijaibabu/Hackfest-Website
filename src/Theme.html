@@ -26,11 +26,11 @@
         margin-bottom: 1rem;
         border-radius: 15px; /* This will make the corners rounded */
       }
-      h1 {
+      .title {
         text-align: center;
         color: var(--text-light);
         margin-top: 100px;
-        font-size: 36px;
+        font-size: 45px;
       }
 
       .theme-section {
@@ -42,6 +42,22 @@
         background: var(--bg-dark);
         padding: 4rem;
       }
+      .theme-section h1 {
+    margin-bottom: 5px;
+    margin-left: 0; /* Remove left margin for proper alignment */
+    font-size: 50px; /* Adjust font size as needed */
+    color: white;
+    border: none;
+    text-align: center; /* Ensure h1 is aligned to the left */
+    font-family: 'Inter', Arial, sans-serif;
+}
+.theme-section h2 {
+    padding: 10px;
+    color: #edeee5;
+    text-align: center; /* Align h2 to the left */
+
+    font-family: 'Inter', Arial, sans-serif;
+}
 
       .theme-card {
         background: rgba(255, 255, 255, 0.1);
@@ -59,31 +75,9 @@
         height: auto;
         margin-bottom: 1rem;
       }
-
-      .theme-title {
-        font-size: 2rem;
-        color: var(--text-light);
-        margin-bottom: 2rem;
-      }
-
-      .theme-description {
-        font-size: 1rem;
-        color: var(--text-light);
-        text-align: justify;
-      }
-      .theme-para {
-        color: var(--text-light);
-      }
-
-      .theme-description p {
-        text-align: justify;
-      }
       @media (max-width: 768px) {
         .theme-section {
           padding: 1rem;
-        }
-        .theme-title {
-          text-align: center;
         }
         .theme-card {
           padding: 1.5rem;
@@ -138,14 +132,14 @@
       </div>
     </nav>
 
-    <h1>THEMES</h1>
+    <h1 class="title">THEMES</h1>
     <section class="theme-section">
       <div class="theme-card">
-        <h2 class="theme-title">Sustainable Business</h2>
+        <h1>Sustainable Business</h1>
         <img src="assets/Theme 1.jpeg" class="theme-image" alt="Theme 1" />
         <br />
-        <b class="theme-para">Building an Equitable Future</b>
-        <p class="theme-description">
+        <h2>Building an Equitable Future</h2>
+        <p class="level3" style="text-align: left">
           <br />
           In an era of rapid economic growth and globalization, businesses play
           a crucial role in shaping a sustainable future. While profitability
@@ -171,11 +165,11 @@
           <br />
         </p>
         <b
-          ><p style="text-align: left" class="theme-para">
+          ><p style="text-align: left" class="level3">
             Create Sustainable Livelihoods
           </p></b
         >
-        <ul style="text-align: left" class="theme-para">
+        <ul style="text-align: left" class="level3">
           <li>
             Design solutions that generate stable, fair-paying jobs across all
             socioeconomic levels.
@@ -193,11 +187,11 @@
         <br />
 
         <b
-          ><p style="text-align: left" class="theme-para">
+          ><p style="text-align: left" class="level3">
             Foster Cultural Sustainability
           </p></b
         >
-        <ul style="text-align: left" class="theme-para">
+        <ul style="text-align: left" class="level3">
           <li>
             Build systems that help preserve and promote local cultural
             practices while scaling businesses.
@@ -215,11 +209,11 @@
         <br />
 
         <b
-          ><p style="text-align: left" class="theme-para">
+          ><p style="text-align: left" class="level3">
             Enable Equitable Economics
           </p></b
         >
-        <ul style="text-align: left" class="theme-para">
+        <ul style="text-align: left" class="level3">
           <li>Design fair profit-sharing models across supply chains.</li>
           <li>
             Create transparency tools for wage equality and fair labor
@@ -233,7 +227,7 @@
 
         <br />
 
-        <p class="theme-para">
+        <p class="level3" style="text-align: left;">
           Participants are encouraged to leverage technology, data, and
           innovative business models to create solutions that ensure businesses
           are not just profitable but also socially responsible and culturally
@@ -244,11 +238,11 @@
 
     <section class="theme-section">
       <div class="theme-card">
-        <h2 class="theme-title">Preventing Digital Fraud</h2>
+        <h1>Preventing Digital Fraud</h1>
         <img src="assets/Theme 2.jpeg" class="theme-image" alt="Theme 2" />
         <br />
-        <b class="theme-para">Protecting the Digital Economy’s Foundation</b>
-        <p class="theme-description">
+        <h2>Protecting the Digital Economy’s Foundation</h2>
+        <p class="level3" style="text-align: left">
           <br />
           As digital transactions and online interactions become an integral
           part of everyday life, the risk of fraud continues to rise. From
@@ -272,11 +266,11 @@
           <br /><br />
         </p>
         <b
-          ><p style="text-align: left" class="theme-para">
+          ><p style="text-align: left" class="level3">
             Protect Consumer Trust
           </p></b
         >
-        <ul style="text-align: left" class="theme-para">
+        <ul style="text-align: left" class="level3">
           <li>Design early warning systems for emerging fraud patterns.</li>
           <li>
             Create user-friendly authentication methods that don’t compromise
@@ -288,11 +282,11 @@
         </ul>
         <br />
         <b
-          ><p style="text-align: left" class="theme-para">
+          ><p style="text-align: left" class="level3">
             Safeguard Business Operations
           </p></b
         >
-        <ul style="text-align: left" class="theme-para">
+        <ul style="text-align: left" class="level3">
           <li>
             Build AI-powered fraud detection systems for real-time transaction
             monitoring.
@@ -302,28 +296,28 @@
         </ul>
         <br />
         <b
-          ><p style="text-align: left" class="theme-para">
+          ><p style="text-align: left" class="level3">
             Enable Secure Innovation
           </p></b
         >
-        <ul style="text-align: left" class="theme-para">
+        <ul style="text-align: left" class="level3">
           <li>Design frameworks for secure digital transformation.</li>
           <li>Create tools for safe adoption of emerging technologies.</li>
           <li>Develop security solutions for IoT and connected devices.</li>
         </ul>
         <br />
         <b
-          ><p style="text-align: left" class="theme-para">
+          ><p style="text-align: left" class="level3">
             Foster Cross-Industry Protection
           </p></b
         >
-        <ul style="text-align: left" class="theme-para">
+        <ul style="text-align: left" class="level3">
           <li>Build collaborative fraud prevention networks.</li>
           <li>Create shared threat intelligence platforms.</li>
           <li>Develop industry-specific fraud prevention tools.</li>
         </ul>
         <br />
-        <p class="theme-para">
+        <p class="level3" style="text-align: left">
           Participants are encouraged to leverage artificial intelligence,
           blockchain, and cybersecurity best practices to create scalable
           solutions that enhance trust, transparency, and security in the
@@ -334,12 +328,12 @@
 
     <section class="theme-section">
       <div class="theme-card">
-        <h2 class="theme-title">Ethics in AI Models for Business</h2>
+        <h1>Ethics in AI Models for Business </h1>
         <img src="assets/Theme 3.jpeg" class="theme-image" alt="Theme 3" />
         <br />
-        <b class="theme-para">Ensuring Responsible Innovation</b>
+        <h2>Ensuring Responsible Innovation</h2>
         <br />
-        <p class="theme-description">
+        <p class="level3" style="text-align: left">
           As artificial intelligence becomes a core part of business operations,
           ensuring ethical and responsible implementation is essential.
           AI-driven decisions impact hiring, lending, customer service, and
@@ -361,12 +355,12 @@
           applications. <br /><br />
         </p>
         <b
-          ><p style="text-align: left" class="theme-para">
+          ><p style="text-align: left" class="level3">
             Fairness and Bias Prevention
           </p></b
         >
 
-        <ul style="text-align: left" class="theme-para">
+        <ul style="text-align: left" class="level3">
           <li>Create tools to detect and mitigate algorithmic bias.</li>
           <li>Design frameworks for inclusive AI model development.</li>
           <li>
@@ -376,38 +370,38 @@
         </ul>
         <br />
         <b
-          ><p style="text-align: left" class="theme-para">
+          ><p style="text-align: left" class="level3">
             Transparency and Accountability
           </p></b
         >
-        <ul style="text-align: left" class="theme-para">
+        <ul style="text-align: left" class="level3">
           <li>Build explainable AI solutions for business decisions.</li>
           <li>Create audit trails for AI model decisions.</li>
           <li>Develop tools for stakeholder oversight of AI systems.</li>
         </ul>
         <br />
         <b
-          ><p style="text-align: left" class="theme-para">
+          ><p style="text-align: left" class="level3">
             Privacy Protection
           </p></b
         >
-        <ul style="text-align: left" class="theme-para">
+        <ul style="text-align: left" class="level3">
           <li>Design privacy-preserving AI training methods.</li>
           <li>Create secure data handling frameworks.</li>
           <li>Develop solutions for ethical data collection and usage.</li>
         </ul>
         <br />
         <b
-          ><p style="text-align: left" class="theme-para">
+          ><p style="text-align: left" class="level3">
             Responsible AI Governance
           </p></b
         >
-        <ul style="text-align: left" class="theme-para">
+        <ul style="text-align: left" class="level3">
           <li>Build AI ethics monitoring systems.</li>
           <li>Create impact assessment tools for AI deployment.</li>
           <li>Develop frameworks for ethical AI policy implementation.</li>
         </ul>
-        <p class="theme-para">
+        <p class="level3" style="text-align: left">
           Participants are encouraged to explore AI ethics through innovative
           frameworks, bias detection algorithms, and privacy-focused AI systems
           to promote fairness, accountability, and responsible AI use in
