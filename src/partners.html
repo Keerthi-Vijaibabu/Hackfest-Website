@@ -178,10 +178,37 @@
         }
         .college-table a {
     color: white;
-    text-decoration: none; 
+    text-decoration: none;
+    overflow-x: auto;
+    max-width: 100%;
+    white-space: nowrap; 
   }
   .college-table a:hover {
     color: #ff61ba; }
+    .table-container {
+      overflow-x: auto; /* Enables horizontal scrolling */
+      max-width: 100%;
+      white-space: nowrap; /* Prevents content from wrapping */
+      margin-bottom: 15px; /* Add spacing between tables */
+  }
+
+  /* Ensure images inside tables are uniform */
+  .college-table img {
+      width: 50px; /* Adjust as needed */
+      height: auto;
+  }
+
+  /* Optional: Improve table appearance */
+  .college-table {
+      border-collapse: collapse;
+      width: 100%;
+  }
+
+  .college-table th, .college-table td {
+      padding: 8px;
+      text-align: center;
+      border: 1px solid #ddd; /* Keeps table structure */
+  }
 
       }
 
@@ -479,7 +506,7 @@
               </tr>
             </tbody>
           </table>
-
+          <div class="table-container">
           <table id="MADURAI" class="college-table">
             <tbody>
               <tr>
@@ -506,6 +533,7 @@
               </tr>
             </tbody>
           </table>
+          </div>
 
           <table id="SALEM" class="college-table">
             <tbody>
