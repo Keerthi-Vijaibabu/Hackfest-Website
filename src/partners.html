@@ -186,6 +186,27 @@
 
      
     </style>
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var navbarToggler = document.querySelector(".navbar-toggler");
+    var navbarCollapse = document.querySelector(".navbar-collapse");
+
+    // Close menu when clicking outside
+    document.addEventListener("click", function (event) {
+      if (
+        !navbarCollapse.contains(event.target) &&
+        !navbarToggler.contains(event.target)
+      ) {
+        navbarCollapse.classList.remove("show");
+      }
+    });
+
+    // Close menu on scroll
+    window.addEventListener("scroll", function () {
+      navbarCollapse.classList.remove("show");
+    });
+  });
+</script>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
