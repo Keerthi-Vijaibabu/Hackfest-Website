@@ -26,15 +26,20 @@ body {
     overflow-x: hidden;
   }
 
-  .level1{
+/* TEXT SECTION */
+/* Ensure that your texts inherits the following text levels */
+
+/* For the fist level of heading */
+  .level1{  
     margin-top: 10px;
-    margin-left: 50px;
+    /* margin-left: 50px; */
     font-size: 3.5rem;
     color: white;
     border: none;
     text-align: center;
 }
 
+/* For all sub headings */
 .level2{
     font-size: 1.5rem;
     margin-bottom: 2rem;
@@ -44,10 +49,31 @@ body {
     text-align: left;
 }
 
+/* For all para contents */
+
 .level3{
     font-size: 1.25rem;
     margin-bottom: 2rem;
 }
+
+@media (max-width: 480px) { /* Small screens */
+    .level1 {
+        font-size: 35px;
+    }
+}
+@media (max-width: 992px) { /* Tablets */
+    .prize-content h2 {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 768px) { /* Mobile devices */
+    .prize-content h2 {
+        font-size: 40px;
+    }
+}
+
+/* TEXT SECTION */
 
 .navtitle{
     height: 50px;

@@ -19,7 +19,7 @@
         /*Alignment */
         .heading{
             padding-left: 10px;
-            text-align: center;
+            text-align: left;
         }
 
         .para{
@@ -355,23 +355,12 @@
 
     .prize-section{
         background: var(--bg-dark); /* Updated to use --bg-dark */
-    animation: gradient 15s ease infinite;
+    /* animation: gradient 15s ease infinite; */
     background-size: 400% 400%;
     background-attachment: fixed;
     text-align: center;
     
     }
-    @keyframes gradient {
-    0% {
-        background-position: 0% 0%;
-    }
-    50% {
-        background-position: 100% 100%;
-    }
-    100% {
-        background-position: 0% 0%;
-    }
-}
 
     .prize-image {
         max-width: 900px;
@@ -391,7 +380,7 @@
     justify-content: center; 
     flex-direction: column; 
     text-align: center;
-    font-size: 60px; /* Default size */
+    /* font-size: 60px; Default size */
 
     
 }
@@ -406,54 +395,12 @@
     
 }
 
-@media (max-width: 480px) { /* Small screens */
-    .prize-content h2 {
-        font-size: 30px;
-    }
-}
-@media (max-width: 992px) { /* Tablets */
-    .prize-content h2 {
-        font-size: 50px;
-    }
-}
-
-@media (max-width: 768px) { /* Mobile devices */
-    .prize-content h2 {
-        font-size: 40px;
-    }
-}
-
-@media (max-width: 480px) { /* Small screens */
-    .prize-content h2 {
-        font-size: 30px;
-    }
-}
-    @media (max-width: 480px) {
-    .hexagon-container{
-
-        padding-left: 50%;
-        align-items: center;
-        padding-right: 0% ;
-        width: 50px;
-    }
-    
-    .prize-content {
-    font-size: 60px
-    
-}
-    }
 
     @media (max-width: 768px) {
         .content-wrapper {
             flex-direction: column;
             text-align: center;
-        }
-            .prize-content {
-    font-size: 60px
-    
-}
-
-       
+        }      
 
         .hero-title {
         font-size: 2rem; /* Reduce title font size for mobile */
@@ -479,7 +426,7 @@
     }
 
         .prize-image {
-            margin-top: 10px;
+        margin-top: 10px;
         margin-left: 0; /* Center image properly */
         margin-right: 20px;
         width: 90%;
@@ -500,24 +447,24 @@
     background: var(--bg-dark); /* Use the dark background */
     /* padding: 20px; */
     border-radius: 10px;
-    align-items: left;
+    /* align-items: left;
     justify-content: justify; 
-    text-align: justify;
+    text-align: justify; */
 }
 
-.guidelines-section h1 {
+/* .guidelines-section h1 {
     align-items: left;
     justify-content: left; 
     text-align: justify;
     margin-top: 10px;
     margin-left: 0; /* Remove left margin for proper alignment */
     /* font-size: 40px; Adjust font size as needed */
-    color: white;
+    /* color: white;
     border: none;
-    text-align: center; /* Ensure h1 is aligned to the left */
-    font-family: 'Inter', Arial, sans-serif;
 
-}
+} */
+
+
 
 .hero-title img {
     max-width: 100%; /* Ensures the image is responsive */
@@ -533,14 +480,6 @@
     }
 }
 
-
-.guidelines-section h2 {
-    /* padding: 20px; */
-    color: #edeee5;
-    text-align: left; /* Align h2 to the left */
-    margin-bottom: 10px;
-    font-family: 'Inter', Arial, sans-serif;
-}
 
 .guidelines-section ul {
     /* padding-left: 40px;  */
@@ -682,7 +621,7 @@
         </iframe>
     </div>
     <div class="description">
-        <p class = " level3">Get to know more about the previous SAP Hackfests. Learn about the challenges, guidelines, and expectations for participants by clicking on the text. Watch this video to understand the process, what you can expect and how you can make an impact!</p>
+        <p class = " level3">Get to know more about the previous SAP Hackfests. Learn about the challenges, guidelines and expectations for participants by clicking on the text. Watch this video to understand the process, what you can expect and how you can make an impact!</p>
     </div>
 </section>
 
@@ -708,7 +647,7 @@
 <!-- Guidelines section-->
 <!-- GUIDELINES Section -->
 <section class="guidelines-section">
-    <h1 class = "level1 heading">GUIDELINES</h1>
+    <h1 class = "level1">GUIDELINES</h1>
     <br>
     <h2 class = "level2 heading">Regional Round</h2>
     <ul class="level3">
