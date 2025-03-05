@@ -3,7 +3,7 @@
     --primary-dark: #21052d; 
     --bg-dark: #070718;
     --bg-darker: #151515;
-    --text-light: rgba(255, 255, 255, 0.8);
+    --text-light: rgb(255, 255, 255);
 }
 
 body {

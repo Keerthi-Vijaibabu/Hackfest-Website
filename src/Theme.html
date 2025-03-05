@@ -30,7 +30,7 @@
         text-align: center;
         color: var(--text-light);
         margin-top: 100px;
-        font-size: 45px;
+        /* font-size: 45px; */
       }
 
       .theme-section {
@@ -43,21 +43,21 @@
         padding: 4rem;
       }
       .theme-section h1 {
-    margin-bottom: 5px;
-    margin-left: 0; /* Remove left margin for proper alignment */
-    font-size: 50px; /* Adjust font size as needed */
-    color: white;
-    border: none;
-    text-align: center; /* Ensure h1 is aligned to the left */
-    font-family: 'Inter', Arial, sans-serif;
-}
-.theme-section h2 {
-    padding: 10px;
-    color: #edeee5;
-    text-align: center; /* Align h2 to the left */
+        margin-bottom: 5px;
+        margin-left: 0; /* Remove left margin for proper alignment */
+        /* font-size: 50px; Adjust font size as needed */
+        color: white;
+        border: none;
+        text-align: center; /* Ensure h1 is aligned to the left */
+        /* font-family: "Inter", Arial, sans-serif; */
+      }
+      .theme-section h2 {
+        padding: 10px;
+        color: #edeee5;
+        text-align: center; /* Align h2 to the left */
 
-    font-family: 'Inter', Arial, sans-serif;
-}
+        font-family: "Inter", Arial, sans-serif;
+      }
 
       .theme-card {
         background: rgba(255, 255, 255, 0.1);
@@ -93,27 +93,26 @@
       }
     </style>
     <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    var navbarToggler = document.querySelector(".navbar-toggler");
-    var navbarCollapse = document.querySelector(".navbar-collapse");
+      document.addEventListener("DOMContentLoaded", function () {
+        var navbarToggler = document.querySelector(".navbar-toggler");
+        var navbarCollapse = document.querySelector(".navbar-collapse");
 
-    // Close menu when clicking outside
-    document.addEventListener("click", function (event) {
-      if (
-        !navbarCollapse.contains(event.target) &&
-        !navbarToggler.contains(event.target)
-      ) {
-        navbarCollapse.classList.remove("show");
-      }
-    });
+        // Close menu when clicking outside
+        document.addEventListener("click", function (event) {
+          if (
+            !navbarCollapse.contains(event.target) &&
+            !navbarToggler.contains(event.target)
+          ) {
+            navbarCollapse.classList.remove("show");
+          }
+        });
 
-    // Close menu on scroll
-    window.addEventListener("scroll", function () {
-      navbarCollapse.classList.remove("show");
-    });
-  });
-</script>
-
+        // Close menu on scroll
+        window.addEventListener("scroll", function () {
+          navbarCollapse.classList.remove("show");
+        });
+      });
+    </script>
   </head>
   <body>
     <!-- Navigation Bar -->
@@ -154,10 +153,10 @@
       </div>
     </nav>
 
-    <h1 class="title">THEMES</h1>
+    <h1 class="title level1">THEMES</h1>
     <section class="theme-section">
       <div class="theme-card">
-        <h1>Sustainable Business</h1>
+        <h1 class="level1">Sustainable Business</h1>
         <img src="assets/Theme 1.jpeg" class="theme-image" alt="Theme 1" />
         <br />
         <h2>Building an Equitable Future</h2>
@@ -249,7 +248,7 @@
 
         <br />
 
-        <p class="level3" style="text-align: left;">
+        <p class="level3" style="text-align: left">
           Participants are encouraged to leverage technology, data, and
           innovative business models to create solutions that ensure businesses
           are not just profitable but also socially responsible and culturally
@@ -260,7 +259,7 @@
 
     <section class="theme-section">
       <div class="theme-card">
-        <h1>Preventing Digital Fraud</h1>
+        <h1 class="level1">Preventing Digital Fraud</h1>
         <img src="assets/Theme 2.jpeg" class="theme-image" alt="Theme 2" />
         <br />
         <h2>Protecting the Digital Economy’s Foundation</h2>
@@ -350,7 +349,7 @@
 
     <section class="theme-section">
       <div class="theme-card">
-        <h1>Ethics in AI Models for Business </h1>
+        <h1 class="level1">Ethics in AI Models for Business</h1>
         <img src="assets/Theme 3.jpeg" class="theme-image" alt="Theme 3" />
         <br />
         <h2>Ensuring Responsible Innovation</h2>
@@ -402,11 +401,7 @@
           <li>Develop tools for stakeholder oversight of AI systems.</li>
         </ul>
         <br />
-        <b
-          ><p style="text-align: left" class="level3">
-            Privacy Protection
-          </p></b
-        >
+        <b><p style="text-align: left" class="level3">Privacy Protection</p></b>
         <ul style="text-align: left" class="level3">
           <li>Design privacy-preserving AI training methods.</li>
           <li>Create secure data handling frameworks.</li>
