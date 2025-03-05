@@ -29,18 +29,19 @@ body {
   .level1{
     margin-top: 10px;
     margin-left: 50px;
-    font-size: 60px;
+    font-size: 3.5rem;
     color: white;
     border: none;
-    text-align: left;
+    text-align: center;
 }
 
 .level2{
     font-size: 1.5rem;
     margin-bottom: 2rem;
-    max-width: 800px;
+    /* max-width: 800px; */
     margin-left: auto;
     margin-right: auto;
+    text-align: left;
 }
 
 .level3{
