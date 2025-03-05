@@ -1,107 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Partners - HackFest 2025</title>
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Partners - HackFest 2025</title>
 
-    <style>
-      h1 {
-        text-align: center;
-        color: var(--text-light);
-        margin-top: 100px;
-        font-size: 36px;
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    h1 {
+      text-align: center;
+      color: var(--text-light);
+      margin-top: 100px;
+      font-size: 36px;
+    }
+
+    .card-container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 80%;
+      max-width: 800px;
+      margin: 40px auto;
+    }
+
+    .card {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #444;
+      text-align: left;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+      transition: transform 0.2s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 4px 4px 12px rgba(255, 255, 255, 0.2);
+    }
+
+    .card-title {
+      font-size: 20px;
+      gap: 50px;
+      color: var(--text-light);
+    }
+
+    .card-content {
+      display: none;
+      /* Hide districts by default */
+      margin-top: 10px;
+      gap: 10px;
+      flex-direction: row;
+      /* Districts in a horizontal row */
+      flex-wrap: wrap;
+      /* Wrap districts if they overflow */
+    }
+
+    .card.active .card-content {
+      display: flex;
+      /* Show districts when the card is active */
+    }
+
+    .district {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+      border: 3px !important;
+      padding: 10px 20px;
+      border-radius: 8px;
+      min-width: 120px;
+      cursor: pointer;
+      text-align: left;
+      transition: background 0.3s ease;
+      width: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+
+    .district.highlight {
+      background-color: #ff61bac7;
+      color: white;
+      font-weight: bold;
+    }
+
+    .college-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      display: none;
+      table-layout: fixed;
+    }
+
+    .college-table a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .college-table a:hover {
+      color: #ff61ba;
+    }
+
+
+    .college-table th,
+    .college-table td {
+      border: 2px solid #ccc;
+      padding: 10px;
+      text-align: left;
+      color: white;
+    }
+
+    .college-table th {
+      background-color: rgba(255, 255, 255, 0.1);
+      font-size: 16px;
+    }
+
+    .college-table td {
+      font-size: 14px;
+    }
+
+    .college-table img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .college-table th:nth-child(1),
+    .college-table td:nth-child(1) {
+      width: 100px;
+      text-align: center;
+    }
+
+    .college-table th:nth-child(2),
+    .college-table td:nth-child(2) {
+      width: auto;
+    }
+
+    @media (max-width: 768px) {
+      .hover-box .names-list {
+        position: relative;
+        top: 10px;
+        left: 0;
       }
 
       .card-container {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        width: 80%;
-        max-width: 800px;
-        margin: 40px auto;
+        width: 100vw;
       }
 
-      .card {
-        background-color: rgba(255, 255, 255, 0.1);
-        padding: 20px;
-        border-radius: 10px;
-        border: 1px solid #444;
-        text-align: left;
-        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-        transition: transform 0.2s ease;
-        cursor: pointer;
+      .hover-box span {
+        font-size: 16px;
       }
 
-      .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 4px 4px 12px rgba(255, 255, 255, 0.2);
+      .names-list p {
+        font-size: 14px;
       }
 
-      .card-title {
-        font-size: 20px;
-        gap: 50px;
-        color: var(--text-light);
-      }
-
-      .card-content {
-        display: none;
-        /* Hide districts by default */
-        margin-top: 10px;
-        gap: 10px;
-        flex-direction: row;
-        /* Districts in a horizontal row */
-        flex-wrap: wrap;
-        /* Wrap districts if they overflow */
-      }
-
-      .card.active .card-content {
-        display: flex;
-        /* Show districts when the card is active */
-      }
-
-      .district {
-        background-color: rgba(255, 255, 255, 0.1);
+      .college-table a {
         color: white;
-        border: 3px !important;
-        padding: 10px 20px;
-        border-radius: 8px;
-        min-width: 120px;
-        cursor: pointer;
-        text-align: left;
-        transition: background 0.3s ease;
-        width: 120px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1rem;
+        text-decoration: none;
       }
 
-      .district.highlight {
-        background-color: #ff61bac7;
-        color: white;
-        font-weight: bold;
+      .college-table a:hover {
+        color: #ff61ba;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hover-box span {
+        font-size: 14px;
       }
 
-      .college-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 10px;
-        display: none;
-        table-layout: fixed;
+      .card-container {
+        margin-top: 60px;
+        width: 100vw;
+      }
+
+      .names-list p {
+        font-size: 12px;
       }
 
       .college-table a {
@@ -113,2178 +196,1862 @@
         color: #ff61ba;
       }
 
-      .college-table th,
-      .college-table td {
-        border: 2px solid #ccc;
-        padding: 10px;
-        text-align: left;
-        color: white;
+
+    }
+
+    @media (max-width: 768px) {
+      .college-table {
+        width: 100%;
+        min-width: 700px;
+        /* Ensures the table doesn't shrink too much */
       }
+    }
 
-      .college-table th {
-        background-color: rgba(255, 255, 255, 0.1);
-        font-size: 16px;
-      }
+    .card-link {
+      display: inline-block;
+      background-color: #2D2B3A; /* Dark background */
+      color: white;
+      padding: 15px 30px;
+      border-radius: 12px; /* Rounded corners */
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  }
+  </style>
+</head>
 
-      .college-table td {
-        font-size: 14px;
-      }
-
-      .college-table img {
-        width: 80px;
-        height: 80px;
-        object-fit: cover;
-        border-radius: 5px;
-      }
-
-      .college-table th:nth-child(1),
-      .college-table td:nth-child(1) {
-        width: 100px;
-        text-align: center;
-      }
-
-      .college-table th:nth-child(2),
-      .college-table td:nth-child(2) {
-        width: auto;
-      }
-
-      @media (max-width: 768px) {
-        .hover-box .names-list {
-          position: relative;
-          top: 10px;
-          left: 0;
-        }
-
-        .card-container {
-          width: 100vw;
-        }
-
-        .hover-box span {
-          font-size: 16px;
-        }
-
-        .names-list p {
-          font-size: 14px;
-        }
-
-        .college-table a {
-          color: white;
-          text-decoration: none;
-        }
-
-        .college-table a:hover {
-          color: #ff61ba;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .hover-box span {
-          font-size: 14px;
-        }
-
-        .card-container {
-          margin-top: 60px;
-          width: 100vw;
-        }
-
-        .names-list p {
-          font-size: 12px;
-        }
-
-        .college-table a {
-          color: white;
-          text-decoration: none;
-        }
-
-        .college-table a:hover {
-          color: #ff61ba;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .college-table {
-          width: 100%;
-          min-width: 700px;
-          /* Ensures the table doesn't shrink too much */
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-      <div class="container d-flex justify-content-between align-items-center">
-        <a class="navbar-brand" href="index.html"
-          ><img class="navtitle" src="assets/Hackfest.png"
-        /></a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto text-center">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">HOME</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="Theme.html">THEMES</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="partners.html">PARTNERS</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="hackfest.html">PREVIOUS EVENTS</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="FAQ.html">FAQ</a>
-            </li>
-          </ul>
-        </div>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a class="navbar-brand" href="index.html"><img class="navtitle" src="assets/Hackfest.png" /></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto text-center">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Theme.html">THEMES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="partners.html">PARTNERS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="hackfest.html">PREVIOUS EVENTS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="FAQ.html">FAQ</a>
+          </li>
+        </ul>
       </div>
-    </nav>
-    <br />
-    <h1>OUR PARTNERS</h1>
+    </div>
+  </nav>
+  <br>
+  <h1>OUR PARTNERS</h1>
 
-    <div class="card-container">
-      <!-- Tamil Nadu -->
-      <div class="card" onclick="toggleAnswer(this)">
-        <div class="card-title">TAMIL NADU</div>
-        <div class="card-content district-container">
-          <div class="card district" onclick="showLogos('CHENNAI', event)">
-            CHENNAI
-          </div>
-          <div class="card district" onclick="showLogos('COIMBATORE', event)">
-            COIMBATORE
-          </div>
-          <div class="card district" onclick="showLogos('MADURAI', event)">
-            MADURAI
-          </div>
-          <div class="card district" onclick="showLogos('SALEM', event)">
-            SALEM
-          </div>
+  <div class="card-link">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScOjMX7XmbtMQ_oqPxK7jPQdOUFwq-zGXoLDiMutGqe8dPPiA/viewform" style="color: white; text-decoration: none;">
+      Click here to register
+  </a>
+  
+  </div>
 
-          <!-- Tables for Tamil Nadu Districts -->
-          <div style="overflow-x: auto; width: 100%">
-            <table id="CHENNAI" class="college-table">
-              <tbody>
-                <tr>
-                  <th
-                    colspan="2"
-                    style="width: 200px; text-align: center; font-size: 14px"
-                  >
-                    College
-                  </th>
-                  <th style="font-size: 14px; text-align: center">SPOC</th>
-                  <th style="font-size: 14px; text-align: center">Email</th>
-                  <th style="font-size: 14px; text-align: center">Phone no</th>
-                  <th style="font-size: 13px; text-align: center">
-                    Registration Start
-                  </th>
-                  <th style="font-size: 13px; text-align: center">
-                    Registration End
-                  </th>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      src="assets/TAMILNADU/CHENNAI/29a0357c-c6d9-4740-9b93-eea14ee4b806.jpg"
-                    />
-                  </td>
-                  <td>Velammal Engineering College</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      src="assets/TAMILNADU/CHENNAI/5de90759-3c28-46d1-b62f-f107ccf0b646.jpg"
-                    />
-                  </td>
-                  <td>Chennai Institute of Technology</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      src="assets/TAMILNADU/CHENNAI/625a4086-9e5c-4496-8971-aef23a0ea5e9.jpg"
-                    />
-                  </td>
-                  <td>Sri Sairam Engineering College</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/TAMILNADU/CHENNAI/SRM.jpg" /></td>
-                  <td>SRM University</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/TAMILNADU/CHENNAI/cresant.jpeg" /></td>
-                  <td>
-                    B. S. Abdur Rahman Crescent Institute Of Science And
-                    Technology
-                  </td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/TAMILNADU/CHENNAI/SSN.jpg" /></td>
-                  <td>SSN College of Engineering</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      src="assets/TAMILNADU/CHENNAI/e1aadf5a-7264-4189-aee5-af85a8409123.jpg"
-                    />
-                  </td>
-                  <td>Vellore Institute of Technology</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      src="assets/TAMILNADU/CHENNAI/fa015ee2-6c66-4103-b107-f1e424703556.jpg"
-                    />
-                  </td>
-                  <td>
-                    Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science
-                    and Technology
-                  </td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div style="overflow-x: auto; width: 100%">
-            <table id="COIMBATORE" class="college-table">
-              <tbody>
-                <tr>
-                  <th
-                    colspan="2"
-                    style="width: 200px; text-align: center; font-size: 14px"
-                  >
-                    College
-                  </th>
-                  <th style="font-size: 14px; text-align: center">SPOC</th>
-                  <th style="font-size: 14px; text-align: center">Email</th>
-                  <th style="font-size: 14px; text-align: center">Phone no</th>
-                  <th style="font-size: 13px; text-align: center">
-                    Registration Start
-                  </th>
-                  <th style="font-size: 13px; text-align: center">
-                    Registration End
-                  </th>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      src="assets/TAMILNADU/COIMBATORE/10b084e4-cefa-4037-8532-73d27e240996.jpg"
-                    />
-                  </td>
-                  <td>Dr.N.G.P Institute of Technology</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      src="assets/TAMILNADU/COIMBATORE/2b816069-501d-406e-a014-437556822319.jpg"
-                    />
-                  </td>
-                  <td>Kumaraguru College of Technology</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      src="assets/TAMILNADU/COIMBATORE/471eb99a-8caa-418e-948b-a840f357f004.jpg"
-                    />
-                  </td>
-                  <td>Adithya Institute Of Technology</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      src="assets/TAMILNADU/COIMBATORE/5d1c8401-7589-4b7c-8c2a-a6a4a2bc9b89.jpg"
-                    />
-                  </td>
-                  <td>Sri Ramakrishna Institute of Technology</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      src="assets/TAMILNADU/COIMBATORE/8bf4522c-03ad-4262-91c0-df8db73d2d00.jpg"
-                    />
-                  </td>
-                  <td>Hindusthan College of Engineering and Technology</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      src="assets/TAMILNADU/COIMBATORE/c1551810-7977-47f6-b8a6-af0ef4542ea1.jpg"
-                    />
-                  </td>
-                  <td>KPR Institute of Engineering and Technology</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      src="assets/TAMILNADU/COIMBATORE/cbb404af-a9ac-495d-ad34-a483c52878e2.jpg"
-                    />
-                  </td>
-                  <td>Sri Ramakrishna Engineering College</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      src="assets/TAMILNADU/COIMBATORE/e4511e31-4358-46d0-80e7-4cd3435408de.jpg"
-                    />
-                  </td>
-                  <td>Sri Krishna Collge of Engineering and Technology</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div style="overflow-x: auto; width: 100%">
-            <table id="MADURAI" class="college-table">
-              <tbody>
-                <tr>
-                  <th
-                    colspan="2"
-                    style="width: 200px; text-align: center; font-size: 14px"
-                  >
-                    College
-                  </th>
-                  <th style="font-size: 14px; text-align: center">SPOC</th>
-                  <th style="font-size: 14px; text-align: center">Email</th>
-                  <th style="font-size: 14px; text-align: center">Phone no</th>
-                  <th style="font-size: 14px; text-align: center">
-                    Registration Start
-                  </th>
-                  <th style="font-size: 14px; text-align: center">
-                    Registration End
-                  </th>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      src="assets/TAMILNADU/MADURAI/72578d52-391b-4489-b6bf-e0523aed9e9b.jpg"
-                    />
-                  </td>
-                  <td>Thiagarajar College of Engineering</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div style="overflow-x: auto; width: 100%">
-            <table id="SALEM" class="college-table">
-              <tbody>
-                <tr>
-                  <th
-                    colspan="2"
-                    style="width: 200px; text-align: center; font-size: 14px"
-                  >
-                    College
-                  </th>
-                  <th style="font-size: 14px; text-align: center">SPOC</th>
-                  <th style="font-size: 14px; text-align: center">Email</th>
-                  <th style="font-size: 14px; text-align: center">Phone no</th>
-                  <th style="font-size: 13px; text-align: center">
-                    Registration Start
-                  </th>
-                  <th style="font-size: 13px; text-align: center">
-                    Registration End
-                  </th>
-                </tr>
-
-                <tr>
-                  <td>
-                    <img
-                      src="assets/TAMILNADU/SALEM/0706dd55-5d43-4ecf-9d15-320d51f0c7e5.jpg"
-                    />
-                  </td>
-                  <td>AVS Engineering College</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      src="assets/TAMILNADU/SALEM/205b616e-bb4a-4ec9-9e34-aa331f1a1ab9.jpg"
-                    />
-                  </td>
-                  <td>Knowledge Institute of Technology</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      src="assets/TAMILNADU/SALEM/2d7a8a7d-60c3-4913-8772-531687174e72.jpg"
-                    />
-                  </td>
-                  <td>Mahendra College of Engineering</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/TAMILNADU/SALEM/Gandhi.jpg" /></td>
-                  <td>Dhirajlal Gandhi College of Technology</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      src="assets/TAMILNADU/SALEM/9044da8b-be81-42fc-bc31-5efac1714f6b.jpg"
-                    />
-                  </td>
-                  <td>Excel Engineering College</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      src="assets/TAMILNADU/SALEM/aa506390-036d-4cb4-a4a8-328dbf80d7f0.jpg"
-                    />
-                  </td>
-                  <td>Salem College of Engineering and Technology</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      src="assets/TAMILNADU/SALEM/d0c0b2b0-886d-4142-925d-570d482d0a37.jpg"
-                    />
-                  </td>
-                  <td>Sona College of Technology</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+  <div class="card-container">
+    <!-- Tamil Nadu -->
+    <div class="card" onclick="toggleAnswer(this)">
+      <div class="card-title">TAMIL NADU</div>
+      <div class="card-content district-container">
+        <div class="card district" onclick="showLogos('CHENNAI', event)">
+          CHENNAI
         </div>
-      </div>
-      <!-- Telangana -->
-      <div class="card" onclick="toggleAnswer(this)">
-        <div class="card-title">TELANGANA</div>
-        <div class="card-content district-container">
-          <div class="card district" onclick="showLogos('HYDERABAD', event)">
-            HYDERABAD
-          </div>
-
-          <!-- Table for Hyderabad -->
-          <div style="overflow-x: auto; width: 100%">
-            <table id="HYDERABAD" class="college-table">
-              <tbody>
-                <tr>
-                  <th
-                    colspan="2"
-                    style="width: 200px; text-align: center; font-size: 14px"
-                  >
-                    College
-                  </th>
-                  <th style="font-size: 14px; text-align: center">SPOC</th>
-                  <th style="font-size: 14px; text-align: center">Email</th>
-                  <th style="font-size: 14px; text-align: center">Phone no</th>
-                  <th style="font-size: 13px; text-align: center">
-                    Registration Start
-                  </th>
-                  <th style="font-size: 13px; text-align: center">
-                    Registration End
-                  </th>
-                </tr>
-                <tr>
-                  <td><img src="assets/TELUGANA/HYDERABAD/H1.jfif" /></td>
-                  <td>Chaitanya Bharathi Institute of Technology</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/TELUGANA/HYDERABAD/H2.jfif" /></td>
-                  <td>Malla Reddy Engineering College</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/TELUGANA/HYDERABAD/H3.jfif" /></td>
-                  <td>VNR VJIET</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img src="assets/TELUGANA/HYDERABAD/VARDHAMAN.jpeg" />
-                  </td>
-                  <td>Vardhaman College of Engineering</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/TELUGANA/HYDERABAD/VASAVI.jpg" /></td>
-                  <td>Vasavi College of Engineering</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/TELUGANA/HYDERABAD/H6.jfif" /></td>
-                  <td>GNITS</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <div class="card district" onclick="showLogos('COIMBATORE', event)">
+          COIMBATORE
         </div>
-      </div>
-      <div class="card" onclick="toggleAnswer(this)">
-        <div class="card-title">KERALA</div>
-        <div class="card-content district-container">
-          <div class="card district" onclick="showLogos('COCHIN', event)">
-            COCHIN
-          </div>
-          <div style="overflow-x: auto; width: 100%">
-            <table id="COCHIN" class="college-table">
-              <tbody>
-                <tr>
-                  <th
-                    colspan="2"
-                    style="width: 200px; text-align: center; font-size: 14px"
-                  >
-                    College
-                  </th>
-                  <th style="font-size: 14px; text-align: center">SPOC</th>
-                  <th style="font-size: 14px; text-align: center">Email</th>
-                  <th style="font-size: 14px; text-align: center">Phone no</th>
-                  <th style="font-size: 13px; text-align: center">
-                    Registration Start
-                  </th>
-                  <th style="font-size: 13px; text-align: center">
-                    Registration End
-                  </th>
-                </tr>
-                <tr>
-                  <td><img src="assets/KERALA/COCHIN/K1.jfif" /></td>
-                  <td>Amal Jyothi College of Engineering</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/KERALA/COCHIN/AISAT.jpg" /></td>
-                  <td>Albertian Engineering</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/KERALA/COCHIN/AISAT.jpg" /></td>
-                  <td>Albertian Institute of Science & Technology</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/KERALA/COCHIN/K4.jfif" /></td>
-                  <td>College of Engineering, Cherthala</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/KERALA/COCHIN/K5.jfif" /></td>
-                  <td>College of Engineering, Chengannoor</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/KERALA/COCHIN/K6.jfif" /></td>
-                  <td>College of Engineering, Kalloopara</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/KERALA/COCHIN/K7.jfif" /></td>
-                  <td>College of Engineering, Poonjar</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/KERALA/COCHIN/coc2.jpg" /></td>
-                  <td>Cochin University of Science and Technology</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/KERALA/COCHIN/KRIS.jpg" /></td>
-                  <td>Kristhujyothi College of Management</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/KERALA/COCHIN/K10.jfif" /></td>
-                  <td>Saintgits College of Engineering</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/KERALA/COCHIN/K11.jfif" /></td>
-                  <td>Sree Narayana Gurukulam College of Engineering</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/KERALA/COCHIN/K12.jfif" /></td>
-                  <td>Toc H Institute of Science & Technology (TIST)</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <div class="card district" onclick="showLogos('MADURAI', event)">
+          MADURAI
         </div>
-      </div>
-
-      <div class="card" onclick="toggleAnswer(this)">
-        <div class="card-title">KARNATAKA</div>
-        <div class="card-content district-container">
-          <div class="card district" onclick="showLogos('BANGALORE', event)">
-            BANGALORE
-          </div>
-          <div class="card district" onclick="showLogos('HUBLI', event)">
-            HUBLI
-          </div>
-          <div class="card district" onclick="showLogos('MANGALORE', event)">
-            MANGALORE
-          </div>
-          <div class="card district" onclick="showLogos('MYSORE', event)">
-            MYSORE
-          </div>
-          <div style="overflow-x: auto; width: 100%">
-            <table id="BANGALORE" class="college-table">
-              <tbody>
-                <tr>
-                  <th
-                    colspan="2"
-                    style="width: 200px; text-align: center; font-size: 14px"
-                  >
-                    College
-                  </th>
-                  <th style="font-size: 14px; text-align: center">SPOC</th>
-                  <th style="font-size: 14px; text-align: center">Email</th>
-                  <th style="font-size: 14px; text-align: center">Phone no</th>
-                  <th style="font-size: 13px; text-align: center">
-                    Registration Start
-                  </th>
-                  <th style="font-size: 13px; text-align: center">
-                    Registration End
-                  </th>
-                </tr>
-                <tr>
-                  <td><img src="assets/KARNATAKA/BANGALORE/B1.jfif" /></td>
-                  <td>Sambhram Institute of Technology</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/KARNATAKA/BANGALORE/B2.jfif" /></td>
-                  <td>BMS College of Engineering</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/KARNATAKA/BANGALORE/B3.jfif" /></td>
-                  <td>Cambridge Group of Institutions</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/KARNATAKA/BANGALORE/B4.jfif" /></td>
-                  <td>Christ University</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/KARNATAKA/BANGALORE/B5.jfif" /></td>
-                  <td>East Point College of Engineering</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/KARNATAKA/BANGALORE/B6.jfif" /></td>
-                  <td>Garden City University</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/KARNATAKA/BANGALORE/B7.jfif" /></td>
-                  <td>Jyothi Engineering College</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/KARNATAKA/BANGALORE/B8.jfif" /></td>
-                  <td>Kristu Jayanti College</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/KARNATAKA/BANGALORE/B11.jfif" /></td>
-                  <td>Nitte Meenakshi Institute of Technology</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/KARNATAKA/BANGALORE/B13.jfif" /></td>
-                  <td>Presidency College</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/KARNATAKA/BANGALORE/B14.jfif" /></td>
-                  <td>Reva University</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/KARNATAKA/BANGALORE/B15.jfif" /></td>
-                  <td>RV College of Engineering</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/KARNATAKA/BANGALORE/RAMAYA.jpg" /></td>
-                  <td>MS Ramaiah Institute of Technology</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img src="assets/KARNATAKA/BANGALORE/nagarjuna.jpg" />
-                  </td>
-                  <td>Nagarjuna College of Engineering and Technology</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/KARNATAKA/BANGALORE/PES.jpg" /></td>
-                  <td>PES University Main Campus</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-
-                <tr>
-                  <td><img src="assets/KARNATAKA/BANGALORE/PES.jpg" /></td>
-                  <td>PES University South Campus</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-
-                <tr>
-                  <td><img src="assets/KARNATAKA/BANGALORE/RV.jpg" /></td>
-                  <td>RV University</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div style="overflow-x: auto; width: 100%">
-            <table id="HUBLI" class="college-table">
-              <tbody>
-                <tr>
-                  <th
-                    colspan="2"
-                    style="width: 200px; text-align: center; font-size: 14px"
-                  >
-                    College
-                  </th>
-                  <th style="font-size: 14px; text-align: center">SPOC</th>
-                  <th style="font-size: 14px; text-align: center">Email</th>
-                  <th style="font-size: 14px; text-align: center">Phone no</th>
-                  <th style="font-size: 13px; text-align: center">
-                    Registration Start
-                  </th>
-                  <th style="font-size: 13px; text-align: center">
-                    Registration End
-                  </th>
-                </tr>
-                <tr>
-                  <td><img src="assets/KARNATAKA/HUBLI/H1.jfif" /></td>
-                  <td>KLE Technological University</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div style="overflow-x: auto; width: 100%">
-            <table id="MANGALORE" class="college-table">
-              <tbody>
-                <tr>
-                  <th
-                    colspan="2"
-                    style="width: 200px; text-align: center; font-size: 14px"
-                  >
-                    College
-                  </th>
-                  <th style="font-size: 14px; text-align: center">SPOC</th>
-                  <th style="font-size: 14px; text-align: center">Email</th>
-                  <th style="font-size: 14px; text-align: center">Phone no</th>
-                  <th style="font-size: 13px; text-align: center">
-                    Registration Start
-                  </th>
-                  <th style="font-size: 13px; text-align: center">
-                    Registration End
-                  </th>
-                </tr>
-                <tr>
-                  <td><img src="assets/KARNATAKA/MANGALORE/MITE.jpg" /></td>
-                  <td>Mangalore Institute of Technology and Engineering</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-
-                <tr>
-                  <td><img src="assets\KARNATAKA\MANGALORE\NITTE.jpg" /></td>
-                  <td>NITTE University</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-
-                <tr>
-                  <td><img src="assets/KARNATAKA/MANGALORE/ST.jpg" /></td>
-                  <td>St. Aloysius</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      src="assets/KARNATAKA/MANGALORE/mangalore university.jpg"
-                    />
-                  </td>
-                  <td>Mangalore University</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/KARNATAKA/MANGALORE/manipal.jpg" /></td>
-                  <td>Manipal Institute of Technology</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img src="assets/KARNATAKA/MANGALORE/st joseph.jpg" />
-                  </td>
-                  <td>St Joseph Engineering College</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/KARNATAKA/MANGALORE/M6.jfif" /></td>
-                  <td>Canara College</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/KARNATAKA/MANGALORE/M7.jfif" /></td>
-                  <td>Yenepoya Institute of Technology</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/KARNATAKA/MANGALORE/M8.jfif" /></td>
-                  <td>Srinivas University</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/KARNATAKA/MANGALORE/M10.jfif" /></td>
-                  <td>Sahyadri College of Ebgineering & Management</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/KARNATAKA/MANGALORE/M11.jfif" /></td>
-                  <td>Alvas Engineerign College</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/KARNATAKA/MANGALORE/M12.jfif" /></td>
-                  <td>Shree Devi Institute of Technology (SDIT)</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/KARNATAKA/MANGALORE/M13.jfif" /></td>
-                  <td>P. A. College of Engineering (PACE) Mangalore</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div style="overflow-x: auto; width: 100%">
-            <table id="MYSORE" class="college-table">
-              <tbody>
-                <tr>
-                  <th
-                    colspan="2"
-                    style="width: 200px; text-align: center; font-size: 14px"
-                  >
-                    College
-                  </th>
-                  <th style="font-size: 14px; text-align: center">SPOC</th>
-                  <th style="font-size: 14px; text-align: center">Email</th>
-                  <th style="font-size: 14px; text-align: center">Phone no</th>
-                  <th style="font-size: 13px; text-align: center">
-                    Registration Start
-                  </th>
-                  <th style="font-size: 13px; text-align: center">
-                    Registration End
-                  </th>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      src="assets/KARNATAKA/MYSORE/UNIVERSITY OF MYSORE 1.png"
-                    />
-                  </td>
-                  <td>University of Mysore</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      src="assets/KARNATAKA/MYSORE/NIE FIRST GRADE MYSORE.png"
-                    />
-                  </td>
-                  <td>N.I.E. First Grade College</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      src="assets/KARNATAKA/MYSORE/MES FIRST GRADE CLG.png"
-                    />
-                  </td>
-                  <td>M.E.S. First Grade College</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      src="assets/KARNATAKA/MYSORE/UNIVERSITY OF MYSORE 2.png"
-                    />
-                  </td>
-                  <td>Bahadur Institute of Management Sciences (BIMS)</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/KARNATAKA/MYSORE/MY2.jfif" /></td>
-                  <td>Saradavilas FGC Mysore</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/KARNATAKA/MYSORE/MY3.jfif" /></td>
-                  <td>Mysore Makkala Koota and Sri</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/KARNATAKA/MYSORE/MY4.jfif" /></td>
-                  <td>Dharmasthala Manjunatheswara College for Women</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-
-                <tr>
-                  <td><img src="assets/KARNATAKA/MYSORE/MY7.jfif" /></td>
-                  <td>Vidya Vikas collage of enginnering</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/KARNATAKA/MYSORE/MY8.jfif" /></td>
-                  <td>Teresian Collage</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/KARNATAKA/MYSORE/MY9.jfif" /></td>
-                  <td>GSSS Institute of Engineering & Technology for Women</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/KARNATAKA/MYSORE/MY11.jfif" /></td>
-                  <td>Vidyavardhaka FGC, Mysore</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/KARNATAKA/MYSORE/MY12.jfif" /></td>
-                  <td>JSS women's collage</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <div class="card district" onclick="showLogos('SALEM', event)">
+          SALEM
         </div>
-      </div>
 
-      <div class="card" onclick="toggleAnswer(this)">
-        <div class="card-title">GOA</div>
-        <div class="card-content district-container">
-          <div class="card district" onclick="showLogos('GOA(NORTH)', event)">
-            GOA(NORTH)
-          </div>
-          <div class="card district" onclick="showLogos('GOA(SOUTH)',event)">
-            GOA(SOUTH)
-          </div>
-          <div style="overflow-x: auto; width: 100%">
-            <table id="GOA(NORTH)" class="college-table">
-              <tbody>
-                <tr>
-                  <th
-                    colspan="2"
-                    style="width: 200px; text-align: center; font-size: 14px"
-                  >
-                    College
-                  </th>
-                  <th style="font-size: 14px; text-align: center">SPOC</th>
-                  <th style="font-size: 14px; text-align: center">Email</th>
-                  <th style="font-size: 14px; text-align: center">Phone no</th>
-                  <th style="font-size: 13px; text-align: center">
-                    Registration Start
-                  </th>
-                  <th style="font-size: 13px; text-align: center">
-                    Registration End
-                  </th>
-                </tr>
-                <tr>
-                  <td><img src="assets/GOA/GOA(NORTH)/mandre.jpg" /></td>
-                  <td>
-                    VP’s Mandre College of Commerce, Economics and Management,
-                    Mandre, Goa
-                  </td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/GOA/GOA(NORTH)/rosaray.jpg" /></td>
-                  <td>Rosary College of Commerce and Arts</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/GOA/GOA(NORTH)/agnel.jpg" /></td>
-                  <td>AGNEL INSTITUTE OF FOOD CRAFT'S & CULINARY SCIENCES</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img src="assets/GOA/GOA(NORTH)/narayan zantye.jpg" />
-                  </td>
-                  <td>Narayan Zantye College of Commerce Bicholim Goa</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/GOA/GOA(NORTH)/gov college .jpg" /></td>
-                  <td>
-                    Government College of Arts Science and Commerce Quepem
-                  </td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/GOA/GOA(NORTH)/vasant joshi.jpg" /></td>
-                  <td>MES Vasant Joshi College of Arts and Commerce</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/GOA/GOA(NORTH)/agnel design.jpg" /></td>
-                  <td>Agnel Instiute of Technology and Design</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
+        <!-- Tables for Tamil Nadu Districts -->
+        <div style="overflow-x: auto; width: 100%;">
+          <table id="CHENNAI" class="college-table">
+            <tbody>
+              <tr>
+                <th colspan="2" style="width: 200px; text-align: center; font-size:14px;">College</th>
+                <th style="font-size:14px; text-align: center;">SPOC</th>
+                <th style="font-size:14px; text-align: center;">Email</th>
+                <th style="font-size:14px; text-align: center;">Phone no</th>
+                <th style="font-size:13px; text-align:center;">Registration Start</th>
+                <th style="font-size:13px; text-align:center;">Registration End</th>
+              </tr>
+              <tr>
 
-                <tr>
-                  <td><img src="assets\GOA\GOA(NORTH)\g-2.jpg" /></td>
-                  <td>Dnyanprassarak Mandal's College and Research Centre</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets\GOA\GOA(NORTH)\g-5.jpg" /></td>
-                  <td>Don Bosco College of Engineering</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets\GOA\GOA(NORTH)\g-6.jpg" /></td>
-                  <td>
-                    Harmal Panchakroshi Shikshan Madal's Ganpat Parsekar College
-                    of Education, Vidya Sankul, Bhom Plateau, Harmal, Pernem,
-                    Goa.
-                  </td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets\GOA\GOA(NORTH)\g-9.jpg" /></td>
-                  <td>Institute of Shipbuilding Technology Goa</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets\GOA\GOA(NORTH)\g-11.jpg" /></td>
-                  <td>
-                    Govt college of Arts Science and Commerce Khandola Marcela
-                    Goa
-                  </td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets\GOA\GOA(NORTH)\g-13.jpg" /></td>
-                  <td>Padre Conceicao College of Engineering</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets\GOA\GOA(NORTH)\g-14.jpeg" /></td>
-                  <td>SPES’S Goa Multi-Faculty College</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div style="overflow-x: auto; width: 100%">
-            <table id="GOA(SOUTH)" class="college-table">
-              <tbody>
-                <tr>
-                  <th
-                    colspan="2"
-                    style="width: 200px; text-align: center; font-size: 14px"
-                  >
-                    College
-                  </th>
-                  <th style="font-size: 14px; text-align: center">SPOC</th>
-                  <th style="font-size: 14px; text-align: center">Email</th>
-                  <th style="font-size: 14px; text-align: center">Phone no</th>
-                  <th style="font-size: 13px; text-align: center">
-                    Registration Start
-                  </th>
-                  <th style="font-size: 13px; text-align: center">
-                    Registration End
-                  </th>
-                </tr>
-                <tr>
-                  <td>
-                    <img src="assets/GOA/GOA(SOUTH)/GOVT PANAJI GOA.png" />
-                  </td>
-                  <td>Government Polytechnic Panaji</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/GOA/GOA(SOUTH)/rayeshwar1.jpg" /></td>
-                  <td>
-                    Shree Rayeshwar Institute of Engineering and Information
-                    Technology
-                  </td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/GOA/GOA(SOUTH)/vasco.jpg" /></td>
-                  <td>VASCO GOVERNMENT INDUSTRIAL TRAINING INSTITUTE</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img src="assets/GOA/GOA(SOUTH)/AGNEL GOA SOUTH.png" />
-                  </td>
-                  <td>Fr.Agnel College of Arts and Commerce, Pilar, Goa</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/GOA/GOA(SOUTH)/prabo goa.png" /></td>
-                  <td>
-                    Prabodhan Education Society's Vidya Prabodhini College of
-                    Commerce, Education Computer and Management Parvari-Goa
-                  </td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-
-                <tr>
-                  <td><img src="assets\GOA\GOA(SOUTH)\g-14.jpg" /></td>
-                  <td>
-                    Sant Sohirobanath Ambiye Government College of Arts and
-                    Commerce Virnoda, Pernem- Goa
-                  </td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets\GOA\GOA(SOUTH)\g-17.jpg" /></td>
-                  <td>Don Bosco College of Engineering</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets\GOA\GOA(SOUTH)\g-18.jpg" /></td>
-                  <td>Government Polytechnic Curchorem</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets\GOA\GOA(SOUTH)\g-19.jpg" /></td>
-                  <td>
-                    VVM’s SHREE DAMODAR COLLEGE OF COMMERCE & ECONOMICS, MARGAO-
-                    GOA
-                  </td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets\GOA\GOA(SOUTH)\g-22.jpg" /></td>
-                  <td>
-                    DCT’ Srinivassa Sinai Dempo College of Commerce and
-                    Economics
-                  </td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+                <td>
+                  <img src="assets/TAMILNADU/CHENNAI/29a0357c-c6d9-4740-9b93-eea14ee4b806.jpg" />
+                </td>
+                <td>
+                  Velammal Engineering College</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="assets/TAMILNADU/CHENNAI/5de90759-3c28-46d1-b62f-f107ccf0b646.jpg" />
+                </td>
+                <td>Chennai Institute of Technology</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="assets/TAMILNADU/CHENNAI/625a4086-9e5c-4496-8971-aef23a0ea5e9.jpg" />
+                </td>
+                <td>Sri Sairam Engineering College</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/TAMILNADU/CHENNAI/SRM.jpg" /></td>
+                <td>SRM University</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/TAMILNADU/CHENNAI/cresant.jpeg" /></td>
+                <td>
+                  B. S. Abdur Rahman Crescent Institute Of Science And
+                  Technology
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/TAMILNADU/CHENNAI/SSN.jpg" /></td>
+                <td>SSN College of Engineering</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="assets/TAMILNADU/CHENNAI/e1aadf5a-7264-4189-aee5-af85a8409123.jpg" />
+                </td>
+                <td>Vellore Institute of Technology</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="assets/TAMILNADU/CHENNAI/fa015ee2-6c66-4103-b107-f1e424703556.jpg" />
+                </td>
+                <td>
+                  Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science
+                  and Technology
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-      </div>
+        <div style="overflow-x: auto; width: 100%;">
+          <table id="COIMBATORE" class="college-table">
+            <tbody>
+              <tr>
+                <th colspan="2" style="width: 200px; text-align: center; font-size:14px;">College</th>
+                <th style="font-size:14px; text-align: center;">SPOC</th>
+                <th style="font-size:14px; text-align: center;">Email</th>
+                <th style="font-size:14px; text-align: center;">Phone no</th>
+                <th style="font-size:13px; text-align:center;">Registration Start</th>
+                <th style="font-size:13px; text-align:center;">Registration End</th>
+              </tr>
+              <tr>
 
-      <div class="card" onclick="toggleAnswer(this)">
-        <div class="card-title">ANDHRA PRADESH</div>
-        <div class="card-content district-container">
-          <div class="card district" onclick="showLogos('KURNOOL', event)">
-            KURNOOL
-          </div>
-          <div class="card district" onclick="showLogos('NELLORE', event)">
-            NELLORE
-          </div>
-          <div class="card district" onclick="showLogos('TIRUPATI', event)">
-            TIRUPATI
-          </div>
-          <div class="card district" onclick="showLogos('VIJAYAWADA', event)">
-            VIJAYAWADA
-          </div>
-          <div class="card district" onclick="showLogos('VIZAG', event)">
-            VIZAG
-          </div>
+                <td>
+                  <img src="assets/TAMILNADU/COIMBATORE/10b084e4-cefa-4037-8532-73d27e240996.jpg" />
+                </td>
+                <td>Dr.N.G.P Institute of Technology</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="assets/TAMILNADU/COIMBATORE/2b816069-501d-406e-a014-437556822319.jpg" />
+                </td>
+                <td>Kumaraguru College of Technology</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="assets/TAMILNADU/COIMBATORE/471eb99a-8caa-418e-948b-a840f357f004.jpg" />
+                </td>
+                <td>Adithya Institute Of Technology</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="assets/TAMILNADU/COIMBATORE/5d1c8401-7589-4b7c-8c2a-a6a4a2bc9b89.jpg" />
+                </td>
+                <td>Sri Ramakrishna Institute of Technology</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="assets/TAMILNADU/COIMBATORE/8bf4522c-03ad-4262-91c0-df8db73d2d00.jpg" />
+                </td>
+                <td>Hindusthan College of Engineering and Technology</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="assets/TAMILNADU/COIMBATORE/c1551810-7977-47f6-b8a6-af0ef4542ea1.jpg" />
+                </td>
+                <td>KPR Institute of Engineering and Technology</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="assets/TAMILNADU/COIMBATORE/cbb404af-a9ac-495d-ad34-a483c52878e2.jpg" />
+                </td>
+                <td>Sri Ramakrishna Engineering College</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="assets/TAMILNADU/COIMBATORE/e4511e31-4358-46d0-80e7-4cd3435408de.jpg" />
+                </td>
+                <td>Sri Krishna Collge of Engineering and Technology</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-          <div style="overflow-x: auto; width: 100%">
-            <table id="KURNOOL" class="college-table">
-              <tbody>
-                <tr>
-                  <th
-                    colspan="2"
-                    style="width: 200px; text-align: center; font-size: 14px"
-                  >
-                    College
-                  </th>
-                  <th style="font-size: 14px; text-align: center">SPOC</th>
-                  <th style="font-size: 14px; text-align: center">Email</th>
-                  <th style="font-size: 14px; text-align: center">Phone no</th>
-                  <th style="font-size: 14px; text-align: center">
-                    Registration Start
-                  </th>
-                  <th style="font-size: 14px; text-align: center">
-                    Registration End
-                  </th>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      src="assets/ANDHRA PRADHESH/KURNOOL/kurnool GIET.jpg"
-                    />
-                  </td>
-                  <td>Godavari Institute of Engineering and Technology</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img src="assets/ANDHRA PRADHESH/KURNOOL/gmrit.jpg" />
-                  </td>
-                  <td>GMR Institute of Technology</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets\ANDHRA PRADHESH\KURNOOL\K1.jfif" /></td>
-                  <td>Ashoka Women's Engineering College</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets\ANDHRA PRADHESH\KURNOOL\K3.jfif" /></td>
-                  <td>Vikas College of Engineering and Technology</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img src="assets/ANDHRA PRADHESH/KURNOOL/gmrit.jpg" />
-                  </td>
-                  <td>
-                    Vishaka Institue of Engineering and Technology College
-                  </td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets\ANDHRA PRADHESH\KURNOOL\K4.jfif" /></td>
-                  <td>NRI Institute of Technology</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets\ANDHRA PRADHESH\KURNOOL\K6.jfif" /></td>
-                  <td>Lakireddy Bali Reddy college of engineering</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets\ANDHRA PRADHESH\KURNOOL\K7.jfif" /></td>
-                  <td>Pragati Engineering College</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets\ANDHRA PRADHESH\KURNOOL\K9.jfif" /></td>
-                  <td>SRKR Engineering College</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets\ANDHRA PRADHESH\KURNOOL\K10.jfif" /></td>
-                  <td>Kallam Haranadhareddy Institute of Technology</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div style="overflow-x: auto; width: 100%">
-            <table id="NELLORE" class="college-table">
-              <tbody>
-                <tr>
-                  <th
-                    colspan="2"
-                    style="width: 200px; text-align: center; font-size: 14px"
-                  >
-                    College
-                  </th>
-                  <th style="font-size: 14px; text-align: center">SPOC</th>
-                  <th style="font-size: 14px; text-align: center">Email</th>
-                  <th style="font-size: 14px; text-align: center">Phone no</th>
-                  <th style="font-size: 13px; text-align: center">
-                    Registration Start
-                  </th>
-                  <th style="font-size: 13px; text-align: center">
-                    Registration End
-                  </th>
-                </tr>
-                <tr>
-                  <td><img src="assets\ANDHRA PRADHESH\NELLORE\N1.jfif" /></td>
-                  <td>Audisankara College of Engineering and Technology</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets\ANDHRA PRADHESH\NELLORE\N4.jfif" /></td>
-                  <td>
-                    Parvatha Reddy Babulreddy Visvodaya Institute of Technology
-                    and Science
-                  </td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets\ANDHRA PRADHESH\NELLORE\N4.jfif" /></td>
-                  <td>Visvodaya Engineering College</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets\ANDHRA PRADHESH\NELLORE\N5.jfif" /></td>
-                  <td>Gokula Krishna College of Engineering</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets\ANDHRA PRADHESH\NELLORE\N6.jfif" /></td>
-                  <td>Vikrama Simhapuri University</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      src="assets\ANDHRA PRADHESH\NELLORE\narayana eng clg nellore.png"
-                    />
-                  </td>
-                  <td>Narayana Engineering College (NEC, Nellore)</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      src="assets\ANDHRA PRADHESH\NELLORE\geeta nellore.png"
-                    />
-                  </td>
-                  <td>Geethanjali Institute of Science & Technology</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div style="overflow-x: auto; width: 100%">
-            <table id="TIRUPATI" class="college-table">
-              <tbody>
-                <tr>
-                  <th
-                    colspan="2"
-                    style="width: 200px; text-align: center; font-size: 14px"
-                  >
-                    College
-                  </th>
-                  <th style="font-size: 14px; text-align: center">SPOC</th>
-                  <th style="font-size: 14px; text-align: center">Email</th>
-                  <th style="font-size: 14px; text-align: center">Phone no</th>
-                  <th style="font-size: 13px; text-align: center">
-                    Registration Start
-                  </th>
-                  <th style="font-size: 13px; text-align: center">
-                    Registration End
-                  </th>
-                </tr>
-                <tr>
-                  <td><img src="assets\ANDHRA PRADHESH\TIRUPATI\T1.jfif" /></td>
-                  <td>Sri Venkateswara College of Engineering</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets\ANDHRA PRADHESH\TIRUPATI\T2.jfif" /></td>
-                  <td>Swetha Institute Of Technology and Science</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets\ANDHRA PRADHESH\TIRUPATI\T3.jfif" /></td>
-                  <td>Shree Institute of Technical Education</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets\ANDHRA PRADHESH\TIRUPATI\T4.jfif" /></td>
-                  <td>Annamacharya Institute of Technology and Sciences</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets\ANDHRA PRADHESH\TIRUPATI\T5.jfif" /></td>
-                  <td>Chadalawada Ramanamma Engineering College</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets\ANDHRA PRADHESH\TIRUPATI\T8.jpg" /></td>
-                  <td>Yogananda Institute of Technology and Science</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets\ANDHRA PRADHESH\TIRUPATI\T9.png" /></td>
-                  <td>SV University</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets\ANDHRA PRADHESH\TIRUPATI\kmm.jpg" /></td>
-                  <td>KMM Institute Of Technology And Science</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets/ANDHRA PRADHESH/TIRUPATI/mbu.jpg" /></td>
-                  <td>Mohanbabu University</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img src="assets\ANDHRA PRADHESH\TIRUPATI\sree rama.jpg" />
-                  </td>
-                  <td>Sree Rama Engineering College</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div style="overflow-x: auto; width: 100%">
-            <table id="VIJAYAWADA" class="college-table">
-              <tbody>
-                <tr>
-                  <th
-                    colspan="2"
-                    style="width: 200px; text-align: center; font-size: 14px"
-                  >
-                    College
-                  </th>
-                  <th style="font-size: 14px; text-align: center">SPOC</th>
-                  <th style="font-size: 14px; text-align: center">Email</th>
-                  <th style="font-size: 14px; text-align: center">Phone no</th>
-                  <th style="font-size: 13px; text-align: center">
-                    Registration Start
-                  </th>
-                  <th style="font-size: 13px; text-align: center">
-                    Registration End
-                  </th>
-                </tr>
-                <tr>
-                  <td>
-                    <img src="assets\ANDHRA PRADHESH\VIJAYAWADA\V1.jfif" />
-                  </td>
-                  <td>Prasad V Potluri Siddhartha Institute of Technology</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img src="assets\ANDHRA PRADHESH\VIJAYAWADA\V2.jfif" />
-                  </td>
-                  <td>Velagapudi Ramakrishna Siddhartha Engineering College</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img src="assets\ANDHRA PRADHESH\VIJAYAWADA\V3.jfif" />
-                  </td>
-                  <td>Andhra Loyola Institute of Engineering and Technology</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img src="assets\ANDHRA PRADHESH\VIJAYAWADA\V4.jfif" />
-                  </td>
-                  <td>Potti Sriramulu College Of Engineering And Technology</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img src="assets\ANDHRA PRADHESH\VIJAYAWADA\V5.jfif" />
-                  </td>
-                  <td>Chalapthi Institue of Technology</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img src="assets\ANDHRA PRADHESH\VIJAYAWADA\V6.jfif" />
-                  </td>
-                  <td>SRM University</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <div style="overflow-x: auto; width: 100%;">
+          <table id="MADURAI" class="college-table">
+            <tbody>
+              <tr>
+                <th colspan="2" style="width: 200px; text-align: center; font-size:14px;">College</th>
+                <th style="font-size:14px; text-align: center;">SPOC</th>
+                <th style="font-size:14px; text-align: center;">Email</th>
+                <th style="font-size:14px; text-align: center;">Phone no</th>
+                <th style="font-size:14px; text-align:center;">Registration Start</th>
+                <th style="font-size:14px; text-align:center;">Registration End</th>
+              </tr>
+              <tr>
+                <td>
+                  <img src="assets/TAMILNADU/MADURAI/72578d52-391b-4489-b6bf-e0523aed9e9b.jpg" />
+                </td>
+                <td>Thiagarajar College of Engineering</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="overflow-x: auto; width: 100%;">
+          <table id="SALEM" class="college-table">
+            <tbody>
+              <tr>
+                <th colspan="2" style="width: 200px; text-align: center; font-size:14px;">College</th>
+                <th style="font-size:14px; text-align: center;">SPOC</th>
+                <th style="font-size:14px; text-align: center;">Email</th>
+                <th style="font-size:14px; text-align: center;">Phone no</th>
+                <th style="font-size:13px; text-align:center;">Registration Start</th>
+                <th style="font-size:13px; text-align:center;">Registration End</th>
+              <tr>
 
-          <div style="overflow-x: auto; width: 100%">
-            <table id="VIZAG" class="college-table">
-              <tbody>
-                <tr>
-                  <th
-                    colspan="2"
-                    style="width: 200px; text-align: center; font-size: 14px"
-                  >
-                    College
-                  </th>
-                  <th style="font-size: 14px; text-align: center">SPOC</th>
-                  <th style="font-size: 14px; text-align: center">Email</th>
-                  <th style="font-size: 14px; text-align: center">Phone no</th>
-                  <th style="font-size: 13px; text-align: center">
-                    Registration Start
-                  </th>
-                  <th style="font-size: 13px; text-align: center">
-                    Registration End
-                  </th>
-                </tr>
-
-                <tr>
-                  <td><img src="assets\ANDHRA PRADHESH\VIZAG\V1.jfif" /></td>
-                  <td>Andhra University</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets\ANDHRA PRADHESH\VIZAG\V2.jfif" /></td>
-                  <td>Vignan's Institute of Information Technology</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets\ANDHRA PRADHESH\VIZAG\V3.jfif" /></td>
-                  <td>Raghu Engineering College</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets\ANDHRA PRADHESH\VIZAG\V4.jfif" /></td>
-                  <td>Gayatri Vidya Parishad College of Engineering</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets\ANDHRA PRADHESH\VIZAG\V5.jfif" /></td>
-                  <td>GITAM School of Technology</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets\ANDHRA PRADHESH\VIZAG\V6.jfif" /></td>
-                  <td>Avanthi Institute of Engineering and Technology</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets\ANDHRA PRADHESH\VIZAG\V7.jfif" /></td>
-                  <td>Vishaka Institue of Engineering and Technology</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><img src="assets\ANDHRA PRADHESH\VIZAG\V8.jfif" /></td>
-                  <td>Pragathi Engineering College</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+                <td>
+                  <img src="assets/TAMILNADU/SALEM/0706dd55-5d43-4ecf-9d15-320d51f0c7e5.jpg" />
+                </td>
+                <td>AVS Engineering College</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="assets/TAMILNADU/SALEM/205b616e-bb4a-4ec9-9e34-aa331f1a1ab9.jpg" />
+                </td>
+                <td>Knowledge Institute of Technology</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="assets/TAMILNADU/SALEM/2d7a8a7d-60c3-4913-8772-531687174e72.jpg" />
+                </td>
+                <td>Mahendra College of Engineering</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/TAMILNADU/SALEM/Gandhi.jpg" /></td>
+                <td>Dhirajlal Gandhi College of Technology</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="assets/TAMILNADU/SALEM/9044da8b-be81-42fc-bc31-5efac1714f6b.jpg" />
+                </td>
+                <td>Excel Engineering College</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="assets/TAMILNADU/SALEM/aa506390-036d-4cb4-a4a8-328dbf80d7f0.jpg" />
+                </td>
+                <td>Salem College of Engineering and Technology</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="assets/TAMILNADU/SALEM/d0c0b2b0-886d-4142-925d-570d482d0a37.jpg" />
+                </td>
+                <td>Sona College of Technology</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
-    <br />
-    <footer
-      class="text-center text-white py-3"
-      style="background-color: rgba(28, 28, 28, 0.95)"
-    >
-      <div
-        style="
+    <!-- Telangana -->
+    <div class="card" onclick="toggleAnswer(this)">
+      <div class="card-title">TELANGANA</div>
+      <div class="card-content district-container">
+        <div class="card district" onclick="showLogos('HYDERABAD', event)">
+          HYDERABAD
+        </div>
+
+        <!-- Table for Hyderabad -->
+        <div style="overflow-x: auto; width: 100%;">
+          <table id="HYDERABAD" class="college-table">
+            <tbody>
+              <tr>
+                <th colspan="2" style="width: 200px; text-align: center; font-size:14px;">College</th>
+                <th style="font-size:14px; text-align: center;">SPOC</th>
+                <th style="font-size:14px; text-align: center;">Email</th>
+                <th style="font-size:14px; text-align: center;">Phone no</th>
+                <th style="font-size:13px; text-align:center;">Registration Start</th>
+                <th style="font-size:13px; text-align:center;">Registration End</th>
+              </tr>
+              <tr>
+
+                <td><img src="assets/TELUGANA/HYDERABAD/H1.jfif" /></td>
+                <td>Chaitanya Bharathi Institute of Technology</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/TELUGANA/HYDERABAD/H2.jfif" /></td>
+                <td>Malla Reddy Engineering College</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/TELUGANA/HYDERABAD/H3.jfif" /></td>
+                <td>VNR VJIET</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/TELUGANA/HYDERABAD/VARDHAMAN.jpeg" /></td>
+                <td>Vardhaman College of Engineering</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/TELUGANA/HYDERABAD/VASAVI.jpg" /></td>
+                <td>Vasavi College of Engineering</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/TELUGANA/HYDERABAD/H6.jfif" /></td>
+                <td>GNITS</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="card" onclick="toggleAnswer(this)">
+      <div class="card-title">KERALA</div>
+      <div class="card-content district-container">
+        <div class="card district" onclick="showLogos('COCHIN', event)">
+          COCHIN
+        </div>
+        <div style="overflow-x: auto; width: 100%;">
+          <table id="COCHIN" class="college-table">
+            <tbody>
+              <tr>
+                <th colspan="2" style="width: 200px; text-align: center; font-size:14px;">College</th>
+                <th style="font-size:14px; text-align: center;">SPOC</th>
+                <th style="font-size:14px; text-align: center;">Email</th>
+                <th style="font-size:14px; text-align: center;">Phone no</th>
+                <th style="font-size:13px; text-align:center;">Registration Start</th>
+                <th style="font-size:13px; text-align:center;">Registration End</th>
+              </tr>
+              <tr>
+                <td><img src="assets/KERALA/COCHIN/K1.jfif" /></td>
+                <td>Amal Jyothi College of Engineering</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KERALA/COCHIN/AISAT.jpg" /></td>
+                <td>Albertian Engineering</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KERALA/COCHIN/AISAT.jpg" /></td>
+                <td>Albertian Institute of Science & Technology</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KERALA/COCHIN/K4.jfif" /></td>
+                <td>College of Engineering, Cherthala</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KERALA/COCHIN/K5.jfif" /></td>
+                <td>College of Engineering, Chengannoor</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KERALA/COCHIN/K6.jfif" /></td>
+                <td>College of Engineering, Kalloopara</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KERALA/COCHIN/K7.jfif" /></td>
+                <td>College of Engineering, Poonjar</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KERALA/COCHIN/coc2.jpg" /></td>
+                <td>Cochin University of Science and Technology</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KERALA/COCHIN/KRIS.jpg" /></td>
+                <td>Kristhujyothi College of Management</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KERALA/COCHIN/K10.jfif" /></td>
+                <td>Saintgits College of Engineering</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KERALA/COCHIN/K11.jfif" /></td>
+                <td>Sree Narayana Gurukulam College of Engineering</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KERALA/COCHIN/K12.jfif" /></td>
+                <td>Toc H Institute of Science & Technology (TIST)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleAnswer(this)">
+      <div class="card-title">KARNATAKA</div>
+      <div class="card-content district-container">
+        <div class="card district" onclick="showLogos('BANGALORE', event)">
+          BANGALORE
+        </div>
+        <div class="card district" onclick="showLogos('HUBLI', event)">
+          HUBLI
+        </div>
+        <div class="card district" onclick="showLogos('MANGALORE', event)">
+          MANGALORE
+        </div>
+        <div class="card district" onclick="showLogos('MYSORE', event)">
+          MYSORE
+        </div>
+        <div style="overflow-x: auto; width: 100%;">
+          <table id="BANGALORE" class="college-table">
+            <tbody>
+              <tr>
+                <th colspan="2" style="width: 200px; text-align: center; font-size:14px;">College</th>
+                <th style="font-size:14px; text-align: center;">SPOC</th>
+                <th style="font-size:14px; text-align: center;">Email</th>
+                <th style="font-size:14px; text-align: center;">Phone no</th>
+                <th style="font-size:13px; text-align:center;">Registration Start</th>
+                <th style="font-size:13px; text-align:center;">Registration End</th>
+              </tr>
+              <tr>
+                <td><img src="assets/KARNATAKA/BANGALORE/B1.jfif" /></td>
+                <td>Sambhram Institute of Technology</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KARNATAKA/BANGALORE/B2.jfif" /></td>
+                <td>BMS College of Engineering</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KARNATAKA/BANGALORE/B3.jfif" /></td>
+                <td>Cambridge Group of Institutions</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KARNATAKA/BANGALORE/B4.jfif" /></td>
+                <td>Christ University</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KARNATAKA/BANGALORE/B5.jfif" /></td>
+                <td>East Point College of Engineering</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KARNATAKA/BANGALORE/B6.jfif" /></td>
+                <td>Garden City University</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KARNATAKA/BANGALORE/B7.jfif" /></td>
+                <td>Jyothi Engineering College</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KARNATAKA/BANGALORE/B8.jfif" /></td>
+                <td>Kristu Jayanti College</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KARNATAKA/BANGALORE/B11.jfif" /></td>
+                <td>Nitte Meenakshi Institute of Technology</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KARNATAKA/BANGALORE/B13.jfif" /></td>
+                <td>Presidency College</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KARNATAKA/BANGALORE/B14.jfif" /></td>
+                <td>Reva University</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KARNATAKA/BANGALORE/B15.jfif" /></td>
+                <td>RV College of Engineering</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KARNATAKA/BANGALORE/RAMAYA.jpg" /></td>
+                <td>MS Ramaiah Institute of Technology</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KARNATAKA/BANGALORE/nagarjuna.jpg" /></td>
+                <td>Nagarjuna College of Engineering and Technology</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KARNATAKA/BANGALORE/PES.jpg" /></td>
+                <td>PES University Main Campus</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+
+              <tr>
+                <td><img src="assets/KARNATAKA/BANGALORE/PES.jpg" /></td>
+                <td>PES University South Campus</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+
+              <tr>
+                <td><img src="assets/KARNATAKA/BANGALORE/RV.jpg" /></td>
+                <td>RV University</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="overflow-x: auto; width: 100%;">
+          <table id="HUBLI" class="college-table">
+            <tbody>
+              <tr>
+                <th colspan="2" style="width: 200px; text-align: center; font-size:14px;">College</th>
+                <th style="font-size:14px; text-align: center;">SPOC</th>
+                <th style="font-size:14px; text-align: center;">Email</th>
+                <th style="font-size:14px; text-align: center;">Phone no</th>
+                <th style="font-size:13px; text-align:center;">Registration Start</th>
+                <th style="font-size:13px; text-align:center;">Registration End</th>
+              </tr>
+              <tr>
+                <td><img src="assets/KARNATAKA/HUBLI/H1.jfif" /></td>
+                <td>KLE Technological University</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="overflow-x: auto; width: 100%;">
+
+          <table id="MANGALORE" class="college-table">
+            <tbody>
+              <tr>
+                <th colspan="2" style="width: 200px; text-align: center; font-size:14px;">College</th>
+                <th style="font-size:14px; text-align: center;">SPOC</th>
+                <th style="font-size:14px; text-align: center;">Email</th>
+                <th style="font-size:14px; text-align: center;">Phone no</th>
+                <th style="font-size:13px; text-align:center;">Registration Start</th>
+                <th style="font-size:13px; text-align:center;">Registration End</th>
+              </tr>
+              <tr>
+                <td><img src="assets/KARNATAKA/MANGALORE/MITE.jpg" /></td>
+                <td>Mangalore Institute of Technology and Engineering</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+
+              <tr>
+                <td><img src="assets\KARNATAKA\MANGALORE\NITTE.jpg" /></td>
+                <td>NITTE University</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+
+              <tr>
+                <td><img src="assets/KARNATAKA/MANGALORE/ST.jpg" /></td>
+                <td>St. Aloysius</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="assets/KARNATAKA/MANGALORE/mangalore university.jpg" />
+                </td>
+                <td>Mangalore University</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KARNATAKA/MANGALORE/manipal.jpg" /></td>
+                <td>Manipal Institute of Technology</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KARNATAKA/MANGALORE/st joseph.jpg" /></td>
+                <td>St Joseph Engineering College</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KARNATAKA/MANGALORE/M6.jfif" /></td>
+                <td>Canara College</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KARNATAKA/MANGALORE/M7.jfif" /></td>
+                <td>Yenepoya Institute of Technology</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KARNATAKA/MANGALORE/M8.jfif" /></td>
+                <td>Srinivas University</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KARNATAKA/MANGALORE/M10.jfif" /></td>
+                <td>Sahyadri College of Ebgineering & Management</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KARNATAKA/MANGALORE/M11.jfif" /></td>
+                <td>Alvas Engineerign College</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KARNATAKA/MANGALORE/M12.jfif" /></td>
+                <td>Shree Devi Institute of Technology (SDIT)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KARNATAKA/MANGALORE/M13.jfif" /></td>
+                <td>P. A. College of Engineering (PACE) Mangalore</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="overflow-x: auto; width: 100%;">
+          <table id="MYSORE" class="college-table">
+            <tbody>
+              <tr>
+                <th colspan="2" style="width: 200px; text-align: center; font-size:14px;">College</th>
+                <th style="font-size:14px; text-align: center;">SPOC</th>
+                <th style="font-size:14px; text-align: center;">Email</th>
+                <th style="font-size:14px; text-align: center;">Phone no</th>
+                <th style="font-size:13px; text-align:center;">Registration Start</th>
+                <th style="font-size:13px; text-align:center;">Registration End</th>
+              </tr>
+              <tr>
+                <td>
+                  <img src="assets/KARNATAKA/MYSORE/UNIVERSITY OF MYSORE 1.png" />
+                </td>
+                <td>University of Mysore</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="assets/KARNATAKA/MYSORE/NIE FIRST GRADE MYSORE.png" />
+                </td>
+                <td>N.I.E. First Grade College</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="assets/KARNATAKA/MYSORE/MES FIRST GRADE CLG.png" />
+                </td>
+                <td>M.E.S. First Grade College</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="assets/KARNATAKA/MYSORE/UNIVERSITY OF MYSORE 2.png" />
+                </td>
+                <td>Bahadur Institute of Management Sciences (BIMS)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KARNATAKA/MYSORE/MY2.jfif" /></td>
+                <td>Saradavilas FGC Mysore</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KARNATAKA/MYSORE/MY3.jfif" /></td>
+                <td>Mysore Makkala Koota and Sri</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KARNATAKA/MYSORE/MY4.jfif" /></td>
+                <td>Dharmasthala Manjunatheswara College for Women</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+
+              <tr>
+                <td><img src="assets/KARNATAKA/MYSORE/MY7.jfif" /></td>
+                <td>Vidya Vikas collage of enginnering</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KARNATAKA/MYSORE/MY8.jfif" /></td>
+                <td>Teresian Collage</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KARNATAKA/MYSORE/MY9.jfif" /></td>
+                <td>GSSS Institute of Engineering & Technology for Women</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KARNATAKA/MYSORE/MY11.jfif" /></td>
+                <td>Vidyavardhaka FGC, Mysore</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/KARNATAKA/MYSORE/MY12.jfif" /></td>
+                <td>JSS women's collage</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card" onclick="toggleAnswer(this)">
+      <div class="card-title">GOA</div>
+      <div class="card-content district-container">
+        <div class="card district" onclick="showLogos('GOA(NORTH)', event)">
+          GOA(NORTH)
+        </div>
+        <div class="card district" onclick="showLogos('GOA(SOUTH)',event)">
+          GOA(SOUTH)
+        </div>
+        <div style="overflow-x: auto; width: 100%;">
+          <table id="GOA(NORTH)" class="college-table">
+            <tbody>
+              <tr>
+                <th colspan="2" style="width: 200px; text-align: center; font-size:14px;">College</th>
+                <th style="font-size:14px; text-align: center;">SPOC</th>
+                <th style="font-size:14px; text-align: center;">Email</th>
+                <th style="font-size:14px; text-align: center;">Phone no</th>
+                <th style="font-size:13px; text-align:center;">Registration Start</th>
+                <th style="font-size:13px; text-align:center;">Registration End</th>
+              </tr>
+              <tr>
+                <td><img src="assets/GOA/GOA(NORTH)/mandre.jpg" /></td>
+                <td>
+                  VP’s Mandre College of Commerce, Economics and Management,
+                  Mandre, Goa
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/GOA/GOA(NORTH)/rosaray.jpg" /></td>
+                <td>Rosary College of Commerce and Arts</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/GOA/GOA(NORTH)/agnel.jpg" /></td>
+                <td>AGNEL INSTITUTE OF FOOD CRAFT'S & CULINARY SCIENCES</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/GOA/GOA(NORTH)/narayan zantye.jpg" /></td>
+                <td>Narayan Zantye College of Commerce Bicholim Goa</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/GOA/GOA(NORTH)/gov college .jpg" /></td>
+                <td>Government College of Arts Science and Commerce Quepem</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/GOA/GOA(NORTH)/vasant joshi.jpg" /></td>
+                <td>MES Vasant Joshi College of Arts and Commerce</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/GOA/GOA(NORTH)/agnel design.jpg" /></td>
+                <td>Agnel Instiute of Technology and Design</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+
+              <tr>
+                <td><img src="assets\GOA\GOA(NORTH)\g-2.jpg" /></td>
+                <td>Dnyanprassarak Mandal's College and Research Centre</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets\GOA\GOA(NORTH)\g-5.jpg" /></td>
+                <td>Don Bosco College of Engineering</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets\GOA\GOA(NORTH)\g-6.jpg" /></td>
+                <td>
+                  Harmal Panchakroshi Shikshan Madal's Ganpat Parsekar College
+                  of Education, Vidya Sankul, Bhom Plateau, Harmal, Pernem, Goa.
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets\GOA\GOA(NORTH)\g-9.jpg" /></td>
+                <td>Institute of Shipbuilding Technology Goa</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets\GOA\GOA(NORTH)\g-11.jpg" /></td>
+                <td>
+                  Govt college of Arts Science and Commerce Khandola Marcela Goa
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets\GOA\GOA(NORTH)\g-13.jpg" /></td>
+                <td>Padre Conceicao College of Engineering</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets\GOA\GOA(NORTH)\g-14.jpeg" /></td>
+                <td>SPES’S Goa Multi-Faculty College</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="overflow-x: auto; width: 100%;">
+          <table id="GOA(SOUTH)" class="college-table">
+            <tbody>
+              <tr>
+                <th colspan="2" style="width: 200px; text-align: center; font-size:14px;">College</th>
+                <th style="font-size:14px; text-align: center;">SPOC</th>
+                <th style="font-size:14px; text-align: center;">Email</th>
+                <th style="font-size:14px; text-align: center;">Phone no</th>
+                <th style="font-size:13px; text-align:center;">Registration Start</th>
+                <th style="font-size:13px; text-align:center;">Registration End</th>
+              </tr>
+              <tr>
+                <td><img src="assets/GOA/GOA(SOUTH)/GOVT PANAJI GOA.png" /></td>
+                <td>Government Polytechnic Panaji</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/GOA/GOA(SOUTH)/rayeshwar1.jpg" /></td>
+                <td>
+                  Shree Rayeshwar Institute of Engineering and Information
+                  Technology
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/GOA/GOA(SOUTH)/vasco.jpg" /></td>
+                <td>VASCO GOVERNMENT INDUSTRIAL TRAINING INSTITUTE</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/GOA/GOA(SOUTH)/AGNEL GOA SOUTH.png" /></td>
+                <td>Fr.Agnel College of Arts and Commerce, Pilar, Goa</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/GOA/GOA(SOUTH)/prabo goa.png" /></td>
+                <td>
+                  Prabodhan Education Society's Vidya Prabodhini College of
+                  Commerce, Education Computer and Management Parvari-Goa
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+
+              <tr>
+                <td><img src="assets\GOA\GOA(SOUTH)\g-14.jpg" /></td>
+                <td>
+                  Sant Sohirobanath Ambiye Government College of Arts and
+                  Commerce Virnoda, Pernem- Goa
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets\GOA\GOA(SOUTH)\g-17.jpg" /></td>
+                <td>Don Bosco College of Engineering</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets\GOA\GOA(SOUTH)\g-18.jpg" /></td>
+                <td>Government Polytechnic Curchorem</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets\GOA\GOA(SOUTH)\g-19.jpg" /></td>
+                <td>
+                  VVM’s SHREE DAMODAR COLLEGE OF COMMERCE & ECONOMICS, MARGAO-
+                  GOA
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets\GOA\GOA(SOUTH)\g-22.jpg" /></td>
+                <td>
+                  DCT’ Srinivassa Sinai Dempo College of Commerce and Economics
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleAnswer(this)">
+      <div class="card-title">ANDHRA PRADESH</div>
+      <div class="card-content district-container">
+        <div class="card district" onclick="showLogos('KURNOOL', event)">
+          KURNOOL
+        </div>
+        <div class="card district" onclick="showLogos('NELLORE', event)">
+          NELLORE
+        </div>
+        <div class="card district" onclick="showLogos('TIRUPATI', event)">
+          TIRUPATI
+        </div>
+        <div class="card district" onclick="showLogos('VIJAYAWADA', event)">
+          VIJAYAWADA
+        </div>
+        <div class="card district" onclick="showLogos('VIZAG', event)">
+          VIZAG
+        </div>
+
+        <div style="overflow-x: auto; width: 100%;">
+          <table id="KURNOOL" class="college-table">
+            <tbody>
+              <tr>
+                <th colspan="2" style="width: 200px; text-align: center; font-size:14px;">College</th>
+                <th style="font-size:14px; text-align: center;">SPOC</th>
+                <th style="font-size:14px; text-align: center;">Email</th>
+                <th style="font-size:14px; text-align: center;">Phone no</th>
+                <th style="font-size:14px; text-align:center;">Registration Start</th>
+                <th style="font-size:14px; text-align:center;">Registration End</th>
+              </tr>
+              <tr>
+                <td>
+                  <img src="assets/ANDHRA PRADHESH/KURNOOL/kurnool GIET.jpg" />
+                </td>
+                <td>Godavari Institute of Engineering and Technology</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/ANDHRA PRADHESH/KURNOOL/gmrit.jpg" /></td>
+                <td>GMR Institute of Technology</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets\ANDHRA PRADHESH\KURNOOL\K1.jfif" /></td>
+                <td>Ashoka Women's Engineering College</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets\ANDHRA PRADHESH\KURNOOL\K3.jfif" /></td>
+                <td>Vikas College of Engineering and Technology</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/ANDHRA PRADHESH/KURNOOL/gmrit.jpg" /></td>
+                <td>Vishaka Institue of Engineering and Technology College</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets\ANDHRA PRADHESH\KURNOOL\K4.jfif" /></td>
+                <td>NRI Institute of Technology</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets\ANDHRA PRADHESH\KURNOOL\K6.jfif" /></td>
+                <td>Lakireddy Bali Reddy college of engineering</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets\ANDHRA PRADHESH\KURNOOL\K7.jfif" /></td>
+                <td>Pragati Engineering College</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets\ANDHRA PRADHESH\KURNOOL\K9.jfif" /></td>
+                <td>SRKR Engineering College</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets\ANDHRA PRADHESH\KURNOOL\K10.jfif" /></td>
+                <td>Kallam Haranadhareddy Institute of Technology</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="overflow-x: auto; width: 100%;">
+          <table id="NELLORE" class="college-table">
+            <tbody>
+              <tr>
+                <th colspan="2" style="width: 200px; text-align: center; font-size:14px;">College</th>
+                <th style="font-size:14px; text-align: center;">SPOC</th>
+                <th style="font-size:14px; text-align: center;">Email</th>
+                <th style="font-size:14px; text-align: center;">Phone no</th>
+                <th style="font-size:13px; text-align:center;">Registration Start</th>
+                <th style="font-size:13px; text-align:center;">Registration End</th>
+              </tr>
+              <tr>
+                <td><img src="assets\ANDHRA PRADHESH\NELLORE\N1.jfif" /></td>
+                <td>Audisankara College of Engineering and Technology</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets\ANDHRA PRADHESH\NELLORE\N4.jfif" /></td>
+                <td>
+                  Parvatha Reddy Babulreddy Visvodaya Institute of Technology
+                  and Science
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets\ANDHRA PRADHESH\NELLORE\N4.jfif" /></td>
+                <td>Visvodaya Engineering College</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets\ANDHRA PRADHESH\NELLORE\N5.jfif" /></td>
+                <td>Gokula Krishna College of Engineering</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets\ANDHRA PRADHESH\NELLORE\N6.jfif" /></td>
+                <td>Vikrama Simhapuri University</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="assets\ANDHRA PRADHESH\NELLORE\narayana eng clg nellore.png" />
+                </td>
+                <td>Narayana Engineering College (NEC, Nellore)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="assets\ANDHRA PRADHESH\NELLORE\geeta nellore.png" />
+                </td>
+                <td>Geethanjali Institute of Science & Technology</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="overflow-x: auto; width: 100%;">
+          <table id="TIRUPATI" class="college-table">
+            <tbody>
+              <tr>
+                <th colspan="2" style="width: 200px; text-align: center; font-size:14px;">College</th>
+                <th style="font-size:14px; text-align: center;">SPOC</th>
+                <th style="font-size:14px; text-align: center;">Email</th>
+                <th style="font-size:14px; text-align: center;">Phone no</th>
+                <th style="font-size:13px; text-align:center;">Registration Start</th>
+                <th style="font-size:13px; text-align:center;">Registration End</th>
+              </tr>
+              <tr>
+                <td><img src="assets\ANDHRA PRADHESH\TIRUPATI\T1.jfif" /></td>
+                <td>Sri Venkateswara College of Engineering</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets\ANDHRA PRADHESH\TIRUPATI\T2.jfif" /></td>
+                <td>Swetha Institute Of Technology and Science</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets\ANDHRA PRADHESH\TIRUPATI\T3.jfif" /></td>
+                <td>Shree Institute of Technical Education</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets\ANDHRA PRADHESH\TIRUPATI\T4.jfif" /></td>
+                <td>Annamacharya Institute of Technology and Sciences</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets\ANDHRA PRADHESH\TIRUPATI\T5.jfif" /></td>
+                <td>Chadalawada Ramanamma Engineering College</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets\ANDHRA PRADHESH\TIRUPATI\T8.jpg" /></td>
+                <td>Yogananda Institute of Technology and Science</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets\ANDHRA PRADHESH\TIRUPATI\T9.png" /></td>
+                <td>SV University</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets\ANDHRA PRADHESH\TIRUPATI\kmm.jpg" /></td>
+                <td>KMM Institute Of Technology And Science</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets/ANDHRA PRADHESH/TIRUPATI/mbu.jpg" /></td>
+                <td>Mohanbabu University</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="assets\ANDHRA PRADHESH\TIRUPATI\sree rama.jpg" />
+                </td>
+                <td>Sree Rama Engineering College</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="overflow-x: auto; width: 100%;">
+          <table id="VIJAYAWADA" class="college-table">
+            <tbody>
+              <tr>
+                <th colspan="2" style="width: 200px; text-align: center; font-size:14px;">College</th>
+                <th style="font-size:14px; text-align: center;">SPOC</th>
+                <th style="font-size:14px; text-align: center;">Email</th>
+                <th style="font-size:14px; text-align: center;">Phone no</th>
+                <th style="font-size:13px; text-align:center;">Registration Start</th>
+                <th style="font-size:13px; text-align:center;">Registration End</th>
+              </tr>
+              <tr>
+                <td><img src="assets\ANDHRA PRADHESH\VIJAYAWADA\V1.jfif" /></td>
+                <td>Prasad V Potluri Siddhartha Institute of Technology</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets\ANDHRA PRADHESH\VIJAYAWADA\V2.jfif" /></td>
+                <td>Velagapudi Ramakrishna Siddhartha Engineering College</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets\ANDHRA PRADHESH\VIJAYAWADA\V3.jfif" /></td>
+                <td>Andhra Loyola Institute of Engineering and Technology</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets\ANDHRA PRADHESH\VIJAYAWADA\V4.jfif" /></td>
+                <td>Potti Sriramulu College Of Engineering And Technology</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets\ANDHRA PRADHESH\VIJAYAWADA\V5.jfif" /></td>
+                <td>Chalapthi Institue of Technology</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets\ANDHRA PRADHESH\VIJAYAWADA\V6.jfif" /></td>
+                <td>SRM University</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="overflow-x: auto; width: 100%;">
+          <table id="VIZAG" class="college-table">
+            <tbody>
+              <tr>
+                <th colspan="2" style="width: 200px; text-align: center; font-size:14px;">College</th>
+                <th style="font-size:14px; text-align: center;">SPOC</th>
+                <th style="font-size:14px; text-align: center;">Email</th>
+                <th style="font-size:14px; text-align: center;">Phone no</th>
+                <th style="font-size:13px; text-align:center;">Registration Start</th>
+                <th style="font-size:13px; text-align:center;">Registration End</th>
+              </tr>
+
+              <tr>
+                <td><img src="assets\ANDHRA PRADHESH\VIZAG\V1.jfif" /></td>
+                <td>Andhra University</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets\ANDHRA PRADHESH\VIZAG\V2.jfif" /></td>
+                <td>Vignan's Institute of Information Technology</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets\ANDHRA PRADHESH\VIZAG\V3.jfif" /></td>
+                <td>Raghu Engineering College</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets\ANDHRA PRADHESH\VIZAG\V4.jfif" /></td>
+                <td>Gayatri Vidya Parishad College of Engineering</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets\ANDHRA PRADHESH\VIZAG\V5.jfif" /></td>
+                <td>GITAM School of Technology</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets\ANDHRA PRADHESH\VIZAG\V6.jfif" /></td>
+                <td>Avanthi Institute of Engineering and Technology</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets\ANDHRA PRADHESH\VIZAG\V7.jfif" /></td>
+                <td>Vishaka Institue of Engineering and Technology</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img src="assets\ANDHRA PRADHESH\VIZAG\V8.jfif" /></td>
+                <td>Pragathi Engineering College</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <footer class="text-center text-white py-3" style="background-color: rgba(28, 28, 28, 0.95)">
+    <div style="
           display: flex;
           flex-wrap: wrap;
           justify-content: space-between;
@@ -2292,114 +2059,115 @@
           max-width: 1200px;
           margin: 0 auto;
           padding: 0 20px;
-        "
-      >
-        <!-- Developer Info -->
-        <div style="text-align: left; position: relative; flex: 1 1 100%">
-          <p class="mb-0 hover-box">
-            <span class="tooltip-trigger">
-              Designed and Developed by PSG iTECH Team
-              <span class="tooltip-text">
-                <strong>Developer Team:</strong><br />
-                1. Keerthi V - Lead<br />
-                2. Madhu Subhiksha M.R<br />
-                3. Rithanya S<br />
-                4. Nija Priya S<br /><br />
-                <strong>Data Collection Team:</strong><br />
-                1. Mythryee A - Lead<br />
-                2. Loohetha P<br />
-                3. Santhiya V<br />
-                4. Sandra M
-              </span>
+        ">
+      <!-- Developer Info -->
+      <div style="text-align: left; position: relative; flex: 1 1 100%">
+        <p class="mb-0 hover-box">
+          <span class="tooltip-trigger">
+            Designed and Developed by PSG iTECH Team
+            <span class="tooltip-text">
+              <strong>Developer Team:</strong><br />
+              1. Keerthi V - Lead<br />
+              2. Madhu Subhiksha M.R<br />
+              3. Rithanya S<br />
+              4. Nija Priya S<br /><br />
+              <strong>Data Collection Team:</strong><br />
+              1. Mythryee A - Lead<br />
+              2. Loohetha P<br />
+              3. Santhiya V<br />
+              4. Sandra M
             </span>
-          </p>
-        </div>
+          </span>
+        </p>
       </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      function toggleAnswer(card) {
-        // Close all other state cards except the clicked one
-        document.querySelectorAll(".card").forEach((otherCard) => {
-          if (otherCard !== card) {
-            otherCard.classList.remove("active");
-          }
-        });
 
-        // Toggle the clicked card (state)
-        card.classList.toggle("active");
-      }
-
-      function showLogos(district, event) {
-        // Prevent the state card from collapsing when a district is clicked
-        event.stopPropagation();
-
-        // Remove highlight from all district buttons
-        document.querySelectorAll(".district").forEach((card) => {
-          card.classList.remove("highlight");
-        });
-
-        // Highlight the selected district
-        event.currentTarget.classList.add("highlight");
-
-        // Get the selected district's table
-        const table = document.getElementById(district);
-
-        if (table) {
-          // If the selected table is already visible, toggle it off
-          if (table.style.display === "table") {
-            table.style.display = "none";
-          } else {
-            // Hide all other tables first
-            document.querySelectorAll(".college-table").forEach((tbl) => {
-              tbl.style.display = "none";
-            });
-
-            // Show only the selected district's table
-            table.style.display = "table";
-          }
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function toggleAnswer(card) {
+      // Close all other state cards except the clicked one
+      document.querySelectorAll(".card").forEach((otherCard) => {
+        if (otherCard !== card) {
+          otherCard.classList.remove("active");
         }
-      }
-
-      // Highlight active page in navbar
-      document.addEventListener("DOMContentLoaded", function () {
-        let navLinks = document.querySelectorAll(".nav-link");
-        let currentUrl = window.location.pathname
-          .split("/")
-          .pop()
-          .toUpperCase(); // Get current file name in uppercase
-
-        navLinks.forEach((link) => {
-          if (
-            link.getAttribute("href").toUpperCase() === currentUrl ||
-            (currentUrl === "" &&
-              link.getAttribute("href").toUpperCase() === "HOME.HTML")
-          ) {
-            link.classList.add("active");
-          }
-        });
       });
-    </script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        var navbarToggler = document.querySelector(".navbar-toggler");
-        var navbarCollapse = document.querySelector(".navbar-collapse");
 
-        // Close menu when clicking outside
-        document.addEventListener("click", function (event) {
-          if (
-            !navbarCollapse.contains(event.target) &&
-            !navbarToggler.contains(event.target)
-          ) {
-            navbarCollapse.classList.remove("show");
-          }
-        });
+      // Toggle the clicked card (state)
+      card.classList.toggle("active");
+    }
 
-        // Close menu on scroll
-        window.addEventListener("scroll", function () {
+    function showLogos(district, event) {
+  // Prevent the state card from collapsing when a district is clicked
+  event.stopPropagation();
+
+  // Remove highlight from all district buttons
+  document.querySelectorAll(".district").forEach((card) => {
+    card.classList.remove("highlight");
+  });
+
+  // Highlight the selected district
+  event.currentTarget.classList.add("highlight");
+
+  // Get the selected district's table
+  const table = document.getElementById(district);
+
+  if (table) {
+    // If the selected table is already visible, toggle it off
+    if (table.style.display === "table") {
+      table.style.display = "none";
+    } else {
+      // Hide all other tables first
+      document.querySelectorAll(".college-table").forEach((tbl) => {
+        tbl.style.display = "none";
+      });
+
+      // Show only the selected district's table
+      table.style.display = "table";
+    }
+  }
+}
+
+    // Highlight active page in navbar
+    document.addEventListener("DOMContentLoaded", function () {
+      let navLinks = document.querySelectorAll(".nav-link");
+      let currentUrl = window.location.pathname
+        .split("/")
+        .pop()
+        .toUpperCase(); // Get current file name in uppercase
+
+      navLinks.forEach((link) => {
+        if (
+          link.getAttribute("href").toUpperCase() === currentUrl ||
+          (currentUrl === "" &&
+            link.getAttribute("href").toUpperCase() === "HOME.HTML")
+        ) {
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var navbarToggler = document.querySelector(".navbar-toggler");
+      var navbarCollapse = document.querySelector(".navbar-collapse");
+
+      // Close menu when clicking outside
+      document.addEventListener("click", function (event) {
+        if (
+          !navbarCollapse.contains(event.target) &&
+          !navbarToggler.contains(event.target)
+        ) {
           navbarCollapse.classList.remove("show");
-        });
+        }
       });
-    </script>
-  </body>
+
+      // Close menu on scroll
+      window.addEventListener("scroll", function () {
+        navbarCollapse.classList.remove("show");
+      });
+    });
+  </script>
+</body>
+
 </html>
