@@ -7,8 +7,7 @@
 
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-    />
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,6 +24,30 @@
         margin-top: 100px;
         font-size: 36px;
       }
+
+      .partners-section {
+    position: sticky;
+    top: 0; /* Adjust to position it at the top */
+  
+    padding: 10px;
+    z-index: 1000; /* Keeps it above other content */
+    text-align: center;
+    color: white;
+}
+
+.card-link {
+    margin-top: 10px;
+    background-color: #ff5722; /* Change color as needed */
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.card-link a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
 
       .card-container {
         display: flex;
@@ -263,16 +286,17 @@
       </div>
     </nav>
     <br />
-    <h1>OUR PARTNERS</h1>
-
-    <div class="card-link">
-      <a
-        href="https://docs.google.com/forms/d/e/1FAIpQLScOjMX7XmbtMQ_oqPxK7jPQdOUFwq-zGXoLDiMutGqe8dPPiA/viewform"
-        style="color: white; text-decoration: none"
-      >
-        Click here to register
-      </a>
-    </div>
+    <div class="partners-section">
+      <h1>OUR PARTNERS</h1>
+      <div class="card-link">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScOjMX7XmbtMQ_oqPxK7jPQdOUFwq-zGXoLDiMutGqe8dPPiA/viewform" 
+        target="_blank" 
+        rel="noopener noreferrer">
+       Click here to register
+        </a>
+      </div>
+  </div>
+  
 
     <div class="card-container">
       <!-- Tamil Nadu -->
