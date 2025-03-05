@@ -127,7 +127,7 @@
       }
 
       h2 {
-        color: #f2a365;
+        color: #ffffff;
         font-size: 24px;
         text-transform: uppercase;
       }
@@ -188,17 +188,19 @@
 
       /* Year Text */
       .year-text {
-        font-size: 24px;
-        font-weight: bold;
-        color: #f2a365;
+        /* font-size: 24px; */
+        /* font-weight: bold; */
+        /* color: #f2a365; */
         margin-top: 10px;
         position: relative;
+        text-align: center;
       }
 
       .time-text {
         font-size: 24px;
-        font-weight: bold;
-        color: #f2a365;
+        /* font-weight: bold; */
+        /* color: #f2a365; */
+        text-align: center;
         margin-top: 10px;
         position: relative;
         margin-top: 5px;
@@ -212,7 +214,7 @@
         width: 2px;
         height: 60px;
         /* Adjust based on spacing */
-        background: #f2a365;
+        background: #ffffff;
         margin: 5px auto;
       }
 
@@ -220,7 +222,7 @@
       .timeline-bar {
         width: 90%;
         height: 4px;
-        background: #f2a365;
+        background: #ffffff;
         margin-left: 40px;
       }
 
@@ -454,27 +456,26 @@
       }
     </style>
     <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    var navbarToggler = document.querySelector(".navbar-toggler");
-    var navbarCollapse = document.querySelector(".navbar-collapse");
+      document.addEventListener("DOMContentLoaded", function () {
+        var navbarToggler = document.querySelector(".navbar-toggler");
+        var navbarCollapse = document.querySelector(".navbar-collapse");
 
-    // Close menu when clicking outside
-    document.addEventListener("click", function (event) {
-      if (
-        !navbarCollapse.contains(event.target) &&
-        !navbarToggler.contains(event.target)
-      ) {
-        navbarCollapse.classList.remove("show");
-      }
-    });
+        // Close menu when clicking outside
+        document.addEventListener("click", function (event) {
+          if (
+            !navbarCollapse.contains(event.target) &&
+            !navbarToggler.contains(event.target)
+          ) {
+            navbarCollapse.classList.remove("show");
+          }
+        });
 
-    // Close menu on scroll
-    window.addEventListener("scroll", function () {
-      navbarCollapse.classList.remove("show");
-    });
-  });
-</script>
-
+        // Close menu on scroll
+        window.addEventListener("scroll", function () {
+          navbarCollapse.classList.remove("show");
+        });
+      });
+    </script>
   </head>
 
   <body>
@@ -528,7 +529,7 @@
               onclick="scrollToSection('heading-2022')"
             />
           </div>
-          <h1 class="year-text">2022</h1>
+          <h1 class="level2 year-text">2022</h1>
           <div class="vertical-line"></div>
         </div>
 
@@ -540,7 +541,7 @@
               onclick="scrollToSection('heading-2023')"
             />
           </div>
-          <h1 class="year-text">2023</h1>
+          <h1 class="level2 year-text">2023</h1>
           <div class="vertical-line"></div>
         </div>
 
@@ -552,14 +553,14 @@
               onclick="scrollToSection('heading-2024')"
             />
           </div>
-          <h1 class="year-text">2024</h1>
+          <h1 class="level2 year-text">2024</h1>
           <div class="vertical-line"></div>
         </div>
       </div>
       <!-- Horizontal Timeline -->
       <div class="timeline-bar">
         <br />
-        <h1 class="time-text">TIMELINE</h1>
+        <h1 class="level2 time-text" style="text-align: center">TIMELINE</h1>
       </div>
     </div>
     <br />
@@ -573,7 +574,7 @@
       <h2
         id="heading-2022"
         style="
-          color: #f2a365;
+          color: #ffffff;
           font-size: 24px;
           text-transform: uppercase;
           margin-bottom: 20px;
@@ -636,7 +637,7 @@
         class="text-container"
         style="margin-top: 20px; text-align: justify; width: 100%"
       >
-        <h2>Overview</h2>
+        <h2 class="level2">Overview</h2>
         <p>
           PSG Institute of Technology and Applied Research hosted iTech Hackfest
           2022 from August 25–27, in collaboration with SAP Academy for
@@ -661,7 +662,7 @@
       <h2
         id="heading-2023"
         style="
-          color: #f2a365;
+          color: #ffffff;
           font-size: 24px;
           text-transform: uppercase;
           margin-bottom: 20px;
@@ -761,7 +762,7 @@
       <h2
         id="heading-2024"
         style="
-          color: #f2a365;
+          color: #ffffff;
           font-size: 24px;
           text-transform: uppercase;
           margin-bottom: 20px;
@@ -964,7 +965,7 @@
       document.addEventListener("DOMContentLoaded", function () {
         var navbarToggler = document.querySelector(".navbar-toggler");
         var navbarCollapse = document.querySelector(".navbar-collapse");
-    
+
         // Close menu when clicking outside
         document.addEventListener("click", function (event) {
           if (
@@ -974,7 +975,7 @@
             navbarCollapse.classList.remove("show");
           }
         });
-    
+
         // Close menu on scroll
         window.addEventListener("scroll", function () {
           navbarCollapse.classList.remove("show");
