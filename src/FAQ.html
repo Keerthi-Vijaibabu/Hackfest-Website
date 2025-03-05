@@ -26,12 +26,6 @@
         max-width: 700px;
         margin: 40px auto;
       }
-      h1 {
-        text-align: center;
-        color: var(--text-light);
-        margin-top: 100px;
-        font-size: 36px;
-      }
 
       .card {
         background: rgba(255, 255, 255, 0.1);
@@ -49,14 +43,14 @@
       }
 
       .card-title {
-        font-size: 18px;
-
-        color: var(--text-light);
         cursor: pointer;
+        font-size: 1.25rem;
+        color:white;
       }
       .card-content {
         margin-top: 10px;
         display: none;
+        font-size: 1.25rem;
         color: #e7dbdb;
       }
       .card.active .card-content {
@@ -146,9 +140,9 @@
       </div>
     </nav>
 
-    <h1>FAQ</h1>
+    <h1 class="level1" style="margin-top: 100px">FAQ</h1>
     <br />
-    <h2 class="faq-below">Answers to the most frequently asked questions!</h2>
+    <h2 class="level2" style="text-align: center;">Answers to the most frequently asked questions!</h2>
     <div class="card-container">
       <div class="card" onclick="toggleAnswer(this)">
         <div class="card-title">What is the prize amount for the winners?</div>
@@ -156,14 +150,31 @@
           The first prize is ₹ 1.5 lakh, second prize is ₹ 1 lakh, and third
           prize is ₹ 50 thousand.
         </div>
-      </div>
-      <div class="card" onclick="toggleAnswer(this)">
+      </div><div class="card" onclick="toggleAnswer(this)">
         <div class="card-title">
           What is expected in the evaluation of the regional round?
         </div>
         <div class="card-content">
           Only ideas will be evaluated, it is not mandatory to have a working
           prototype.
+        </div>
+      </div>
+      <div class="card" onclick="toggleAnswer(this)">
+        <div class="card-title">
+          How are teams shortlisted in the regional round?
+        </div>
+        <div class="card-content">
+          Teams are shortlisted based on their project presentations and
+          adherence to the provided guidelines.
+        </div>
+      </div>
+      <div class="card" onclick="toggleAnswer(this)">
+        <div class="card-title">
+          What is the registration fee for the regional round Hackfest?
+        </div>
+        <div class="card-content">
+          There is no registration fee for participating in the regional round
+          of Hackathon.
         </div>
       </div>
       <div class="card" onclick="toggleAnswer(this)">
@@ -192,24 +203,7 @@
           demonstrate the working prototype.
         </div>
       </div>
-      <div class="card" onclick="toggleAnswer(this)">
-        <div class="card-title">
-          How are teams shortlisted in the regional round?
-        </div>
-        <div class="card-content">
-          Teams are shortlisted based on their project presentations and
-          adherence to the provided guidelines.
-        </div>
-      </div>
-      <div class="card" onclick="toggleAnswer(this)">
-        <div class="card-title">
-          What is the registration fee for the regional round Hackfest?
-        </div>
-        <div class="card-content">
-          There is no registration fee for participating in the regional round
-          of Hackathon.
-        </div>
-      </div>
+      
   
       <div class="card" onclick="toggleAnswer(this)">
         <div class="card-title">
