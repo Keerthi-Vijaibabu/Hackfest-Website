@@ -208,16 +208,19 @@
     }
 
     .card-link {
-      display: inline-block;
-      background-color: #2D2B3A; /* Dark background */
-      color: white;
-      padding: 15px 30px;
-      border-radius: 12px; /* Rounded corners */
-      text-align: center;
-      font-size: 18px;
-      font-weight: bold;
-      text-decoration: none;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+        display: inline-block;
+        background-color: #2d2b3a; /* Dark background */
+        color: white;
+        padding: 15px 30px;
+        border-radius: 12px; /* Rounded corners */
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        text-decoration: none;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+        position: sticky;
+        top: 100px; /* Adjust based on navbar height */
+        z-index: 1000; /* Ensure it stays on top */
   }
   </style>
 </head>
