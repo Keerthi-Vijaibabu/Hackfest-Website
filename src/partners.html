@@ -220,6 +220,9 @@
         font-weight: bold;
         text-decoration: none;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+        position: sticky;
+        top: 100px; /* Adjust based on navbar height */
+        z-index: 1000; /* Ensure it stays on top */
       }
     </style>
   </head>
@@ -269,27 +272,28 @@
       <a
         href="https://docs.google.com/forms/d/e/1FAIpQLScOjMX7XmbtMQ_oqPxK7jPQdOUFwq-zGXoLDiMutGqe8dPPiA/viewform"
         style="color: white; text-decoration: none"
+        target="_blank"
       >
-        CLICK HERE TO REGISTER
+        Click here to register
       </a>
     </div>
 
     <div class="card-container">
       <!-- Tamil Nadu -->
       <div class="card" onclick="toggleAnswer(this)">
-        <div class="card-title">TAMIL NADU</div>
+        <div class="card-title">Tamil Nadu</div>
         <div class="card-content district-container">
           <div class="card district" onclick="showLogos('CHENNAI', event)">
-            CHENNAI
+            Chennai
           </div>
           <div class="card district" onclick="showLogos('COIMBATORE', event)">
-            COIMBATORE
+            Coimbatore
           </div>
           <div class="card district" onclick="showLogos('MADURAI', event)">
-            MADURAI
+            Madurai
           </div>
           <div class="card district" onclick="showLogos('SALEM', event)">
-            SALEM
+            Salem
           </div>
 
           <!-- Tables for Tamil Nadu Districts -->
@@ -299,17 +303,18 @@
                 <tr>
                   <th
                     colspan="2"
-                    style="width: 200px; text-align: center; font-size: 14px"
+                    style="width: 400px; text-align: center; font-size: 14px"
                   >
                     College
                   </th>
                   <th style="font-size: 14px; text-align: center">SPOC</th>
-                  <th style="font-size: 14px; text-align: center">Email</th>
-                  <th style="font-size: 14px; text-align: center">Phone no</th>
-                  <th style="font-size: 13px; text-align: center">
+                  <th style="font-size: 11px; text-align: center">
+                    Contact Details
+                  </th>
+                  <th style="font-size: 11px; text-align: center">
                     Registration Start
                   </th>
-                  <th style="font-size: 13px; text-align: center">
+                  <th style="font-size: 11px; text-align: center">
                     Registration End
                   </th>
                 </tr>
@@ -320,7 +325,6 @@
                     />
                   </td>
                   <td>Velammal Engineering College</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -337,7 +341,6 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td>
@@ -350,12 +353,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets/TAMILNADU/CHENNAI/SRM.jpg" /></td>
                   <td>SRM University</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -371,12 +372,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets/TAMILNADU/CHENNAI/SSN.jpg" /></td>
                   <td>SSN College of Engineering</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -389,7 +388,6 @@
                     />
                   </td>
                   <td>Vellore Institute of Technology</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -409,7 +407,6 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
               </tbody>
             </table>
@@ -420,17 +417,18 @@
                 <tr>
                   <th
                     colspan="2"
-                    style="width: 200px; text-align: center; font-size: 14px"
+                    style="width: 400px; text-align: center; font-size: 14px"
                   >
                     College
                   </th>
                   <th style="font-size: 14px; text-align: center">SPOC</th>
-                  <th style="font-size: 14px; text-align: center">Email</th>
-                  <th style="font-size: 14px; text-align: center">Phone no</th>
-                  <th style="font-size: 13px; text-align: center">
+                  <th style="font-size: 11px; text-align: center">
+                    Contact Details
+                  </th>
+                  <th style="font-size: 11px; text-align: center">
                     Registration Start
                   </th>
-                  <th style="font-size: 13px; text-align: center">
+                  <th style="font-size: 11px; text-align: center">
                     Registration End
                   </th>
                 </tr>
@@ -441,7 +439,6 @@
                     />
                   </td>
                   <td>Dr.N.G.P Institute of Technology</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -458,7 +455,6 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td>
@@ -467,7 +463,6 @@
                     />
                   </td>
                   <td>Adithya Institute Of Technology</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -484,7 +479,6 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td>
@@ -493,7 +487,6 @@
                     />
                   </td>
                   <td>Hindusthan College of Engineering and Technology</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -510,7 +503,6 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td>
@@ -519,7 +511,6 @@
                     />
                   </td>
                   <td>Sri Ramakrishna Engineering College</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -536,7 +527,6 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
               </tbody>
             </table>
@@ -548,17 +538,18 @@
                 <tr>
                   <th
                     colspan="2"
-                    style="width: 200px; text-align: center; font-size: 14px"
+                    style="width: 400px; text-align: center; font-size: 14px"
                   >
                     College
                   </th>
                   <th style="font-size: 14px; text-align: center">SPOC</th>
-                  <th style="font-size: 14px; text-align: center">Email</th>
-                  <th style="font-size: 14px; text-align: center">Phone no</th>
-                  <th style="font-size: 14px; text-align: center">
+                  <th style="font-size: 11px; text-align: center">
+                    Contact Details
+                  </th>
+                  <th style="font-size: 11px; text-align: center">
                     Registration Start
                   </th>
-                  <th style="font-size: 14px; text-align: center">
+                  <th style="font-size: 11px; text-align: center">
                     Registration End
                   </th>
                 </tr>
@@ -573,7 +564,6 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
               </tbody>
             </table>
@@ -584,17 +574,18 @@
                 <tr>
                   <th
                     colspan="2"
-                    style="width: 200px; text-align: center; font-size: 14px"
+                    style="width: 400px; text-align: center; font-size: 14px"
                   >
                     College
                   </th>
                   <th style="font-size: 14px; text-align: center">SPOC</th>
-                  <th style="font-size: 14px; text-align: center">Email</th>
-                  <th style="font-size: 14px; text-align: center">Phone no</th>
-                  <th style="font-size: 13px; text-align: center">
+                  <th style="font-size: 11px; text-align: center">
+                    Contact Details
+                  </th>
+                  <th style="font-size: 11px; text-align: center">
                     Registration Start
                   </th>
-                  <th style="font-size: 13px; text-align: center">
+                  <th style="font-size: 11px; text-align: center">
                     Registration End
                   </th>
                 </tr>
@@ -606,7 +597,6 @@
                     />
                   </td>
                   <td>AVS Engineering College</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -623,7 +613,6 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td>
@@ -636,12 +625,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets/TAMILNADU/SALEM/Gandhi.jpg" /></td>
                   <td>Dhirajlal Gandhi College of Technology</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -658,7 +645,6 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td>
@@ -667,7 +653,6 @@
                     />
                   </td>
                   <td>Salem College of Engineering and Technology</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -684,7 +669,6 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
               </tbody>
             </table>
@@ -693,10 +677,10 @@
       </div>
       <!-- Telangana -->
       <div class="card" onclick="toggleAnswer(this)">
-        <div class="card-title">TELANGANA</div>
+        <div class="card-title">Telangana</div>
         <div class="card-content district-container">
           <div class="card district" onclick="showLogos('HYDERABAD', event)">
-            HYDERABAD
+            Hyderabad
           </div>
 
           <!-- Table for Hyderabad -->
@@ -706,24 +690,24 @@
                 <tr>
                   <th
                     colspan="2"
-                    style="width: 200px; text-align: center; font-size: 14px"
+                    style="width: 400px; text-align: center; font-size: 14px"
                   >
                     College
                   </th>
                   <th style="font-size: 14px; text-align: center">SPOC</th>
-                  <th style="font-size: 14px; text-align: center">Email</th>
-                  <th style="font-size: 14px; text-align: center">Phone no</th>
-                  <th style="font-size: 13px; text-align: center">
+                  <th style="font-size: 11px; text-align: center">
+                    Contact Details
+                  </th>
+                  <th style="font-size: 11px; text-align: center">
                     Registration Start
                   </th>
-                  <th style="font-size: 13px; text-align: center">
+                  <th style="font-size: 11px; text-align: center">
                     Registration End
                   </th>
                 </tr>
                 <tr>
                   <td><img src="assets/TELUGANA/HYDERABAD/H1.jfif" /></td>
                   <td>Chaitanya Bharathi Institute of Technology</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -736,12 +720,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets/TELUGANA/HYDERABAD/H3.jfif" /></td>
                   <td>VNR VJIET</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -756,12 +738,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets/TELUGANA/HYDERABAD/VASAVI.jpg" /></td>
                   <td>Vasavi College of Engineering</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -774,7 +754,6 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
               </tbody>
             </table>
@@ -782,10 +761,10 @@
         </div>
       </div>
       <div class="card" onclick="toggleAnswer(this)">
-        <div class="card-title">KERALA</div>
+        <div class="card-title">Kerala</div>
         <div class="card-content district-container">
           <div class="card district" onclick="showLogos('COCHIN', event)">
-            COCHIN
+            Cochin
           </div>
           <div style="overflow-x: auto; width: 100%">
             <table id="COCHIN" class="college-table">
@@ -793,24 +772,24 @@
                 <tr>
                   <th
                     colspan="2"
-                    style="width: 200px; text-align: center; font-size: 14px"
+                    style="width: 400px; text-align: center; font-size: 14px"
                   >
                     College
                   </th>
                   <th style="font-size: 14px; text-align: center">SPOC</th>
-                  <th style="font-size: 14px; text-align: center">Email</th>
-                  <th style="font-size: 14px; text-align: center">Phone no</th>
-                  <th style="font-size: 13px; text-align: center">
+                  <th style="font-size: 11px; text-align: center">
+                    Contact Details
+                  </th>
+                  <th style="font-size: 11px; text-align: center">
                     Registration Start
                   </th>
-                  <th style="font-size: 13px; text-align: center">
+                  <th style="font-size: 11px; text-align: center">
                     Registration End
                   </th>
                 </tr>
                 <tr>
                   <td><img src="assets/KERALA/COCHIN/K1.jfif" /></td>
                   <td>Amal Jyothi College of Engineering</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -823,12 +802,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets/KERALA/COCHIN/AISAT.jpg" /></td>
                   <td>Albertian Institute of Science & Technology</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -841,12 +818,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets/KERALA/COCHIN/K5.jfif" /></td>
                   <td>College of Engineering, Chengannoor</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -859,12 +834,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets/KERALA/COCHIN/K7.jfif" /></td>
                   <td>College of Engineering, Poonjar</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -877,12 +850,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets/KERALA/COCHIN/KRIS.jpg" /></td>
                   <td>Kristhujyothi College of Management</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -895,12 +866,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets/KERALA/COCHIN/K11.jfif" /></td>
                   <td>Sree Narayana Gurukulam College of Engineering</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -913,7 +882,6 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
               </tbody>
             </table>
@@ -922,19 +890,19 @@
       </div>
 
       <div class="card" onclick="toggleAnswer(this)">
-        <div class="card-title">KARNATAKA</div>
+        <div class="card-title">Karnataka</div>
         <div class="card-content district-container">
           <div class="card district" onclick="showLogos('BANGALORE', event)">
-            BANGALORE
+            Bangalore
           </div>
           <div class="card district" onclick="showLogos('HUBLI', event)">
-            HUBLI
+            Hubli
           </div>
           <div class="card district" onclick="showLogos('MANGALORE', event)">
-            MANGALORE
+            Mangalore
           </div>
           <div class="card district" onclick="showLogos('MYSORE', event)">
-            MYSORE
+            Mysore
           </div>
           <div style="overflow-x: auto; width: 100%">
             <table id="BANGALORE" class="college-table">
@@ -942,24 +910,24 @@
                 <tr>
                   <th
                     colspan="2"
-                    style="width: 200px; text-align: center; font-size: 14px"
+                    style="width: 400px; text-align: center; font-size: 14px"
                   >
                     College
                   </th>
                   <th style="font-size: 14px; text-align: center">SPOC</th>
-                  <th style="font-size: 14px; text-align: center">Email</th>
-                  <th style="font-size: 14px; text-align: center">Phone no</th>
-                  <th style="font-size: 13px; text-align: center">
+                  <th style="font-size: 11px; text-align: center">
+                    Contact Details
+                  </th>
+                  <th style="font-size: 11px; text-align: center">
                     Registration Start
                   </th>
-                  <th style="font-size: 13px; text-align: center">
+                  <th style="font-size: 11px; text-align: center">
                     Registration End
                   </th>
                 </tr>
                 <tr>
                   <td><img src="assets/KARNATAKA/BANGALORE/B1.jfif" /></td>
                   <td>Sambhram Institute of Technology</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -972,12 +940,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets/KARNATAKA/BANGALORE/B3.jfif" /></td>
                   <td>Cambridge Group of Institutions</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -990,12 +956,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets/KARNATAKA/BANGALORE/B5.jfif" /></td>
                   <td>East Point College of Engineering</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1008,12 +972,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets/KARNATAKA/BANGALORE/B7.jfif" /></td>
                   <td>Jyothi Engineering College</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1026,12 +988,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets/KARNATAKA/BANGALORE/B11.jfif" /></td>
                   <td>Nitte Meenakshi Institute of Technology</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1044,12 +1004,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets/KARNATAKA/BANGALORE/B14.jfif" /></td>
                   <td>Reva University</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1062,12 +1020,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets/KARNATAKA/BANGALORE/RAMAYA.jpg" /></td>
                   <td>MS Ramaiah Institute of Technology</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1082,12 +1038,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets/KARNATAKA/BANGALORE/PES.jpg" /></td>
                   <td>PES University Main Campus</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1101,13 +1055,11 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
 
                 <tr>
                   <td><img src="assets/KARNATAKA/BANGALORE/RV.jpg" /></td>
                   <td>RV University</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1122,24 +1074,24 @@
                 <tr>
                   <th
                     colspan="2"
-                    style="width: 200px; text-align: center; font-size: 14px"
+                    style="width: 400px; text-align: center; font-size: 14px"
                   >
                     College
                   </th>
                   <th style="font-size: 14px; text-align: center">SPOC</th>
-                  <th style="font-size: 14px; text-align: center">Email</th>
-                  <th style="font-size: 14px; text-align: center">Phone no</th>
-                  <th style="font-size: 13px; text-align: center">
+                  <th style="font-size: 11px; text-align: center">
+                    Contact Details
+                  </th>
+                  <th style="font-size: 11px; text-align: center">
                     Registration Start
                   </th>
-                  <th style="font-size: 13px; text-align: center">
+                  <th style="font-size: 11px; text-align: center">
                     Registration End
                   </th>
                 </tr>
                 <tr>
                   <td><img src="assets/KARNATAKA/HUBLI/H1.jfif" /></td>
                   <td>KLE Technological University</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1154,24 +1106,24 @@
                 <tr>
                   <th
                     colspan="2"
-                    style="width: 200px; text-align: center; font-size: 14px"
+                    style="width: 400px; text-align: center; font-size: 14px"
                   >
                     College
                   </th>
                   <th style="font-size: 14px; text-align: center">SPOC</th>
-                  <th style="font-size: 14px; text-align: center">Email</th>
-                  <th style="font-size: 14px; text-align: center">Phone no</th>
-                  <th style="font-size: 13px; text-align: center">
+                  <th style="font-size: 11px; text-align: center">
+                    Contact Details
+                  </th>
+                  <th style="font-size: 11px; text-align: center">
                     Registration Start
                   </th>
-                  <th style="font-size: 13px; text-align: center">
+                  <th style="font-size: 11px; text-align: center">
                     Registration End
                   </th>
                 </tr>
                 <tr>
                   <td><img src="assets/KARNATAKA/MANGALORE/MITE.jpg" /></td>
                   <td>Mangalore Institute of Technology and Engineering</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1185,13 +1137,11 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
 
                 <tr>
                   <td><img src="assets/KARNATAKA/MANGALORE/ST.jpg" /></td>
                   <td>St. Aloysius</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1208,12 +1158,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets/KARNATAKA/MANGALORE/manipal.jpg" /></td>
                   <td>Manipal Institute of Technology</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1228,12 +1176,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets/KARNATAKA/MANGALORE/M6.jfif" /></td>
                   <td>Canara College</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1246,12 +1192,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets/KARNATAKA/MANGALORE/M8.jfif" /></td>
                   <td>Srinivas University</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1264,12 +1208,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets/KARNATAKA/MANGALORE/M11.jfif" /></td>
                   <td>Alvas Engineerign College</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1282,12 +1224,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets/KARNATAKA/MANGALORE/M13.jfif" /></td>
                   <td>P. A. College of Engineering (PACE) Mangalore</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1302,17 +1242,18 @@
                 <tr>
                   <th
                     colspan="2"
-                    style="width: 200px; text-align: center; font-size: 14px"
+                    style="width: 400px; text-align: center; font-size: 14px"
                   >
                     College
                   </th>
                   <th style="font-size: 14px; text-align: center">SPOC</th>
-                  <th style="font-size: 14px; text-align: center">Email</th>
-                  <th style="font-size: 14px; text-align: center">Phone no</th>
-                  <th style="font-size: 13px; text-align: center">
+                  <th style="font-size: 11px; text-align: center">
+                    Contact Details
+                  </th>
+                  <th style="font-size: 11px; text-align: center">
                     Registration Start
                   </th>
-                  <th style="font-size: 13px; text-align: center">
+                  <th style="font-size: 11px; text-align: center">
                     Registration End
                   </th>
                 </tr>
@@ -1323,7 +1264,6 @@
                     />
                   </td>
                   <td>University of Mysore</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1340,7 +1280,6 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td>
@@ -1349,7 +1288,6 @@
                     />
                   </td>
                   <td>M.E.S. First Grade College</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1366,12 +1304,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets/KARNATAKA/MYSORE/MY2.jfif" /></td>
                   <td>Saradavilas FGC Mysore</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1384,12 +1320,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets/KARNATAKA/MYSORE/MY4.jfif" /></td>
                   <td>Dharmasthala Manjunatheswara College for Women</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1403,12 +1337,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets/KARNATAKA/MYSORE/MY8.jfif" /></td>
                   <td>Teresian Collage</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1421,12 +1353,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets/KARNATAKA/MYSORE/MY11.jfif" /></td>
                   <td>Vidyavardhaka FGC, Mysore</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1439,7 +1369,6 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
               </tbody>
             </table>
@@ -1448,13 +1377,13 @@
       </div>
 
       <div class="card" onclick="toggleAnswer(this)">
-        <div class="card-title">GOA</div>
+        <div class="card-title">Goa</div>
         <div class="card-content district-container">
           <div class="card district" onclick="showLogos('GOA(NORTH)', event)">
-            GOA(NORTH)
+            Goa(North)
           </div>
           <div class="card district" onclick="showLogos('GOA(SOUTH)',event)">
-            GOA(SOUTH)
+            Goa(South)
           </div>
           <div style="overflow-x: auto; width: 100%">
             <table id="GOA(NORTH)" class="college-table">
@@ -1462,17 +1391,18 @@
                 <tr>
                   <th
                     colspan="2"
-                    style="width: 200px; text-align: center; font-size: 14px"
+                    style="width: 400px; text-align: center; font-size: 14px"
                   >
                     College
                   </th>
                   <th style="font-size: 14px; text-align: center">SPOC</th>
-                  <th style="font-size: 14px; text-align: center">Email</th>
-                  <th style="font-size: 14px; text-align: center">Phone no</th>
-                  <th style="font-size: 13px; text-align: center">
+                  <th style="font-size: 11px; text-align: center">
+                    Contact Details
+                  </th>
+                  <th style="font-size: 11px; text-align: center">
                     Registration Start
                   </th>
-                  <th style="font-size: 13px; text-align: center">
+                  <th style="font-size: 11px; text-align: center">
                     Registration End
                   </th>
                 </tr>
@@ -1486,7 +1416,6 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets/GOA/GOA(NORTH)/rosaray.jpg" /></td>
@@ -1495,12 +1424,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets/GOA/GOA(NORTH)/agnel.jpg" /></td>
-                  <td>AGNEL INSTITUTE OF FOOD CRAFT'S & CULINARY SCIENCES</td>
-                  <td></td>
+                  <td>Agnel Institute Of Food Craft's & Culinary Science</td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1515,14 +1442,12 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets/GOA/GOA(NORTH)/gov college .jpg" /></td>
                   <td>
                     Government College of Arts Science and Commerce Quepem
                   </td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1535,12 +1460,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets/GOA/GOA(NORTH)/agnel design.jpg" /></td>
                   <td>Agnel Instiute of Technology and Design</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1554,12 +1477,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets\GOA\GOA(NORTH)\g-5.jpg" /></td>
                   <td>Don Bosco College of Engineering</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1576,12 +1497,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets\GOA\GOA(NORTH)\g-9.jpg" /></td>
                   <td>Institute of Shipbuilding Technology Goa</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1597,7 +1516,6 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets\GOA\GOA(NORTH)\g-13.jpg" /></td>
@@ -1606,12 +1524,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets\GOA\GOA(NORTH)\g-14.jpeg" /></td>
                   <td>SPES’S Goa Multi-Faculty College</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1627,17 +1543,18 @@
                 <tr>
                   <th
                     colspan="2"
-                    style="width: 200px; text-align: center; font-size: 14px"
+                    style="width: 400px; text-align: center; font-size: 14px"
                   >
                     College
                   </th>
                   <th style="font-size: 14px; text-align: center">SPOC</th>
-                  <th style="font-size: 14px; text-align: center">Email</th>
-                  <th style="font-size: 14px; text-align: center">Phone no</th>
-                  <th style="font-size: 13px; text-align: center">
+                  <th style="font-size: 11px; text-align: center">
+                    Contact Details
+                  </th>
+                  <th style="font-size: 11px; text-align: center">
                     Registration Start
                   </th>
-                  <th style="font-size: 13px; text-align: center">
+                  <th style="font-size: 11px; text-align: center">
                     Registration End
                   </th>
                 </tr>
@@ -1646,7 +1563,6 @@
                     <img src="assets/GOA/GOA(SOUTH)/GOVT PANAJI GOA.png" />
                   </td>
                   <td>Government Polytechnic Panaji</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1662,12 +1578,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets/GOA/GOA(SOUTH)/vasco.jpg" /></td>
                   <td>VASCO GOVERNMENT INDUSTRIAL TRAINING INSTITUTE</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1682,7 +1596,6 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets/GOA/GOA(SOUTH)/prabo goa.png" /></td>
@@ -1690,7 +1603,6 @@
                     Prabodhan Education Society's Vidya Prabodhini College of
                     Commerce, Education Computer and Management Parvari-Goa
                   </td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1707,12 +1619,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets\GOA\GOA(SOUTH)\g-17.jpg" /></td>
                   <td>Don Bosco College of Engineering</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1725,15 +1635,13 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets\GOA\GOA(SOUTH)\g-19.jpg" /></td>
                   <td>
-                    VVM’s SHREE DAMODAR COLLEGE OF COMMERCE & ECONOMICS, MARGAO-
-                    GOA
+                    VVM’s Shree Damodar College Of Commerce & Economics, Margo-
+                    Goa
                   </td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1749,7 +1657,6 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
               </tbody>
             </table>
@@ -1758,22 +1665,22 @@
       </div>
 
       <div class="card" onclick="toggleAnswer(this)">
-        <div class="card-title">ANDHRA PRADESH</div>
+        <div class="card-title">Andhra Pradhesh</div>
         <div class="card-content district-container">
           <div class="card district" onclick="showLogos('KURNOOL', event)">
-            KURNOOL
+            Kurnool
           </div>
           <div class="card district" onclick="showLogos('NELLORE', event)">
-            NELLORE
+            Nellore
           </div>
           <div class="card district" onclick="showLogos('TIRUPATI', event)">
-            TIRUPATI
+            Tirupati
           </div>
           <div class="card district" onclick="showLogos('VIJAYAWADA', event)">
-            VIJAYAWADA
+            Vijayawada
           </div>
           <div class="card district" onclick="showLogos('VIZAG', event)">
-            VIZAG
+            Vizag
           </div>
 
           <div style="overflow-x: auto; width: 100%">
@@ -1782,17 +1689,18 @@
                 <tr>
                   <th
                     colspan="2"
-                    style="width: 200px; text-align: center; font-size: 14px"
+                    style="width: 400px; text-align: center; font-size: 14px"
                   >
                     College
                   </th>
                   <th style="font-size: 14px; text-align: center">SPOC</th>
-                  <th style="font-size: 14px; text-align: center">Email</th>
-                  <th style="font-size: 14px; text-align: center">Phone no</th>
-                  <th style="font-size: 14px; text-align: center">
+                  <th style="font-size: 11px; text-align: center">
+                    Contact Details
+                  </th>
+                  <th style="font-size: 11px; text-align: center">
                     Registration Start
                   </th>
-                  <th style="font-size: 14px; text-align: center">
+                  <th style="font-size: 11px; text-align: center">
                     Registration End
                   </th>
                 </tr>
@@ -1807,14 +1715,12 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td>
                     <img src="assets/ANDHRA PRADHESH/KURNOOL/gmrit.jpg" />
                   </td>
                   <td>GMR Institute of Technology</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1827,12 +1733,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets\ANDHRA PRADHESH\KURNOOL\K3.jfif" /></td>
                   <td>Vikas College of Engineering and Technology</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1849,12 +1753,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets\ANDHRA PRADHESH\KURNOOL\K4.jfif" /></td>
                   <td>NRI Institute of Technology</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1867,12 +1769,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets\ANDHRA PRADHESH\KURNOOL\K7.jfif" /></td>
                   <td>Pragati Engineering College</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1885,12 +1785,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets\ANDHRA PRADHESH\KURNOOL\K10.jfif" /></td>
                   <td>Kallam Haranadhareddy Institute of Technology</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1905,24 +1803,24 @@
                 <tr>
                   <th
                     colspan="2"
-                    style="width: 200px; text-align: center; font-size: 14px"
+                    style="width: 400px; text-align: center; font-size: 14px"
                   >
                     College
                   </th>
                   <th style="font-size: 14px; text-align: center">SPOC</th>
-                  <th style="font-size: 14px; text-align: center">Email</th>
-                  <th style="font-size: 14px; text-align: center">Phone no</th>
-                  <th style="font-size: 13px; text-align: center">
+                  <th style="font-size: 11px; text-align: center">
+                    Contact Details
+                  </th>
+                  <th style="font-size: 11px; text-align: center">
                     Registration Start
                   </th>
-                  <th style="font-size: 13px; text-align: center">
+                  <th style="font-size: 11px; text-align: center">
                     Registration End
                   </th>
                 </tr>
                 <tr>
                   <td><img src="assets\ANDHRA PRADHESH\NELLORE\N1.jfif" /></td>
                   <td>Audisankara College of Engineering and Technology</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1938,12 +1836,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets\ANDHRA PRADHESH\NELLORE\N4.jfif" /></td>
                   <td>Visvodaya Engineering College</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1956,12 +1852,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets\ANDHRA PRADHESH\NELLORE\N6.jfif" /></td>
                   <td>Vikrama Simhapuri University</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -1978,7 +1872,6 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td>
@@ -1987,7 +1880,6 @@
                     />
                   </td>
                   <td>Geethanjali Institute of Science & Technology</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -2002,24 +1894,24 @@
                 <tr>
                   <th
                     colspan="2"
-                    style="width: 200px; text-align: center; font-size: 14px"
+                    style="width: 400px; text-align: center; font-size: 14px"
                   >
                     College
                   </th>
                   <th style="font-size: 14px; text-align: center">SPOC</th>
-                  <th style="font-size: 14px; text-align: center">Email</th>
-                  <th style="font-size: 14px; text-align: center">Phone no</th>
-                  <th style="font-size: 13px; text-align: center">
+                  <th style="font-size: 11px; text-align: center">
+                    Contact Details
+                  </th>
+                  <th style="font-size: 11px; text-align: center">
                     Registration Start
                   </th>
-                  <th style="font-size: 13px; text-align: center">
+                  <th style="font-size: 11px; text-align: center">
                     Registration End
                   </th>
                 </tr>
                 <tr>
                   <td><img src="assets\ANDHRA PRADHESH\TIRUPATI\T1.jfif" /></td>
                   <td>Sri Venkateswara College of Engineering</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -2032,12 +1924,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets\ANDHRA PRADHESH\TIRUPATI\T3.jfif" /></td>
                   <td>Shree Institute of Technical Education</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -2050,12 +1940,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets\ANDHRA PRADHESH\TIRUPATI\T5.jfif" /></td>
                   <td>Chadalawada Ramanamma Engineering College</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -2068,12 +1956,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets\ANDHRA PRADHESH\TIRUPATI\T9.png" /></td>
                   <td>SV University</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -2086,12 +1972,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets/ANDHRA PRADHESH/TIRUPATI/mbu.jpg" /></td>
                   <td>Mohanbabu University</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -2106,7 +1990,6 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
               </tbody>
             </table>
@@ -2117,17 +2000,18 @@
                 <tr>
                   <th
                     colspan="2"
-                    style="width: 200px; text-align: center; font-size: 14px"
+                    style="width: 400px; text-align: center; font-size: 14px"
                   >
                     College
                   </th>
                   <th style="font-size: 14px; text-align: center">SPOC</th>
-                  <th style="font-size: 14px; text-align: center">Email</th>
-                  <th style="font-size: 14px; text-align: center">Phone no</th>
-                  <th style="font-size: 13px; text-align: center">
+                  <th style="font-size: 11px; text-align: center">
+                    Contact Details
+                  </th>
+                  <th style="font-size: 11px; text-align: center">
                     Registration Start
                   </th>
-                  <th style="font-size: 13px; text-align: center">
+                  <th style="font-size: 11px; text-align: center">
                     Registration End
                   </th>
                 </tr>
@@ -2136,7 +2020,6 @@
                     <img src="assets\ANDHRA PRADHESH\VIJAYAWADA\V1.jfif" />
                   </td>
                   <td>Prasad V Potluri Siddhartha Institute of Technology</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -2151,14 +2034,12 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td>
                     <img src="assets\ANDHRA PRADHESH\VIJAYAWADA\V3.jfif" />
                   </td>
                   <td>Andhra Loyola Institute of Engineering and Technology</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -2173,7 +2054,6 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td>
@@ -2184,14 +2064,12 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td>
                     <img src="assets\ANDHRA PRADHESH\VIJAYAWADA\V6.jfif" />
                   </td>
                   <td>SRM University</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -2207,17 +2085,18 @@
                 <tr>
                   <th
                     colspan="2"
-                    style="width: 200px; text-align: center; font-size: 14px"
+                    style="width: 400px; text-align: center; font-size: 14px"
                   >
                     College
                   </th>
                   <th style="font-size: 14px; text-align: center">SPOC</th>
-                  <th style="font-size: 14px; text-align: center">Email</th>
-                  <th style="font-size: 14px; text-align: center">Phone no</th>
-                  <th style="font-size: 13px; text-align: center">
+                  <th style="font-size: 11px; text-align: center">
+                    Contact Details
+                  </th>
+                  <th style="font-size: 11px; text-align: center">
                     Registration Start
                   </th>
-                  <th style="font-size: 13px; text-align: center">
+                  <th style="font-size: 11px; text-align: center">
                     Registration End
                   </th>
                 </tr>
@@ -2225,7 +2104,6 @@
                 <tr>
                   <td><img src="assets\ANDHRA PRADHESH\VIZAG\V1.jfif" /></td>
                   <td>Andhra University</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -2238,12 +2116,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets\ANDHRA PRADHESH\VIZAG\V3.jfif" /></td>
                   <td>Raghu Engineering College</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -2256,12 +2132,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets\ANDHRA PRADHESH\VIZAG\V5.jfif" /></td>
                   <td>GITAM School of Technology</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -2274,7 +2148,6 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets\ANDHRA PRADHESH\VIZAG\V7.jfif" /></td>
@@ -2283,12 +2156,10 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <td><img src="assets\ANDHRA PRADHESH\VIZAG\V8.jfif" /></td>
                   <td>Pragathi Engineering College</td>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -2308,11 +2179,9 @@
       <div
         style="
           display: flex;
-          flex-wrap: wrap;
           justify-content: space-between;
           align-items: center;
           max-width: 1200px;
-          margin: 0 auto;
           padding: 0 20px;
         "
       >
